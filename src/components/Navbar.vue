@@ -4,22 +4,23 @@
 
     <!-- Botón hamburguesa -->
     <div class="hamburger" @click="toggleMenu">
-      <span :class="{ 'active': menuOpen }"></span>
-      <span :class="{ 'active': menuOpen }"></span>
-      <span :class="{ 'active': menuOpen }"></span>
+      <span :class="{ active: menuOpen }"></span>
+      <span :class="{ active: menuOpen }"></span>
+      <span :class="{ active: menuOpen }"></span>
     </div>
 
     <!-- Menú principal -->
     <ul class="nav-links" :class="{ open: menuOpen }">
-      <li><router-link to="/">Home</router-link></li>
-  <li><router-link to="/precios">Precios</router-link></li>
+      <li><router-link to="/" @click="closeMenu">Home</router-link></li>
+      <li><router-link to="/precios" @click="closeMenu">Precios</router-link></li>
+
       <li class="submenu">
         <a href="#" @click.prevent="toggleSubmenu('servicios')">
           Servicios ▾
         </a>
         <ul class="dropdown" :class="{ open: activeSubmenu === 'servicios' }">
           <li v-for="(item, index) in servicios" :key="index">
-            <router-link :to="item.link">{{ item.nombre }}</router-link>
+            <router-link :to="item.link" @click="closeMenu">{{ item.nombre }}</router-link>
           </li>
         </ul>
       </li>
@@ -30,80 +31,83 @@
         </a>
         <ul class="dropdown" :class="{ open: activeSubmenu === 'portfolio' }">
           <li v-for="(item, index) in portfolioItems" :key="index">
-            <router-link :to="item.link">{{ item.nombre }}</router-link>
+            <router-link :to="item.link" @click="closeMenu">{{ item.nombre }}</router-link>
           </li>
         </ul>
       </li>
 
-      <li><router-link to="/nosotros">Nosotros</router-link></li>
-      <li><router-link to="/contacto">Contacto</router-link></li>
+      <li><router-link to="/nosotros" @click="closeMenu">Nosotros</router-link></li>
+      <li><router-link to="/contacto" @click="closeMenu">Contacto</router-link></li>
     </ul>
   </nav>
 </template>
 
 <script>
-import { ref, onMounted, nextTick } from 'vue'
-import { gsap } from 'gsap'
+import { ref, onMounted, nextTick } from "vue";
+import { gsap } from "gsap";
 
 export default {
-  name: 'Navbar',
+  name: "Navbar",
   setup() {
-    const menuOpen = ref(false)
-    const activeSubmenu = ref(null)
+    const menuOpen = ref(false);
+    const activeSubmenu = ref(null);
 
     const servicios = [
-      { nombre: 'Diseño Web', link: '/servicios#diseno-web' },
-      { nombre: 'Desarrollo Frontend', link: '/servicios#frontend' },
-      { nombre: 'Mantenimiento', link: '/servicios#mantenimiento' }
-    ]
+      { nombre: "Diseño Web", link: "/servicios#diseno-web" },
+      { nombre: "Desarrollo Frontend", link: "/servicios#frontend" },
+      { nombre: "Mantenimiento", link: "/servicios#mantenimiento" },
+    ];
 
     const portfolioItems = [
-      { nombre: 'Proyecto 1', link: '/portfolio#proyecto1' },
-      { nombre: 'Proyecto 2', link: '/portfolio#proyecto2' },
-      { nombre: 'Proyecto 3', link: '/portfolio#proyecto3' }
-    ]
+      { nombre: "Proyecto 1", link: "/portfolio#proyecto1" },
+      { nombre: "Proyecto 2", link: "/portfolio#proyecto2" },
+      { nombre: "Proyecto 3", link: "/portfolio#proyecto3" },
+    ];
 
     const toggleMenu = () => {
-      menuOpen.value = !menuOpen.value
-    }
+      menuOpen.value = !menuOpen.value;
+    };
+
+    const closeMenu = () => {
+      menuOpen.value = false;
+      activeSubmenu.value = null;
+    };
 
     const toggleSubmenu = (name) => {
-      activeSubmenu.value = activeSubmenu.value === name ? null : name
-    }
+      activeSubmenu.value = activeSubmenu.value === name ? null : name;
+    };
 
     const goHome = () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-      menuOpen.value = false
-    }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      closeMenu();
+    };
 
-    // Animaciones GSAP para submenus desktop
     onMounted(() => {
       nextTick(() => {
-        const submenus = document.querySelectorAll('.submenu')
+        const submenus = document.querySelectorAll(".submenu");
 
         submenus.forEach((menu) => {
-          const dropdown = menu.querySelector('.dropdown')
+          const dropdown = menu.querySelector(".dropdown");
 
-          menu.addEventListener('mouseenter', () => {
+          // Solo animación en desktop (>768px)
+          menu.addEventListener("mouseenter", () => {
             if (window.innerWidth > 768) {
-              gsap.to(dropdown, { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }
-                
-              )
+              gsap.to(dropdown, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" });
             }
-          })
+          });
 
-          menu.addEventListener('mouseleave', () => {
+          menu.addEventListener("mouseleave", () => {
             if (window.innerWidth > 768) {
-              gsap.to(dropdown, { opacity: 0, y: -10, duration: 0.3, ease: 'power2.in' })
+              gsap.to(dropdown, { opacity: 0, y: -10, duration: 0.3, ease: "power2.in" });
             }
-          })
-        })
-      })
-    })
+          });
+        });
+      });
+    });
 
-    return { menuOpen, activeSubmenu, servicios, portfolioItems, toggleMenu, toggleSubmenu, goHome }
-  }
-}
+    return { menuOpen, activeSubmenu, servicios, portfolioItems, toggleMenu, toggleSubmenu, goHome, closeMenu };
+  },
+};
 </script>
 
 <style scoped>
@@ -114,7 +118,7 @@ export default {
   align-items: center;
   padding: 1.5rem 4%;
   background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -144,14 +148,14 @@ export default {
   transition: all 0.3s;
 }
 
-.hamburger span.active:nth-child(1) {
+.hamburger span:nth-child(1).active {
   transform: rotate(45deg) translate(5px, 5px);
 }
-.hamburger span.active:nth-child(2) {
+.hamburger span:nth-child(2).active {
   opacity: 0;
 }
-.hamburger span.active:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+.hamburger span:nth-child(3).active {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Menú principal */
@@ -177,24 +181,17 @@ export default {
   color: #0077cc;
   border-bottom: 2px solid #0077cc;
 }
-/* Eliminar los puntos de la lista principal y de los submenús */
-.nav-links,
-.nav-links ul.dropdown {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
 
 /* Submenus */
 .submenu .dropdown {
   position: absolute;
   top: 100%;
-  right: px;
+  left: 0;
   background-color: #ffffff;
   border-radius: 8px;
   padding: 0.5rem 0;
   min-width: 180px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
@@ -211,7 +208,6 @@ export default {
 .dropdown li {
   padding: 0.5rem 1rem;
   border-bottom: 1px solid transparent;
-  transition: all 1.5s;
 }
 
 .dropdown li:last-child {
@@ -225,10 +221,6 @@ export default {
 
 .dropdown li a:hover {
   color: #0077cc;
-}
-
-.dropdown li:hover {
-  border-bottom: 2px solid #0077cc;
 }
 
 /* Responsive */
@@ -248,7 +240,7 @@ export default {
     padding-top: 5rem;
     gap: 2rem;
     transition: right 0.3s ease;
-    box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links.open {
