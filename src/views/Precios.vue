@@ -6,8 +6,10 @@
     <div class="pricing-grid">
       <div class="plan-card basic">
         <h3>Básico</h3>
-        <p class="subtitle">Sencillo, eficiente, perfecto</p>
-        <div class="price">43,99€<span>/mes</span></div>
+        <p class="subtitle"> Eficiente</p>
+
+
+        <div class="price">250€</div>
         <ul>
           <p>Hosting incluido</p>
           <p>Diseño web sencillo</p>
@@ -21,8 +23,8 @@
 
       <div class="plan-card advanced">
         <h3>Avanzado</h3>
-        <p class="subtitle">La excelencia hecha web</p>
-        <div class="price">64,99€<span>/mes</span></div>
+        <p class="subtitle">Presencia de marca completa</p>
+        <div class="price">450€</div>
         <ul>
           <p>Diseño web avanzado</p>
           <p>4 secciones máximo</p>
@@ -36,8 +38,8 @@
 
       <div class="plan-card premium">
         <h3>Premium</h3>
-        <p class="subtitle">Soluciones premium, resultados premium</p>
-        <div class="price">79,99€<span>/mes</span></div>
+        <p class="subtitle">ecommerce,integraciones y rendimiento avanzado</p>
+        <div class="price">750€</div>
         <ul>
           <p>Diseño profesional sin límites</p>
           <p>WooCommerce incluido</p>
@@ -49,7 +51,9 @@
         <button class="select-btn">Elegir plan</button>
       </div>
     </div>
+    
   </section>
+  
 </template>
 
 <script setup>
@@ -65,20 +69,20 @@ onMounted(() => {
   const cards = pricingSection.value.querySelectorAll('.plan-card')
   const line = pricingSection.value.querySelector('.line-separator')
 
-  // Animación del separador
+  
   gsap.fromTo(
     line,
-    { width: 0, opacity: 0 },
+    { width: 10, opacity: 0 },
     {
       scrollTrigger: { trigger: line, start: 'top 80%' },
-      width: '180px',
+      width: '780px',
       opacity: 1,
       duration: 1.5,
       ease: 'power2.out'
     }
   )
 
-  // Animación de entrada de las tarjetas
+  
   gsap.from(cards, {
     scrollTrigger: { trigger: pricingSection.value, start: 'top 80%' },
     y: 100,
@@ -88,7 +92,7 @@ onMounted(() => {
     ease: 'power3.out'
   })
 
-  // Efecto de “latido” en los botones
+  
   gsap.to('.select-btn', {
     scale: 1.05,
     repeat: -1,
@@ -116,10 +120,10 @@ h2 {
 }
 
 .line-separator {
-  width: 0;
+  width: 200px;
   height: 4px;
   margin: 2rem auto 4rem;
-  background: linear-gradient(270deg, #00ffff, #ffffff, #00c3ff, cyan);
+  background: linear-gradient(270deg, #00ffff, #ffffff, #4400ff, cyan);
   border-radius: 5px;
   opacity: 0;
 }

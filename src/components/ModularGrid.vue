@@ -122,6 +122,7 @@ export default {
 
 .grid-item {
   display: flex;
+  flex-direction: column;
   overflow: hidden;
   border-radius: px;
   cursor: pointer;
@@ -134,7 +135,7 @@ export default {
 .grid-item.small { grid-column: span 1; grid-row: span 1; }
 
 .image {
-  width: 60%;
+  width: 100%;
   height: 150px;
   background-size: cover;
   background-position: center;
@@ -143,7 +144,7 @@ export default {
 }
 
 .text {
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

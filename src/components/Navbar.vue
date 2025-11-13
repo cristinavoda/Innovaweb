@@ -3,21 +3,19 @@
     <div class="logo" @click="goHome">InnovaWeb</div>
 
     <!-- Botón hamburguesa -->
-    <div class="hamburger" @click="toggleMenu">
-      <span :class="{ active: menuOpen }"></span>
-      <span :class="{ active: menuOpen }"></span>
-      <span :class="{ active: menuOpen }"></span>
+    <div class="hamburger" ref="hamburger" @click="toggleMenu">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
     <!-- Menú principal -->
-    <ul class="nav-links" :class="{ open: menuOpen }">
-      <li><router-link to="/" @click="closeMenu">Home</router-link></li>
+    <ul class="nav-links" :class="{ open: menuOpen }" ref="menu">
+      <li><router-link to="/" @click="closeMenu">Inicio</router-link></li>
       <li><router-link to="/precios" @click="closeMenu">Precios</router-link></li>
 
       <li class="submenu">
-        <a href="#" @click.prevent="toggleSubmenu('servicios')">
-          Servicios ▾
-        </a>
+        <a href="#" @click.prevent="toggleSubmenu('servicios')">Servicios ▾</a>
         <ul class="dropdown" :class="{ open: activeSubmenu === 'servicios' }">
           <li v-for="(item, index) in servicios" :key="index">
             <router-link :to="item.link" @click="closeMenu">{{ item.nombre }}</router-link>
@@ -26,9 +24,7 @@
       </li>
 
       <li class="submenu">
-        <a href="#" @click.prevent="toggleSubmenu('portfolio')">
-          Portfolio ▾
-        </a>
+        <a href="#" @click.prevent="toggleSubmenu('portfolio')">Portfolio ▾</a>
         <ul class="dropdown" :class="{ open: activeSubmenu === 'portfolio' }">
           <li v-for="(item, index) in portfolioItems" :key="index">
             <router-link :to="item.link" @click="closeMenu">{{ item.nombre }}</router-link>
@@ -43,7 +39,7 @@
 </template>
 
 <script>
-import { ref, onMounted, nextTick } from "vue";
+import { ref, onMounted, nextTick, watch } from "vue";
 import { gsap } from "gsap";
 
 export default {
@@ -51,6 +47,9 @@ export default {
   setup() {
     const menuOpen = ref(false);
     const activeSubmenu = ref(null);
+    const hamburger = ref(null);
+    const menu = ref(null);
+    let autoCloseTimer = null;
 
     const servicios = [
       { nombre: "Diseño Web", link: "/servicios#diseno-web" },
@@ -66,11 +65,23 @@ export default {
 
     const toggleMenu = () => {
       menuOpen.value = !menuOpen.value;
+
+      if (menuOpen.value) startAutoCloseTimer();
+      animateHamburger(menuOpen.value);
     };
 
     const closeMenu = () => {
       menuOpen.value = false;
       activeSubmenu.value = null;
+      animateHamburger(false);
+      clearTimeout(autoCloseTimer);
+    };
+
+    const startAutoCloseTimer = () => {
+      clearTimeout(autoCloseTimer);
+      autoCloseTimer = setTimeout(() => {
+        closeMenu();
+      }, 6000); // ⏱️ Se cierra después de 6 segundos sin interacción
     };
 
     const toggleSubmenu = (name) => {
@@ -82,148 +93,134 @@ export default {
       closeMenu();
     };
 
+    // Detectar clic fuera del menú
     onMounted(() => {
+      document.addEventListener("click", (e) => {
+        if (
+          menuOpen.value &&
+          !menu.value.contains(e.target) &&
+          !hamburger.value.contains(e.target)
+        ) {
+          closeMenu();
+        }
+      });
+
+      // GSAP animación de entrada para submenús (desktop)
       nextTick(() => {
         const submenus = document.querySelectorAll(".submenu");
-
         submenus.forEach((menu) => {
           const dropdown = menu.querySelector(".dropdown");
-
-          // Solo animación en desktop (>768px)
           menu.addEventListener("mouseenter", () => {
-            if (window.innerWidth > 768) {
-              gsap.to(dropdown, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" });
-            }
+            if (window.innerWidth > 768)
+              gsap.to(dropdown, {
+                opacity: 1,
+                y: 0,
+                duration: 0.3,
+                ease: "power2.out",
+              });
           });
-
           menu.addEventListener("mouseleave", () => {
-            if (window.innerWidth > 768) {
-              gsap.to(dropdown, { opacity: 0, y: -10, duration: 0.3, ease: "power2.in" });
-            }
+            if (window.innerWidth > 768)
+              gsap.to(dropdown, {
+                opacity: 0,
+                y: -10,
+                duration: 0.3,
+                ease: "power2.in",
+              });
           });
         });
       });
     });
 
-    return { menuOpen, activeSubmenu, servicios, portfolioItems, toggleMenu, toggleSubmenu, goHome, closeMenu };
+    // Animación hamburguesa con GSAP
+    const animateHamburger = (isOpen) => {
+      const bars = hamburger.value.querySelectorAll("span");
+      if (isOpen) {
+        gsap.to(bars[0], { rotate: 45, y: 8, duration: 0.3 });
+        gsap.to(bars[1], { opacity: 0, duration: 0.2 });
+        gsap.to(bars[2], { rotate: -45, y: -8, duration: 0.3 });
+      } else {
+        gsap.to(bars[0], { rotate: 0, y: 0, duration: 0.3 });
+        gsap.to(bars[1], { opacity: 1, duration: 0.2 });
+        gsap.to(bars[2], { rotate: 0, y: 0, duration: 0.3 });
+      }
+    };
+
+    return {
+      menuOpen,
+      activeSubmenu,
+      servicios,
+      portfolioItems,
+      toggleMenu,
+      toggleSubmenu,
+      goHome,
+      closeMenu,
+      hamburger,
+      menu,
+    };
   },
 };
 </script>
 
 <style scoped>
-/* Navbar base */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 4%;
-  background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  position: sticky;
-  top: 0;
+/* --- NAVBAR BASE --- */
+/* Estilos generales */
+nav {
+  position: fixed;
+  top: 20px0;
+  left: 0;
+  width: 100%;
+  background: white;
   z-index: 1000;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
 }
 
 .logo {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  color: #0077cc;
-  cursor: pointer;
 }
 
-/* Botón hamburguesa */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  display: block;
-  height: 3px;
-  width: 25px;
-  background-color: #0077cc;
-  border-radius: 2px;
-  transition: all 0.3s;
-}
-
-.hamburger span:nth-child(1).active {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger span:nth-child(2).active {
-  opacity: 0;
-}
-.hamburger span:nth-child(3).active {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Menú principal */
+/* 🔹 Menú de navegación */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
-  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
 }
 
-.nav-links li {
-  position: relative;
+/* 🔹 Hamburguesa oculta en escritorio */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  transition: 0.3s ease;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #111111;
-  font-weight: 500;
-  transition: color 0.3s;
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #0077cc;
-  border-bottom: 2px solid #0077cc;
+/* 🔸 Animación hamburguesa → X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
 }
-
-/* Submenus */
-.submenu .dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 0.5rem 0;
-  min-width: 180px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+.hamburger.active span:nth-child(2) {
   opacity: 0;
-  transform: translateY(-10px);
-  pointer-events: none;
-  transition: all 0.3s;
-  z-index: 1000;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
-.submenu .dropdown.open {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-.dropdown li {
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid transparent;
-}
-
-.dropdown li:last-child {
-  border-bottom: none;
-}
-
-.dropdown li a {
-  display: block;
-  color: #111111;
-}
-
-.dropdown li a:hover {
-  color: #0077cc;
-}
-
-/* Responsive */
+/* 🔹 Responsive: versión móvil */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -231,16 +228,18 @@ export default {
 
   .nav-links {
     position: fixed;
-    top: 0;
+    top: 60px;
     right: -100%;
-    height: 100vh;
-    width: 70%;
-    background-color: #ffffff;
     flex-direction: column;
-    padding-top: 5rem;
-    gap: 2rem;
-    transition: right 0.3s ease;
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    height: calc(100vh - 60px);
+    background: white;
+    align-items: center;
+    justify-content: start;
+    padding-top: 2rem;
+    gap: 1.5rem;
+    transition: right 0.4s ease;
+    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links.open {
@@ -252,26 +251,23 @@ export default {
     text-align: center;
   }
 
-  /* Submenus en móvil */
+  .nav-links a {
+    color: #222;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  /* Submenú en móviles */
   .submenu .dropdown {
-    position: relative;
-    top: 0;
-    left: 0;
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
     display: none;
     flex-direction: column;
-    background: none;
-    box-shadow: none;
+    background: #f9f9f9;
+    width: 100%;
   }
 
   .submenu .dropdown.open {
     display: flex;
   }
-
-  .dropdown li {
-    border-bottom: 1px solid #eee;
-  }
 }
+
 </style>

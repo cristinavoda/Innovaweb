@@ -4,7 +4,7 @@
     <router-view />
 
     <!-- Módulo decorativo -->
-    <ModularGrid />
+   
 
     <Footer />
 
@@ -28,7 +28,6 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
-import ModularGrid from './components/ModularGrid.vue'
 import WhatsAppButton from './components/WhatsAppButton.vue'
 import PhoneButton from './components/PhoneButton.vue'
 
@@ -61,7 +60,7 @@ body {
 /* Scroll top */
 .scroll-top-btn {
   position: fixed;
-  bottom: 8rem;
+  bottom: 10rem;
   right: 2rem;
   background-color: rgb(247, 248, 248);
   color: darkcyan;

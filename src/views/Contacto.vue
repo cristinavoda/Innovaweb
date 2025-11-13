@@ -1,9 +1,19 @@
 <template>
+  
+
   <section class="contact">
+     <div class ="contact-bg">
+
     <h1 data-aos="fade-down">Contacto</h1>
     <p data-aos="fade-up" data-aos-delay="400">
       ¿Quieres una página web elegante y personalizada? ¡Hablemos!
     </p>
+     
+       <a href="mailto:paginaswebpersonalizadas.es@gmail.com" class="btn email-btn" title="paginasweb">
+    <span class="btn-text">paginaswebpersonalizadas.es@gmail.com</span>
+
+</a>
+
 <div class="contact-cards">
   
  
@@ -22,7 +32,7 @@
  
           
       <div class="card" data-aos="fade-right" data-aos-delay="500">
-        <h2> 🌐Ubicación</h2>
+        <h2> Ubicación</h2>
         <p>Lleida, Catalunya, España</p>
       </div>
 </div>
@@ -40,7 +50,9 @@
         <button type="submit" class="btn">Enviar</button>
       </form>
     </div>
+     </div>
   </section>
+ 
 </template>
 
 <script setup>
@@ -65,18 +77,29 @@ onMounted(() => {
 
 <style scoped>
 .contact {
-  min-height: 100vh;
+  min-height: 110vh;
   padding: 4rem 2rem;
   text-align: center;
   background-color: #fdfdfd;
   color: #002f33;
 }
+.contact-bg {
+                                                                                                                                                                      
+background-image: url('images/contact-background.jpg'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto; 
+background-position: center;
+
+  
+}
 
 .contact h1 {
-     font-size: 2.5rem;
-  margin-top: 3rem;
+  font-size: 2.5rem;
+  margin-top: 5rem;
   margin-bottom: 3rem;
-  background: linear-gradient(45deg, #515352, #b4b0b0);
+  background: linear-gradient(45deg, #343534, #faf8f8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.5s ease;
@@ -87,27 +110,32 @@ onMounted(() => {
 
 .contact p {
   font-size: 1.2rem;
-  margin-bottom: 3rem;
-  background: linear-gradient(45deg, #676e6b, #b4b0b0);
+  margin-top: 2.5rem;
+  background: linear-gradient(45deg, #121312, #b4b0b0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.5s ease;
 }
-
+btn email-btn{
+  width: auto;
+}
 .contact-cards {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+  
 }
 
 .card {
   background-color: #fff;
-  padding: 2rem;
+  padding: 3rem 3rem;
+  gap:2rem;
+  margin-top: 30px;
   border-radius: 1rem;
   max-width: 250px;
-  
+  box-shadow:2px 1px 4px#ecf0ee;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -134,7 +162,7 @@ onMounted(() => {
   border-radius: 1rem;
   max-width: 500px;
   margin: 0 auto;
-  
+  box-shadow:2px 1px 4px#ecf0ee;
 }
 .form-card:hover {
   background-color: #fff;
@@ -187,6 +215,9 @@ onMounted(() => {
 .btn:hover {
   background-color: rgb(196, 199, 199);
   transform: scale(1.05);
+}
+btn-icon {
+  font-size: 1px;
 }
 .whatsapp-button {
   position: fixed;
@@ -273,6 +304,22 @@ onMounted(() => {
     position: absolute;
     top: 15px;
     right: 200px;
+  }
+}
+@media (max-width: 768px) {
+  .contact-form {
+    width: 90%;
+    padding: 0,5rem;
+  }
+
+  .contact {
+    padding: 1rem;
+    background-size: cover; 
+  }
+
+  .contact-form {
+    width: 90%;
+    padding: 1rem;
   }
 }
 </style>

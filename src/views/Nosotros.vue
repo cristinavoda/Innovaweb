@@ -1,16 +1,12 @@
 <template>
   <section class="nosotros">
     <div class="nosotros-container">
-      <h2> </h2>
-      
       <div class="nosotros-imagen">
         <img src="/images/design.png" alt="Cristina Voda" />
-       
+        
       </div>
 
-  
       <div class="nosotros-texto">
-        
         <p>
           Actualmente las páginas web suelen tener plantillas similares,
           sin diferenciación, con diseños responsive pero sin pensar en mobile first.  
@@ -21,32 +17,49 @@
         <p class="firma">Cristina Voda</p>
       </div>
     </div>
+
+    <canvas ref="canvas" class="wave-canvas"></canvas>
   </section>
-   <svg
-          class="wave"
-          viewBox="1 0 500 150"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0.00,49.98 C150.00,150.00 349.31,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-            style="stroke: none; fill: url(#grad)"
-          ></path>
-          <defs>
-            <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#00b8b8" />
-              <stop offset="100%" stop-color="#f8b195" />
-            </linearGradient>
-          </defs>
-        </svg>
 </template>
 
+
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
-
+const canvas = ref(null);
 onMounted(() => {
+  const ctx = canvas.value.getContext("2d");
+  let t = 0;
+
+  const draw = () => {
+    const w = (canvas.value.width = canvas.value.offsetWidth);
+    const h = (canvas.value.height = canvas.value.offsetHeight);
+    ctx.clearRect(0, 0, w, h);
+
+    // Degradado animado suave
+    const gradient = ctx.createLinearGradient(0, 0, w, h);
+    gradient.addColorStop(0, `hsl(${(t * 40) % 360}, 80%, 60%)`);
+    gradient.addColorStop(1, `hsl(${(t * 40 + 120) % 360}, 80%, 60%)`);
+    ctx.fillStyle = gradient;
+
+    // Onda principal
+    ctx.beginPath();
+    for (let x = 0; x < w; x++) {
+      const y = h / 2 + Math.sin(x * 0.02 + t) * 25 + Math.cos(x * 0.04 + t / 2) * 15;
+      ctx.lineTo(x, y);
+    }
+    ctx.lineTo(w, h);
+    ctx.lineTo(0, h);
+    ctx.closePath();
+    ctx.fill();
+
+    t += 0.03; // velocidad media (fluida pero relajada)
+    requestAnimationFrame(draw);
+  };
+
+  draw();
   gsap.from('.nosotros-texto', {
     scrollTrigger: {
       trigger: '.nosotros-texto',
@@ -64,25 +77,27 @@ onMounted(() => {
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
 
 .nosotros {
-  width: 100%;
-  background: linear-gradient(135deg, #fdfdfd, #f4f9f9);
+  position: relative;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5rem 0;
+  background: linear-gradient(to bottom, #fff, #f8f9fa);
+  padding-bottom: 100px; /* espacio para la wave */
 }
 
 .nosotros-container {
   display: flex;
-  width: 90%;
-  max-width: 1200px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+  z-index: 2;
   position: relative;
 }
 
+
 .nosotros-imagen {
+  margin-top: -190px;
   flex: 1;
   position: relative;
   display: flex;
@@ -92,26 +107,14 @@ onMounted(() => {
 
 .nosotros-imagen img {
   width: fit-content;
+  max-width: 900px;
   
-  max-width: 600px;
-  border-radius: 12px;
   box-shadow: 2px 10px 25px rgba(241, 224, 122, 0.904);
   object-fit: cover;
   z-index: 2;
+  transition: all 0.4s ease;
 }
 
-.wave {
-  position: absolute;
-  left: -300px;
-  width: 100%;      /* Ocupa todo el ancho del contenedor */
-  height: 150px;    /* Altura de la onda (puedes ajustar) */
-  display: block;
-  bottom: -250px;
-  transform: translateY(-50%);
-  width: 220px;
-  opacity: 0.7;
-  z-index: 1;
-}
 
 .nosotros-texto {
   margin-top: 35px;
@@ -142,22 +145,115 @@ p {
   transform: rotate(-2deg);
   text-shadow: 0 2px 3px rgba(0,0,0,0.1);
 }
-
-/* Responsive */
+.wave-canvas {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 1;
+}
 @media (max-width: 900px) {
   .nosotros-container {
     flex-direction: column;
     text-align: center;
   }
+  
   .wave {
     display: none;
   }
   .nosotros-imagen img {
-    width: 60%;
-    margin-bottom: 2rem;
+    width: 100%;
+    margin-top: 250px;
   }
   .firma {
     text-align: center;
   }
 }
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  z-index: 0;
+  opacity: 0.85;
+  animation: waveMove 10s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-30px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .wave {
+    height: 120px;
+    animation-duration: 12s;
+    opacity: 0.9;
+  }
+}
+
+@media (max-width: 768px) {
+  .nosotros-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nosotros-imagen img {
+    width: 100%;
+    height: 40vh; 
+    max-width: none;
+    object-fit: cover;
+   
+    box-shadow: none; 
+  }
+  .wave-canvas {
+    height: 80px;
+  }
+}
+@media (min-width: 1200px) {
+  .nosotros-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 3rem 5rem;
+  }
+
+  .nosotros-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .nosotros-imagen img {
+    width: 1080px;
+    height: 600px;
+    max-width: 170%;
+    border-radius: 0px;
+    margin-left: -300px;
+  }
+
+  .nosotros-texto {
+    flex: 2;
+    text-align: left;
+    line-height: 1.7;
+    font-size: 1.15rem;
+  }
+
+  .nosotros-texto p {
+    max-width: 700px;
+  }
+}
+
 </style>

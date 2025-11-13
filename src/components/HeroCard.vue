@@ -147,5 +147,46 @@ export default {
 .media-container:hover .hero-video {
   opacity: 1;
 }
+/* Mobile Hero */
+@media (max-width: 768px) {
+  .hero-content .typewriter {
+    bottom: auto;        /* desactiva la posición inferior */
+    top: 2rem;           /* coloca el texto cerca de la parte superior */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;   /* tamaño más pequeño para móviles */
+    line-height: 1.5;
+    max-width: 90%;      /* ancho adaptativo */
+    word-wrap: break-word; /* permite que las palabras se rompan si es necesario */
+  }
+}
+.grid-container {
+    grid-template-columns: 1fr; /* un item por fila */
+    gap: 0.8rem;
+  }
 
+  .grid-item {
+    flex-direction: column; /* se mantiene columna */
+  }
+
+  .image {
+    height: 200px; /* imagen más alta para móvil */
+  }
+
+  .text {
+    font-size: 1.1rem; /* texto más legible */
+    padding: 1.2rem;
+  }
+
+
+@media (max-width: 480px) {
+  .image {
+    height: 180px; /* ajusta si quieres más compacta */
+  }
+
+  .text {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
 </style>

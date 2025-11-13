@@ -41,7 +41,7 @@ const servicios = [
   {
     titulo: 'Mantenimiento Web',
     descripcion: 'Soporte continuo y actualizaciones.',
-    imagen: '/images/Services/mantenimiento.png',
+    imagen: '/images/Services/mantenimiento.jpg',
     ruta: '/informacion/mantenimiento'
   }
 ]
@@ -50,7 +50,7 @@ const servicios = [
 
 <style scoped>
 h1 {
-   background: linear-gradient(45deg, #052a3be3, #63f3ecee);
+   background: linear-gradient(45deg, #bec2c2f6, #242525ee);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   text-align: center;
@@ -58,7 +58,7 @@ h1 {
 }
 
 h2 {
-  color: darkcyan;
+  color: rgb(67, 70, 70);
   margin-top: 1rem;
 }
 
@@ -95,6 +95,7 @@ h2 {
   padding: 0.5rem 1rem;
   background: transparent;
   color: rgb(112, 111, 108);
+  box-shadow:1px #5c5b5b;
   border-radius: 0.5rem;
   text-decoration: none;
   transition: background 0.3s, color 0.3s;
