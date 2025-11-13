@@ -102,7 +102,7 @@ body {
     width: 45px;
     height: 45px;
     font-size: 18px;
-    bottom: 15px;
+    bottom: 105px;
     right: 15px;
   }
 }

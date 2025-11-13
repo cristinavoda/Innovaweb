@@ -108,9 +108,9 @@ export default {
     ModularGrid
   }
     const servicios = [
-      { titulo: 'Diseño Web', descripcion: 'Creamos sitios modernos y responsivos.' },
-      { titulo: 'Desarrollo Frontend', descripcion: 'Aplicaciones interactivas y rápidas.' },
-      { titulo: 'Mantenimiento', descripcion: 'Soporte y actualizaciones constantes.' },
+      { titulo: 'Diseño Web', descripcion: 'Creamos sitios modernos y responsivos.', imagen: '/images/Services/diseno-web.jpg' },
+      { titulo: 'Desarrollo Frontend', descripcion: 'Aplicaciones interactivas y rápidas.', imagen: 'Services/frontend.jpg' },
+      { titulo: 'Mantenimiento', descripcion: 'Soporte y actualizaciones constantes.', imagen: 'Services/mantenimiento.jpg' },
     ]
 
     const portfolio = [

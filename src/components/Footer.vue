@@ -10,9 +10,11 @@
         <h3></h3>
         <ul>
           <li><router-link to="/">Inicio</router-link></li>
-          <li><router-link to="/services">Servicios</router-link></li>
-          <li><router-link to="/muestras">Muestras</router-link></li>
-          <li><router-link to="/contact">Contacto</router-link></li>
+           <li><router-link to="/precios">Precios</router-link></li>
+          <li><router-link to="/servicios">Servicios</router-link></li>
+          <li><router-link to="/portfolio">Portfolio</router-link></li>
+          <li><router-link to="/nosotros">Nosotros</router-link></li>
+          <li><router-link to="/contacto">Contacto</router-link></li>
         </ul>
       </div>
 

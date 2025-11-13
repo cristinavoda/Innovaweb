@@ -2,14 +2,14 @@
   <nav class="navbar">
     <div class="logo" @click="goHome">InnovaWeb</div>
 
-    <!-- Botón hamburguesa -->
+    
     <div class="hamburger" ref="hamburger" @click="toggleMenu">
       <span></span>
       <span></span>
       <span></span>
     </div>
 
-    <!-- Menú principal -->
+  
     <ul class="nav-links" :class="{ open: menuOpen }" ref="menu">
       <li><router-link to="/" @click="closeMenu">Inicio</router-link></li>
       <li><router-link to="/precios" @click="closeMenu">Precios</router-link></li>
@@ -194,13 +194,17 @@ nav {
 
 /* 🔹 Hamburguesa oculta en escritorio */
 .hamburger {
-  display: none;
+  display: none; /* por defecto, oculto en escritorio */
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  gap: 5px;
-  transition: 0.3s ease;
+  width: 35px;
+  height: 35px;
+  z-index: 1001;
+  background: transparent;
+  border: none;
 }
-
 .hamburger span {
   width: 25px;
   height: 3px;
@@ -222,16 +226,28 @@ nav {
 
 /* 🔹 Responsive: versión móvil */
 @media (max-width: 768px) {
+ 
+
   .hamburger {
     display: flex;
+    top: 15px;
+    right: 70px;
   }
 
+  .bar {
+    width: 25px;
+    height: 3px;
+    right:80px;
+    background-color: #797373; 
+    transition: all 0.3s ease;
+  
+  }
   .nav-links {
     position: fixed;
     top: 60px;
     right: -100%;
     flex-direction: column;
-    width: 70%;
+    width: 100%;
     height: calc(100vh - 60px);
     background: white;
     align-items: center;
@@ -240,6 +256,7 @@ nav {
     gap: 1.5rem;
     transition: right 0.4s ease;
     box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
   }
 
   .nav-links.open {

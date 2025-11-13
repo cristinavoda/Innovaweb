@@ -106,12 +106,15 @@ onMounted(() => {
 <style scoped>
 .pricing-section {
   text-align: center;
-  padding: 5rem 2rem;
+  padding:  6rem 2rem 4rem;
   background: linear-gradient(180deg, #ffffff, #f7f9fa);
+   position: relative;
 }
+
 h2 {
   color :#444  
 }
+
 .title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -127,7 +130,10 @@ h2 {
   border-radius: 5px;
   opacity: 0;
 }
-
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -210,4 +216,29 @@ h2 {
 .basic { background: linear-gradient(180deg, #fefefe, #eaf9f9); }
 .advanced { background: linear-gradient(180deg, #ffffff, #e4f4ff); }
 .premium { background: linear-gradient(180deg, #ffffff, #e7f8ef); }
+@media (min-width: 1200px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .pricing-section {
+    padding-top: 8rem; /* evita que tape el navbar */
+  }
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  .plan-card {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
 </style>

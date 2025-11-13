@@ -33,16 +33,17 @@ onBeforeUnmount(() => {
 <style scoped>
 .scroll-top {
   position: fixed;
-  bottom: 25px;
-  right: 95px;
-  background-color: #1e6f6f; /* DarkCyan elegante */
+  bottom: 80px;
+  right: 20px;
+  background-color: #008b8b; /* DarkCyan elegante */
   color: white;
   border: none;
   border-radius: 50%;
-  width: 55px;
-  height: 55px;
-  font-size: 1.4rem;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
   display: flex;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -57,14 +58,21 @@ onBeforeUnmount(() => {
   background-color: #25d366; 
   color: #fff;
 }
-
 @media (max-width: 768px) {
   .scroll-top {
-    right: 20px;
-    bottom: 90px; 
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
+    bottom: 50%; /* mitad de la pantalla */
+    right: 50%;
+    transform: translate(50%, 50%);
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    background-color: #009999;
+  }
+
+  .scroll-top:hover {
+    transform: translate(50%, 50%) scale(1.1);
   }
 }
+
+
 </style>

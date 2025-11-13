@@ -112,7 +112,7 @@ export default {
 <style scoped>
 .modular-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 220px;
   gap: 1rem;
   padding: 2rem;
@@ -122,12 +122,16 @@ export default {
 
 .grid-item {
   display: flex;
+  position: relative;
   flex-direction: column;
   overflow: hidden;
   border-radius: px;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.grid-item:hover {
+  transform: scale(1.03);
 }
 
 .grid-item.large { grid-column: span 2; grid-row: span 2; }
@@ -136,7 +140,7 @@ export default {
 
 .image {
   width: 100%;
-  height: 150px;
+  height: 200px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -162,5 +166,21 @@ export default {
   font-size: 0.9rem;
   color: #444;
   opacity: 0.9;
+}
+@media (max-width: 1024px) {
+  .modular-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+  .modular-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-item .image {
+    height: 150px;
+  }
 }
 </style>

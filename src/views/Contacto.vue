@@ -82,6 +82,7 @@ onMounted(() => {
   text-align: center;
   background-color: #fdfdfd;
   color: #002f33;
+   background: linear-gradient(180deg, #fefefe, #eaf9f9); ;
 }
 .contact-bg {
                                                                                                                                                                       
