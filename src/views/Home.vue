@@ -108,10 +108,22 @@ export default {
     ModularGrid
   }
     const servicios = [
-      { titulo: 'Diseño Web', descripcion: 'Creamos sitios modernos y responsivos.', imagen: '/images/Services/diseno-web.jpg' },
-      { titulo: 'Desarrollo Frontend', descripcion: 'Aplicaciones interactivas y rápidas.', imagen: 'Services/frontend.jpg' },
-      { titulo: 'Mantenimiento', descripcion: 'Soporte y actualizaciones constantes.', imagen: 'Services/mantenimiento.jpg' },
-    ]
+  {
+    titulo: 'Diseño Web',
+    descripcion: 'Creamos sitios modernos y responsivos.',
+    imagen: '/images/Services/diseno-web.jpg',
+  },
+  {
+    titulo: 'Desarrollo Frontend',
+    descripcion: 'Aplicaciones interactivas y rápidas.',
+    imagen: '/images/Services/frontend.jpg',
+  },
+  {
+    titulo: 'Mantenimiento',
+    descripcion: 'Soporte y actualizaciones constantes.',
+    imagen: '/images/Services/mantenimiento.jpg',
+  },
+];
 
     const portfolio = [
       { titulo: 'Proyecto 1', imagen: '/src/assets/logo.png' },
@@ -331,5 +343,25 @@ export default {
     transform: translateY(0);
   }
 }
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden; /* evitar scroll horizontal */
+  }
 
+  .home,
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0.5rem; /* un poquito de margen si quieres */
+    margin: 0;
+  }
+
+  /* Opcional: ajustar títulos y cards si se salen */
+  .pricing-container,
+  .service-cards,
+  .projects {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
 </style>
