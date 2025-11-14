@@ -85,15 +85,27 @@
 <div class="line-separator"></div>  
 
  <section class="services container">
-      <h2 data-aos="fade-right">Nuestros Servicios</h2>
-      <div class="service-cards">
-        
-        <div class="card" data-aos="flip-up" v-for="(service, index) in servicios" :key="index">
-          <h3>{{ service.titulo }}</h3>
-          <p>{{ service.descripcion }}</p>
-        </div>
+  <h2 data-aos="fade-right">Nuestros Servicios</h2>
+
+  <div class="service-list">
+    <div
+      class="service-item"
+      v-for="(service, index) in servicios"
+      :key="index"
+      data-aos="fade-up"
+    >
+      <img :src="service.imagen" :alt="service.titulo" />
+
+      <div class="service-content">
+        <h3>{{ service.titulo }}</h3>
+        <p>{{ service.descripcion }}</p>
       </div>
-    </section>
+
+      <div v-if="index < servicios.length - 1" class="separator"></div>
+    </div>
+  </div>
+</section>
+
 
   <div class="line-separator"></div> 
 
@@ -119,55 +131,44 @@ import { gsap } from 'gsap'
 import AOS from 'aos'
 import HeroCard from '../components/HeroCard.vue'
 
-
 export default {
   name: 'Home',
-   components: {
-    HeroCard
-    
-  },
-  
+  components: { HeroCard },
+
   setup() {
-    components: {
-    HeroCard
-    
-  }
-   
-const servicios = [
-  {
-    titulo: 'Diseño Web',
-    descripcion: 'Creamos sitios modernos y responsivos.',
-    imagen: '/images/diseno.png',
-  },
-  {
-    titulo: 'Desarrollo Frontend',
-    descripcion: 'Aplicaciones interactivas y rápidas.',
-    imagen: '/images/frontend.jpg',
-  },
-  {
-    titulo: 'Mantenimiento',
-    descripcion: 'Soporte y actualizaciones constantes.',
-    imagen: '/images/mantenimiento.jpg',
-  },
-  {
-    titulo: 'Mantenimiento Web',
-    descripcion: 'Soporte continuo y actualizaciones.',
-    imagen: '/public/images/Services/mantenimiento.png',
-    
-  },
-];
+
+    const servicios = [
+      {
+        titulo: 'Diseño Web',
+        descripcion: 'Creamos sitios modernos y responsivos una página web con un diseño personalizado a partir de tu identidad corporativa .',
+        imagen: '/images/mod9.jpg',
+      },
+      {
+        titulo: 'Desarrollo Frontend',
+        descripcion: 'Aplicaciones interactivas y rápidas.',
+        imagen: '/images/code.jpg',
+      },
+      {
+        titulo: 'Marqueting y SEO',
+        descripcion: 'posicionamiento de nombre de marca para aparecer en los primeros puestos con el nombre de la marca,',
+        imagen: '/images/seo.png',
+      },
+      {
+        titulo: 'Mantenimiento Web',
+        descripcion: 'Soporte continuo y actualizaciones.',
+        imagen: '/images/mantenimiento.png',
+      },
+    ]
 
     const portfolio = [
-      { titulo: 'Studioart ', imagen: '/src/assets/proyecto1.jpg',   link: 'https://interiorista.netlify.app/'},
-      { titulo: 'Proyecto 2', imagen: '/src/assets/proyecto2.png' ,link: 'https://paginaswebpersonalizadas.es/'},
-      { titulo: 'Proyecto 3', imagen: '/src/assets/proyecto3.png', link: 'https://maltratoemocionalpsicologicoeconomico.wordpress.com/2023/07/30/el-amor-no-duele/#more-34'},
+      { titulo: 'Studioart', imagen: '/images/proyecto1.jpg', link: 'https://interiorista.netlify.app/' },
+      { titulo: 'Proyecto 2', imagen: '/images/proyecto2.png', link: 'https://paginaswebpersonalizadas.es/' },
+      { titulo: 'Proyecto 3', imagen: '/images/proyecto3.png', link: 'https://maltratoemocionalpsicologicoeconomico.wordpress.com/2023/07/30/el-amor-no-duele/#more-34' },
     ]
 
     onMounted(() => {
-     
       AOS.init({ once: true, duration: 1000 })
 
-      
       gsap.from('.hero h1', { opacity: 0, y: -50, duration: 1 })
       gsap.from('.hero p', { opacity: 0, y: -20, delay: 0.3, duration: 1 })
       gsap.from('.hero button', { opacity: 0, y: 20, delay: 0.6, duration: 1 })
@@ -184,6 +185,7 @@ const servicios = [
   }
 }
 </script>
+
 
 <style scoped>
 .home {
@@ -401,7 +403,15 @@ h2.subtitle {
 .card:hover, .project-card:hover {
   transform: translateY(-10px);
 }
+.service-cards img {
+  width: 98%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 
+}
+.service-cards h3 {
+  color: #008b8b;
+}
 .project-card img {
   width: 98%;
   border-radius: 8px;
@@ -421,15 +431,14 @@ h2.subtitle {
 .project-link {
   display: inline-block;
   margin-top: 0.5rem;
-  color: #1e90ff; /* color diferente para el link */
+  color: #1e90ff; 
   text-decoration: underline;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .project-link:hover {
-  color: #00ffff; /* efecto hover más brillante */
-}
+  color: #00ffff; }
 
 .section-title {
   font-size: 2.5rem;
@@ -592,4 +601,63 @@ h2.subtitle {
     overflow-x: hidden;
   }
 }
+.services {
+  padding: 60px 20px;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; 
+}
+
+.service-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.service-content h3 {
+  margin: 0 0 0.5rem 0;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.service-content p {
+  margin: 0;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.separator {
+  height: 1px;
+  background: linear-gradient(270deg, #00ffff, #ffffff, #081ddb,#ffffff, rgb(62, 187, 187));
+  width: 100%;
+  margin: 20px 0;
+}
+
+
+@media (max-width: 768px) {
+  .service-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-item img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 </style>

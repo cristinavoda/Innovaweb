@@ -14,6 +14,7 @@
           <li><router-link to="/modular">Servicios</router-link></li>
          <li><router-link to="/nosotros">Nosotros</router-link></li>
           <li><router-link to="/contacto">Contacto</router-link></li>
+          <li><router-link to="/portfolio" @click="closeMenu">Portfolio</router-link></li>
         </ul>
       </div>
 

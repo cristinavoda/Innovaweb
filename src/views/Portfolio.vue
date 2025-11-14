@@ -1,5 +1,5 @@
 <template>
-  <h1>Portfolio - Galería Inmersiva Premium</h1>
+  
   <section class="galeria3d-section">
     <h2>Galería Inmersiva Premium</h2>
     <div class="galeria3d-ui">
@@ -242,7 +242,7 @@ function animate() {
 
 .galeria3d-ui {
   position: absolute;
-  top: 20px;
+  top: 90px;
   left: 20px;
   z-index: 20;
   display: flex;
