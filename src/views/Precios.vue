@@ -256,8 +256,8 @@ h2 {
     display: flex;
     flex-direction: column; /* una card debajo de otra */
     gap: 1.2rem;
-    width: 100vw;
-    max-width: 100vw;
+  width: 100%;
+    
     padding: 0; /* importante */
     margin: 0 auto;
   }
