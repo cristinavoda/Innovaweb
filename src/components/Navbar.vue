@@ -23,6 +23,8 @@
       </li>
 
       <li><router-link to="/modular" @click="closeMenu">Servicios</router-link></li>
+       <li><router-link to="/portfolio" @click="closeMenu">Portfolio</router-link></li>
+      
       <li><router-link to="/nosotros" @click="closeMenu">Nosotros</router-link></li>
       <li><router-link to="/contacto" @click="closeMenu">Contacto</router-link></li>
     </ul>

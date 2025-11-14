@@ -3,8 +3,8 @@
 
   <section class="contact">
      <div class ="contact-bg">
-
-    <h1 data-aos="fade-down">Contacto</h1>
+<div class ="contact-mail">
+    <h1 data-aos="fade-down" class="h1">Contacto</h1>
     <p data-aos="fade-up" data-aos-delay="400">
       ¿Quieres una página web elegante y personalizada? ¡Hablemos!
     </p>
@@ -13,7 +13,7 @@
     <span class="btn-text">paginaswebpersonalizadas.es@gmail.com</span>
 
 </a>
-
+</div>
 <div class="contact-cards">
   
  
@@ -77,17 +77,18 @@ onMounted(() => {
 
 <style scoped>
 .contact {
-  min-height: 110vh;
-  padding: 4rem 2rem;
-  text-align: center;
+  min-height: 120vh;
+  padding:1rem 1rem;
+  margin-left: 0px;
+  text-align: left;
   background-color: #fdfdfd;
   color: #002f33;
    background: linear-gradient(180deg, #fefefe, #eaf9f9); ;
 }
 .contact-bg {
                                                                                                                                                                       
-background-image: url('images/contact-background.jpg'); 
-  background-repeat: no-repeat;
+background-image: url('images/contact-background2.jpg'); 
+  background-repeat:repeat-y;
   background-size: cover;
   width: 100%;
   height: auto; 
@@ -98,9 +99,9 @@ background-position: center;
 
 .contact h1 {
   font-size: 2.5rem;
-  margin-top: 5rem;
+  margin-top: 4rem;
   margin-bottom: 3rem;
-  background: linear-gradient(45deg, #343534, #faf8f8);
+  background: linear-gradient(45deg, #484b48, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.5s ease;
@@ -119,6 +120,9 @@ background-position: center;
 }
 btn email-btn{
   width: auto;
+}
+.contact-mail{
+
 }
 .contact-cards {
   display: flex;

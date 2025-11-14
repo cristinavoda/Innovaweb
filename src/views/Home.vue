@@ -103,6 +103,7 @@
         <div class="project-card" data-aos="flip-up" v-for="(project, index) in portfolio" :key="index">
           <img :src="project.imagen" :alt="project.titulo" />
           <h3>{{ project.titulo }}</h3>
+           <a :href="project.link" target="_blank" class="project-link">Ver proyecto</a>
         </div>
       </div>
     </section>
@@ -136,30 +137,30 @@ const servicios = [
   {
     titulo: 'Diseño Web',
     descripcion: 'Creamos sitios modernos y responsivos.',
-    imagen: '@/images/diseno-web.jpg',
+    imagen: '/images/diseno.png',
   },
   {
     titulo: 'Desarrollo Frontend',
     descripcion: 'Aplicaciones interactivas y rápidas.',
-    imagen: '@/images/frontend.jpg',
+    imagen: '/images/frontend.jpg',
   },
   {
     titulo: 'Mantenimiento',
     descripcion: 'Soporte y actualizaciones constantes.',
-    imagen: '@/images/mantenimiento.jpg',
+    imagen: '/images/mantenimiento.jpg',
   },
   {
     titulo: 'Mantenimiento Web',
     descripcion: 'Soporte continuo y actualizaciones.',
-    imagen: '/images/Services/mantenimiento.png',
-    ruta: '/informacion/mantenimiento'
+    imagen: '/public/images/Services/mantenimiento.png',
+    
   },
 ];
 
     const portfolio = [
-      { titulo: 'Proyecto 1', imagen: '/src/assets/logo.png' },
-      { titulo: 'Proyecto 2', imagen: '/src/assets/logo.png' },
-      { titulo: 'Proyecto 3', imagen: '/src/assets/logo.png' },
+      { titulo: 'Studioart ', imagen: '/src/assets/proyecto1.jpg',   link: 'https://interiorista.netlify.app/'},
+      { titulo: 'Proyecto 2', imagen: '/src/assets/proyecto2.png' ,link: 'https://paginaswebpersonalizadas.es/'},
+      { titulo: 'Proyecto 3', imagen: '/src/assets/proyecto3.png', link: 'https://maltratoemocionalpsicologicoeconomico.wordpress.com/2023/07/30/el-amor-no-duele/#more-34'},
     ]
 
     onMounted(() => {
@@ -327,7 +328,7 @@ h2.subtitle {
 .services, .portfolio {
   padding: 4rem 0;
 }
-/* TITULO PRINCIPAL H1 */
+
 h2{
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
@@ -335,17 +336,17 @@ h2{
   letter-spacing: 0.5px;
   margin-bottom: 1rem;
 
-  /* Opciones de color */
-  color: #ffffff; /* sólido clásico */
-  /* o degradado premium */
+  
+  color: #ffffff; 
+  
   background: linear-gradient(120deg, #00c6ff, #0072ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  /* Sombra sutil */
+  
   text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 
-  /* Animación de entrada */
+ 
   opacity: 0;
   transform: translateY(20px);
   animation: titleEnter 0.8s ease-out forwards;
@@ -358,17 +359,17 @@ h2{
   }
 }
 
-/* SUBTITULO H2 */
+
 h2.subtitle {
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 500;
   font-size: 1.8rem;
-  color: #e0e0e0; /* gris claro elegante */
+  color: #e0e0e0; 
   letter-spacing: 0.3px;
   margin-bottom: 1rem;
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
   h2.section-title {
     font-size: 2.5rem;
@@ -394,7 +395,7 @@ h2.subtitle {
   text-align: center;
   width: 250px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  transition: transform 0.3s,  box-shadow 0.3s ease;
 }
 
 .card:hover, .project-card:hover {
@@ -402,7 +403,7 @@ h2.subtitle {
 }
 
 .project-card img {
-  width: 90%;
+  width: 98%;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
@@ -412,10 +413,28 @@ h2.subtitle {
   text-align: center;
 }
 
+.project-card h3 {
+  margin-top: 0.8rem;
+  color: #0f4392;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #1e90ff; /* color diferente para el link */
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.project-link:hover {
+  color: #00ffff; /* efecto hover más brillante */
+}
+
 .section-title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #111;
+  color: #155b9c;
   font-weight: 700;
   letter-spacing: 1px;
 }
