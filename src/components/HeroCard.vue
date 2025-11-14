@@ -50,7 +50,7 @@ export default {
     },
   }, "-=0.3");
 
-      // button: bounce
+     
       tl.from(btn.value, { y: 20, opacity: 0, scale: 0.9, duration: 0.8, ease: "bounce.out" }, "-=0.3");
     });
     
@@ -85,10 +85,9 @@ export default {
 .hero-section:hover .hero-video { opacity: 1; }
 
 .hero-content {
-  position: absolute;
-  top: 50%; left: 50%;
+  position: relative;
   transform: translate(-50%, -50%);
-  width: 90%; max-width: 1200px;
+  width: 100%; max-width: 1200px;
   text-align: center;
   color: white;
   z-index: 3;
@@ -139,7 +138,7 @@ export default {
   0%, 100% { border-color: transparent; }
   50% { border-color: darkcyan; }
 }
-/* Al hacer hover sobre el contenedor: mostrar video, ocultar imagen */
+
 .media-container:hover .hero-image {
   opacity: 0;
 }
@@ -152,7 +151,6 @@ export default {
   .hero-content .typewriter {
     bottom: auto;        /* desactiva la posición inferior */
     top: 2rem;           /* coloca el texto cerca de la parte superior */
-    left: 50%;
     transform: translateX(-50%);
     font-size: 1.2rem;   /* tamaño más pequeño para móviles */
     line-height: 1.5;

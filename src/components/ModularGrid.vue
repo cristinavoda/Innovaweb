@@ -140,7 +140,7 @@ export default {
 
 .image {
   width: 100%;
-  height: 200px;
+  height: 500px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -173,7 +173,7 @@ export default {
   }
 }
 
-/* Móviles */
+
 @media (max-width: 600px) {
   .modular-grid {
     grid-template-columns: 1fr;

@@ -106,20 +106,40 @@ onMounted(() => {
 <style scoped>
 .pricing-section {
   text-align: center;
-  padding:  6rem 2rem 4rem;
+  padding:  1rem 1rem 1rem;
   background: linear-gradient(180deg, #ffffff, #f7f9fa);
    position: relative;
 }
 
+
 h2 {
-  color :#444  
+ 
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-top: 5rem;
+  color: #ffffff; 
+  background: linear-gradient(120deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: titleEnter 0.8s ease-out forwards;
 }
 
+@keyframes titleEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .title {
   font-size: 2.5rem;
   font-weight: 700;
   color: #0f3c3c;
-  margin-bottom: 1rem;
+  margin-top: 5rem;
 }
 
 .line-separator {

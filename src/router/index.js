@@ -5,6 +5,8 @@ import Servicios from '../views/Servicios.vue'
 import Portfolio from '../views/Portfolio.vue'
 import Nosotros from '../views/Nosotros.vue'
 import Contacto from '../views/Contacto.vue'
+import ModularView from '../views/ModularView.vue'
+import Metodologia from '../views/Metodologia.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -12,7 +14,11 @@ const routes = [
   { path: '/servicios', name: 'Servicios', component: Servicios },
   { path: '/portfolio', name: 'Portfolio', component: Portfolio },
   { path: '/nosotros', name: 'Nosotros', component: Nosotros },
-  { path: '/contacto', name: 'Contacto', component: Contacto }
+  { path: '/contacto', name: 'Contacto', component: Contacto },
+  { path: '/modular', name: 'ModularView', component: ModularView },
+  { path: '/metodologia', name: 'Metodologia', component: Metodologia }
+
+
 ]
 
 const router = createRouter({

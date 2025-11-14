@@ -57,7 +57,7 @@ body {
   color: #111;
 }
 
-/* Scroll top */
+
 .scroll-top-btn {
   position: fixed;
   bottom: 10rem;

@@ -1,289 +1,259 @@
 <template>
   <nav class="navbar">
-    <div class="logo" @click="goHome">InnovaWeb</div>
+    <div class="logo" @click="goHome">Innovaweb</div>
 
-    
+    <!-- HAMBURGER para móvil -->
     <div class="hamburger" ref="hamburger" @click="toggleMenu">
       <span></span>
       <span></span>
       <span></span>
     </div>
 
-  
-    <ul class="nav-links" :class="{ open: menuOpen }" ref="menu">
+    <!-- NAV LINKS -->
+    <ul :class="['nav-links', { open: menuOpen }]" ref="menu">
       <li><router-link to="/" @click="closeMenu">Inicio</router-link></li>
-      <li><router-link to="/precios" @click="closeMenu">Precios</router-link></li>
 
       <li class="submenu">
-        <a href="#" @click.prevent="toggleSubmenu('servicios')">Servicios ▾</a>
-        <ul class="dropdown" :class="{ open: activeSubmenu === 'servicios' }">
-          <li v-for="(item, index) in servicios" :key="index">
-            <router-link :to="item.link" @click="closeMenu">{{ item.nombre }}</router-link>
-          </li>
+        <a href="#" @click.prevent="toggleSubmenu('precios')">Precios</a>
+        <ul :class="['dropdown', { open: activeSubmenu === 'precios' }]">
+          <li><router-link to="/precios" @click="closeMenu">Básico</router-link></li>
+          <li><router-link to="/precios" @click="closeMenu">Avanzado</router-link></li>
+          <li><router-link to="/precios" @click="closeMenu">Premium</router-link></li>
         </ul>
       </li>
 
-      <li class="submenu">
-        <a href="#" @click.prevent="toggleSubmenu('portfolio')">Portfolio ▾</a>
-        <ul class="dropdown" :class="{ open: activeSubmenu === 'portfolio' }">
-          <li v-for="(item, index) in portfolioItems" :key="index">
-            <router-link :to="item.link" @click="closeMenu">{{ item.nombre }}</router-link>
-          </li>
-        </ul>
-      </li>
-
+      <li><router-link to="/modular" @click="closeMenu">Servicios</router-link></li>
       <li><router-link to="/nosotros" @click="closeMenu">Nosotros</router-link></li>
       <li><router-link to="/contacto" @click="closeMenu">Contacto</router-link></li>
     </ul>
   </nav>
 </template>
+<script setup>
+import { ref, onMounted, nextTick } from 'vue';
+import gsap from 'gsap';
+import { useRouter } from 'vue-router';
 
-<script>
-import { ref, onMounted, nextTick, watch } from "vue";
-import { gsap } from "gsap";
+const router = useRouter();
 
-export default {
-  name: "Navbar",
-  setup() {
-    const menuOpen = ref(false);
-    const activeSubmenu = ref(null);
-    const hamburger = ref(null);
-    const menu = ref(null);
-    let autoCloseTimer = null;
+const menuOpen = ref(false);
+const activeSubmenu = ref(null);
 
-    const servicios = [
-      { nombre: "Diseño Web", link: "/servicios#diseno-web" },
-      { nombre: "Desarrollo Frontend", link: "/servicios#frontend" },
-      { nombre: "Mantenimiento", link: "/servicios#mantenimiento" },
-    ];
+const hamburger = ref(null);
+const menu = ref(null);
 
-    const portfolioItems = [
-      { nombre: "Proyecto 1", link: "/portfolio#proyecto1" },
-      { nombre: "Proyecto 2", link: "/portfolio#proyecto2" },
-      { nombre: "Proyecto 3", link: "/portfolio#proyecto3" },
-    ];
+let autoCloseTimer = null;
+let submenuCloseTimeout = null;
 
-    const toggleMenu = () => {
-      menuOpen.value = !menuOpen.value;
+// Abrir / cerrar menú principal
+const toggleMenu = () => {
+  menuOpen.value = !menuOpen.value;
+  animateHamburger(menuOpen.value);
 
-      if (menuOpen.value) startAutoCloseTimer();
-      animateHamburger(menuOpen.value);
-    };
-
-    const closeMenu = () => {
-      menuOpen.value = false;
-      activeSubmenu.value = null;
-      animateHamburger(false);
-      clearTimeout(autoCloseTimer);
-    };
-
-    const startAutoCloseTimer = () => {
-      clearTimeout(autoCloseTimer);
-      autoCloseTimer = setTimeout(() => {
-        closeMenu();
-      }, 6000); // ⏱️ Se cierra después de 6 segundos sin interacción
-    };
-
-    const toggleSubmenu = (name) => {
-      activeSubmenu.value = activeSubmenu.value === name ? null : name;
-    };
-
-    const goHome = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      closeMenu();
-    };
-
-    // Detectar clic fuera del menú
-    onMounted(() => {
-      document.addEventListener("click", (e) => {
-        if (
-          menuOpen.value &&
-          !menu.value.contains(e.target) &&
-          !hamburger.value.contains(e.target)
-        ) {
-          closeMenu();
-        }
-      });
-
-      // GSAP animación de entrada para submenús (desktop)
-      nextTick(() => {
-        const submenus = document.querySelectorAll(".submenu");
-        submenus.forEach((menu) => {
-          const dropdown = menu.querySelector(".dropdown");
-          menu.addEventListener("mouseenter", () => {
-            if (window.innerWidth > 768)
-              gsap.to(dropdown, {
-                opacity: 1,
-                y: 0,
-                duration: 0.3,
-                ease: "power2.out",
-              });
-          });
-          menu.addEventListener("mouseleave", () => {
-            if (window.innerWidth > 768)
-              gsap.to(dropdown, {
-                opacity: 0,
-                y: -10,
-                duration: 0.3,
-                ease: "power2.in",
-              });
-          });
-        });
-      });
-    });
-
-    // Animación hamburguesa con GSAP
-    const animateHamburger = (isOpen) => {
-      const bars = hamburger.value.querySelectorAll("span");
-      if (isOpen) {
-        gsap.to(bars[0], { rotate: 45, y: 8, duration: 0.3 });
-        gsap.to(bars[1], { opacity: 0, duration: 0.2 });
-        gsap.to(bars[2], { rotate: -45, y: -8, duration: 0.3 });
-      } else {
-        gsap.to(bars[0], { rotate: 0, y: 0, duration: 0.3 });
-        gsap.to(bars[1], { opacity: 1, duration: 0.2 });
-        gsap.to(bars[2], { rotate: 0, y: 0, duration: 0.3 });
-      }
-    };
-
-    return {
-      menuOpen,
-      activeSubmenu,
-      servicios,
-      portfolioItems,
-      toggleMenu,
-      toggleSubmenu,
-      goHome,
-      closeMenu,
-      hamburger,
-      menu,
-    };
-  },
+  if (menuOpen.value) startTimer();
+  else clearTimeout(autoCloseTimer);
 };
-</script>
 
-<style scoped>
-/* --- NAVBAR BASE --- */
-/* Estilos generales */
-nav {
+// Timer para cerrar menú automáticamente
+const startTimer = () => {
+  clearTimeout(autoCloseTimer);
+  autoCloseTimer = setTimeout(() => {
+    menuOpen.value = false;
+    animateHamburger(false);
+  }, 6000);
+};
+
+// Cerrar menú manual
+const closeMenu = () => {
+  menuOpen.value = false;
+  activeSubmenu.value = null;
+  animateHamburger(false);
+};
+
+// Submenú con delay
+const toggleSubmenu = (name) => {
+  clearTimeout(submenuCloseTimeout);
+
+  if (activeSubmenu.value === name) {
+    submenuCloseTimeout = setTimeout(() => {
+      activeSubmenu.value = null;
+    }, 1000); // 1s de retraso
+  } else {
+    activeSubmenu.value = name;
+  }
+};
+
+// Scroll to top
+const goHome = () => {
+  router.push('/');
+  closeMenu();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+// Animación hamburguesa
+const animateHamburger = (isOpen) => {
+  const bars = hamburger.value.querySelectorAll('span');
+  if (isOpen) {
+    gsap.to(bars[0], { rotate: 45, y: 8, duration: 0.3 });
+    gsap.to(bars[1], { opacity: 0, duration: 0.2 });
+    gsap.to(bars[2], { rotate: -45, y: -8, duration: 0.3 });
+  } else {
+    gsap.to(bars[0], { rotate: 0, y: 0, duration: 0.3 });
+    gsap.to(bars[1], { opacity: 1, duration: 0.2 });
+    gsap.to(bars[2], { rotate: 0, y: 0, duration: 0.3 });
+  }
+};
+
+// Cerrar menú al hacer click fuera
+onMounted(() => {
+  document.addEventListener('click', (e) => {
+    if (
+      menuOpen.value &&
+      !menu.value.contains(e.target) &&
+      !hamburger.value.contains(e.target)
+    ) {
+      closeMenu();
+    }
+  });
+});
+</script>
+<style scoped >
+/* ------------------- NAVBAR ------------------- */
+.navbar {
   position: fixed;
-  top: 20px0;
+  top: 0;
   left: 0;
   width: 100%;
-  background: white;
-  z-index: 1000;
-  transition: 0.3s;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(18px);
+  z-index: 1000;
+  font-family: 'Poppins', sans-serif;
 }
 
 .logo {
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-
-/* 🔹 Menú de navegación */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-/* 🔹 Hamburguesa oculta en escritorio */
-.hamburger {
-  display: none; /* por defecto, oculto en escritorio */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.55);
   cursor: pointer;
-  width: 35px;
-  height: 35px;
-  z-index: 1001;
-  background: transparent;
-  border: none;
-}
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  border-radius: 2px;
-  transition: all 0.3s ease;
 }
 
-/* 🔸 Animación hamburguesa → X */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+/* ------------------- NAV LINKS ------------------- */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
 }
-.hamburger.active span:nth-child(2) {
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.55);
+  padding: 8px 12px;
+  transition: 0.25s;
+}
+
+.nav-links li a:hover {
+  background: rgba(255,255,255,0.15);
+  border-radius: 6px;
+}
+
+/* ------------------- SUBMENUS ------------------- */
+.submenu {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(12px);
+  padding: 10px 0;
+  border-radius: 8px;
   opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.35s ease;
 }
 
-/* 🔹 Responsive: versión móvil */
+.dropdown.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+/* ------------------- HAMBURGER ------------------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 3px;
+}
+
+/* ------------------- MEDIA QUERY MOVIL ------------------- */
 @media (max-width: 768px) {
- 
+  .hamburger { display: flex; }
 
-  .hamburger {
-    display: flex;
-    top: 15px;
-    right: 70px;
-  }
-
-  .bar {
-    width: 25px;
-    height: 3px;
-    right:80px;
-    background-color: #797373; 
-    transition: all 0.3s ease;
-  
-  }
   .nav-links {
-    position: fixed;
-    top: 60px;
-    right: -100%;
+    position: absolute;
+    top: 68px;
+    right: 0;
     flex-direction: column;
     width: 100%;
-    height: calc(100vh - 60px);
-    background: white;
-    align-items: center;
-    justify-content: start;
-    padding-top: 2rem;
-    gap: 1.5rem;
-    transition: right 0.4s ease;
-    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    background: rgba(255,255,255 );
+    backdrop-filter: blur(18px);
+    padding: 20px 0;
+    transform: translateY(-200%);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
   }
 
   .nav-links.open {
-    right: 0;
+    transform: translateY(0);
+    opacity: 1;
   }
 
   .nav-links li {
+    list-style: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .dropdown {
+    position: relative;
+    top: 0;
     width: 100%;
-    text-align: center;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(15px);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.35s ease;
   }
 
-  .nav-links a {
-    color: #222;
-    text-decoration: none;
-    font-size: 1.2rem;
-  }
-
-  /* Submenú en móviles */
-  .submenu .dropdown {
-    display: none;
-    flex-direction: column;
-    background: #f9f9f9;
-    width: 100%;
-  }
-
-  .submenu .dropdown.open {
-    display: flex;
+  .dropdown.open {
+    max-height: 500px;
+    opacity: 1;
   }
 }
 

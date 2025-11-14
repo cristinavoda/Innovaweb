@@ -44,7 +44,7 @@ onMounted(() => {
     gradient.addColorStop(1, `hsl(${(t * 40 + 120) % 360}, 80%, 60%)`);
     ctx.fillStyle = gradient;
 
-    // Onda principal
+   
     ctx.beginPath();
     for (let x = 0; x < w; x++) {
       const y = h / 2 + Math.sin(x * 0.02 + t) * 25 + Math.cos(x * 0.04 + t / 2) * 15;
@@ -55,7 +55,7 @@ onMounted(() => {
     ctx.closePath();
     ctx.fill();
 
-    t += 0.03; // velocidad media (fluida pero relajada)
+    t += 0.03; 
     requestAnimationFrame(draw);
   };
 
@@ -80,7 +80,7 @@ onMounted(() => {
   position: relative;
   overflow: hidden;
   background: linear-gradient(to bottom, #fff, #f8f9fa);
-  padding-bottom: 100px; /* espacio para la wave */
+  padding-bottom: 100px;
 }
 
 .nosotros-container {
@@ -97,7 +97,7 @@ onMounted(() => {
 
 
 .nosotros-imagen {
-  margin-top: -190px;
+  margin-top: -220px;
   flex: 1;
   position: relative;
   display: flex;
