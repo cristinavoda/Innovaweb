@@ -100,7 +100,7 @@ export default {
 </script>
 
 <style scoped>
-/* Fondo oscuro blur */
+
 .overlay {
   position: fixed;
   inset: 0;
@@ -109,7 +109,7 @@ export default {
   z-index: 9998;
 }
 
-/* Modal glassmorphism */
+
 .modal {
   position: fixed;
   top: 50%;
@@ -142,7 +142,7 @@ h2 {
   opacity: 0.8;
 }
 
-/* Opciones */
+
 .option {
   display: flex;
   justify-content: space-between;
@@ -151,7 +151,7 @@ h2 {
   margin: 14px 0;
 }
 
-/* Switch moderno */
+
 .switch {
   position: relative;
   display: inline-block;
@@ -190,7 +190,7 @@ input:checked + .slider:before {
   transform: translateX(24px);
 }
 
-/* Botones */
+
 .buttons {
   display: flex;
   justify-content: flex-end;
@@ -216,11 +216,11 @@ input:checked + .slider:before {
   font-weight: 600;
 }
 
-/* Botón flotante */
+
 .cookie-floating {
   position: fixed;
-  bottom: 90px;
-  right: 16px;
+  bottom: 94px;
+  right: 20px;
 
   width: 48px;
   height: 48px;

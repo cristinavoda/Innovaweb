@@ -134,7 +134,7 @@ export default {
 </script>
 
 <style scoped>
-/* GENERAL */
+
 .metodologia {
   padding-top: 8rem;
   color: #222;
@@ -142,7 +142,7 @@ export default {
 h1 {
     color: #098678;
 }
-/* HERO */
+
 .hero-metodologia {
   text-align: center;
   padding: 2rem 1rem;
@@ -161,7 +161,6 @@ h1 {
   color: #4a4a4a;
 }
 
-/* STEPS */
 .steps h2 {
   text-align: center;
   margin-bottom: 2rem;
@@ -185,7 +184,7 @@ h1 {
   color: var(--theme-green, #008b8b);
 }
 
-/* GARANTÍAS */
+
 .garantias-list {
   list-style: none;
   padding: 0;
@@ -197,7 +196,7 @@ h1 {
   font-size: 1.1rem;
 }
 
-/* STACK */
+
 .stack-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -241,5 +240,24 @@ h1 {
   padding: 1.5rem;
   border-radius: 10px;
 }
+
+
+.btn-inicio {
+  font-size: 1.5rem;
+  display: inline-block;
+  margin-top: 1.5rem;
+  margin-left: 35px;
+  background-color: transparent;
+  color: #0b9fda;
+  padding: 0.3rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow:1px 1px 1px #098678;
+}
+
+
+
+
 
 </style>

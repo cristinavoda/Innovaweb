@@ -337,7 +337,7 @@ h2{
   font-weight: 800;
   letter-spacing: 0.5px;
   margin-bottom: 1rem;
-
+text-align: center;
   
   color: #ffffff; 
   
@@ -622,19 +622,23 @@ h2.subtitle {
 }
 
 .service-item img {
-  width: 180px;
-  height: 180px;
+  width: 450px;
+  height: 220px;
   object-fit: cover;
   border-radius: 12px;
   flex-shrink: 0;
 }
 
 .service-content h3 {
-  margin: 0 0 0.5rem 0;
-  color: darkcyan;
+  margin: 1 0 0.5rem 0;
+  color: rgb(27, 133, 133);
   font-size: 1.2rem;
 }
-
+.service-content title {
+  margin-left: 10px;
+  color: #615c5c;
+  line-height: 1.5;
+}
 .service-content p {
   margin: 0;
   color: #615c5c;
@@ -656,8 +660,8 @@ h2.subtitle {
   }
 
   .service-item img {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 150px;
   }
 }
 

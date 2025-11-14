@@ -18,8 +18,8 @@ export default {
 <style scoped>
 .cookie-floating {
   position: fixed;
-  bottom: 90px;
-  right: 16px;
+  bottom: 91px;
+  right: 29px;
 
   width: 48px;
   height: 48px;
