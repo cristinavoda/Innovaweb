@@ -2,17 +2,21 @@
   <div id="app">
     <Navbar />
     <router-view />
+    <CookiesBanner />
+  <CookieSettingsButton />
+  <CookiesSettingsModal/>
 
-    <!-- Módulo decorativo -->
-   
+  <DrawerSidebar v-if="showDrrawer" @close="showDrower=false" />
+<Footer />
 
-    <Footer />
-
-    <!-- Botones flotantes -->
+    
     <WhatsAppButton />
     <PhoneButton />
+<div class="cookie-floating" @click="openModal" aria-label="Configuración de cookies">
+  ⚙️
+</div>
 
-    <!-- Botón scroll top -->
+    
     <button 
       v-if="showButton" 
       class="scroll-top-btn" 
@@ -30,6 +34,9 @@ import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import WhatsAppButton from './components/WhatsAppButton.vue'
 import PhoneButton from './components/PhoneButton.vue'
+import CookiesBanner from "./components/CookiesBanner.vue";
+import CookieSettingsButton from "./components/CookieSettingsButton.vue";
+import CookieSettingsModal from "./components/CookieSettingsModal.vue";
 
 const showButton = ref(false)
 
@@ -47,6 +54,8 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', checkScroll)
 })
+
+
 </script>
 
 <style>
@@ -91,7 +100,11 @@ body {
   font-size: 1.8rem;
   animation: float 1.5s ease-in-out infinite;
 }
-
+.cookie-floating:hover {
+  transform: scale(1.12);
+  background: rgba(41, 37, 37, 0.22);
+  box-shadow: 0 6px 25px rgba(0, 201, 167, 0.7);
+}
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5px); }

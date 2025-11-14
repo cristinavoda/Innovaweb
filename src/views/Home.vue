@@ -140,22 +140,22 @@ export default {
     const servicios = [
       {
         titulo: 'Diseño Web',
-        descripcion: 'Creamos sitios modernos y responsivos una página web con un diseño personalizado a partir de tu identidad corporativa .',
+        descripcion: 'Creamos sitios modernos y responsivos una página web con un diseño personalizado a partir de tu identidad corporativa ,con unestilo unico para diferencirte en tu sector.',
         imagen: '/images/mod9.jpg',
       },
       {
         titulo: 'Desarrollo Frontend',
-        descripcion: 'Aplicaciones interactivas y rápidas.',
+        descripcion: 'Aplicaciones interactivas y rápidas,adaptadas a moviles ,rapidas ,creemos interfaces interactivas y fluidas con tehnologias de ultima generation ,animaciones para una experencia inmersiva',
         imagen: '/images/code.jpg',
       },
       {
         titulo: 'Marqueting y SEO',
-        descripcion: 'posicionamiento de nombre de marca para aparecer en los primeros puestos con el nombre de la marca,',
+        descripcion: 'Optimizamos tu presencia online para que tus clientes te encuentren.Estrategia SEO ,posicionamiento de nombre de marca para aparecer en los primeros puestos con el nombre de la marca,',
         imagen: '/images/seo.png',
       },
       {
         titulo: 'Mantenimiento Web',
-        descripcion: 'Soporte continuo y actualizaciones.',
+        descripcion: 'Soporte continuo y actualizaciones ,seguridad ,copias de respaldo y mejoras continuas  para que tu web sea siempre al dia y funcionando perfectamente',
         imagen: '/images/mantenimiento.png',
       },
     ]
@@ -618,11 +618,12 @@ h2.subtitle {
   align-items: center;
   gap: 20px;
   flex-wrap: wrap; 
+  color :rgb(61, 59, 59);
 }
 
 .service-item img {
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
   border-radius: 12px;
   flex-shrink: 0;
@@ -630,13 +631,13 @@ h2.subtitle {
 
 .service-content h3 {
   margin: 0 0 0.5rem 0;
-  color: #fff;
+  color: darkcyan;
   font-size: 1.2rem;
 }
 
 .service-content p {
   margin: 0;
-  color: #ccc;
+  color: #615c5c;
   line-height: 1.5;
 }
 
