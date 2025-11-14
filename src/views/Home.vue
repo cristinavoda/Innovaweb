@@ -186,10 +186,10 @@ const servicios = [
 
 <style scoped>
 .home {
-  width: 100vw;
-  min-width: 100%;
+  
+  
   margin: 0;
-  padding: 0;
+  padding-left: 2rem;
   display: block;
   box-sizing: border-box;
 }
@@ -402,7 +402,7 @@ h2.subtitle {
 }
 
 .project-card img {
-  width: 100%;
+  width: 90%;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
@@ -422,7 +422,7 @@ h2.subtitle {
 
 
 .line-separator {
-  width: 100px;
+  width: 400px;
   height: 4px;
   margin: 2rem auto 4rem;
   background: linear-gradient(270deg, #00ffff, #ffffff, #081ddb,#ffffff, rgb(62, 187, 187));
@@ -433,7 +433,7 @@ h2.subtitle {
 
 @keyframes drawFlow {
   to {
-    width: 920px;
+    width: 400px;
     opacity: 1;
   }
 }
@@ -443,7 +443,7 @@ h2.subtitle {
     background-position: 0 50%;
   }
   100% {
-    background-position: 200% 50%;
+    background-position: 100% 50%;
   }
 }
 
@@ -548,6 +548,14 @@ h2.subtitle {
   html, body {
     overflow-x: hidden; 
   }
+.home {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+* {
+  box-sizing: border-box;
+}
 
   .home,
   .container {

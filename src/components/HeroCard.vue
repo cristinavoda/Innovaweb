@@ -151,7 +151,7 @@ export default {
   .hero-content .typewriter {
     bottom: auto;        /* desactiva la posición inferior */
     top: 2rem;           /* coloca el texto cerca de la parte superior */
-    transform: translateX(-50%);
+
     font-size: 1.2rem;   /* tamaño más pequeño para móviles */
     line-height: 1.5;
     max-width: 90%;      /* ancho adaptativo */
@@ -187,4 +187,14 @@ export default {
     padding: 1rem;
   }
 }
+@media (max-width: 768px) {
+  .hero-content {
+    transform: none !important;
+    left: 0 !important;
+    top: 0 !important;
+    position: relative !important;
+    padding-top: 3rem;
+  }
+}
+
 </style>

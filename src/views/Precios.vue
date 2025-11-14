@@ -104,11 +104,13 @@ onMounted(() => {
 </script>
 
 <style scoped>
+
 .pricing-section {
   text-align: center;
   padding:  1rem 1rem 1rem;
   background: linear-gradient(180deg, #ffffff, #f7f9fa);
    position: relative;
+   width: 100%;
 }
 
 
@@ -250,15 +252,29 @@ h2 {
 }
 
 @media (max-width: 767px) {
-  .pricing-section {
-    padding-top: 8rem; /* evita que tape el navbar */
-  }
-  .pricing-grid {
-    grid-template-columns: 1fr;
-  }
-  .plan-card {
-    width: 95%;
+ .pricing-grid {
+    display: flex;
+    flex-direction: column; /* una card debajo de otra */
+    gap: 1.2rem;
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0; /* importante */
     margin: 0 auto;
+  }
+
+  /* LAS CARDS TAMBIÉN AL 100% */
+  .plan-card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0.9rem;
+    padding: 1.2rem;
+    margin: 0;
+    box-sizing: border-box; /* evita desbordes */
+  }
+
+  /* TÍTULO */
+  .pricing-section .title {
+    padding: 0 1rem;
   }
 }
 </style>

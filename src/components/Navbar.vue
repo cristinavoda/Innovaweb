@@ -149,7 +149,7 @@ onMounted(() => {
 }
 
 .nav-links li a {
-  color: white;
+  color: rgb(110, 107, 107);
   text-decoration: none;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.55);
   padding: 8px 12px;
@@ -207,7 +207,7 @@ onMounted(() => {
   display: block;
   height: 3px;
   width: 100%;
-  background: white;
+  background: rgb(85, 83, 83);
   border-radius: 3px;
 }
 
