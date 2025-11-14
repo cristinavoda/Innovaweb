@@ -11,7 +11,7 @@
           Actualmente las páginas web suelen tener plantillas similares,
           sin diferenciación, con diseños responsive pero sin pensar en mobile first.  
           <br /><br />
-          Es el momento de destacar con un diseño web personalizado en HTML5,
+          Es el momento de destacar con un diseño web personalizado en HTML5, Vue ,React ,JS,y otros programas.
           con estilo propio y una experiencia visual diferente.
         </p>
         <p class="firma">Cristina Voda</p>
@@ -108,7 +108,7 @@ onMounted(() => {
 .nosotros-imagen img {
   width: fit-content;
   max-width: 900px;
-  
+  margin-left :30px;
   box-shadow: 2px 10px 25px rgba(241, 224, 122, 0.904);
   object-fit: cover;
   z-index: 2;
@@ -165,6 +165,7 @@ p {
   .nosotros-imagen img {
     width: 100%;
     margin-top: 250px;
+    margin-left: 20px;
   }
   .firma {
     text-align: center;
