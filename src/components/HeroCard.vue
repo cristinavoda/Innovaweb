@@ -22,6 +22,7 @@ export default {
     const title = ref(null)
     const subtitle = ref(null)
     const btn = ref(null)
+    
     onMounted(() => {
       
       hero.value.addEventListener("mouseenter", () => {
@@ -59,13 +60,14 @@ export default {
   }
   
 };
+
 </script>
 
 <style scoped>
 .hero-section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 83vh;
   overflow: hidden;
 }
 

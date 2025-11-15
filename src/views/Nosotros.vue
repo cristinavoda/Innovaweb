@@ -153,6 +153,7 @@ p {
   height: 120px;
   z-index: 1;
 }
+
 @media (max-width: 900px) {
   .nosotros-container {
     flex-direction: column;
@@ -235,6 +236,8 @@ p {
     flex: 1;
     display: flex;
     justify-content: flex-start;
+    margin-left: 50px;
+    margin-top: 01px;
   }
 
   .nosotros-imagen img {

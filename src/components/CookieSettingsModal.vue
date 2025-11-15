@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- Fondo oscuro borroso -->
+   
     <div 
       v-if="visible" 
       class="overlay" 
@@ -8,7 +8,7 @@
       ref="overlay"
     ></div>
 
-    <!-- Modal -->
+    
     <div 
       v-if="visible" 
       class="modal" 
@@ -18,12 +18,12 @@
       <p class="subtitle">Controla qué tipos de cookies deseas permitir.</p>
 
       <div class="option">
-        <label>🍪 Cookies esenciales</label>
+        <label> Cookies esenciales</label>
         <span>Obligatorias</span>
       </div>
 
       <div class="option">
-        <label>📊 Cookies analíticas</label>
+        <label> Cookies analíticas</label>
         <label class="switch">
           <input type="checkbox" v-model="analytics">
           <span class="slider"></span>
@@ -31,7 +31,7 @@
       </div>
 
       <div class="option">
-        <label>🎯 Marketing</label>
+        <label> Marketing</label>
         <label class="switch">
           <input type="checkbox" v-model="marketing">
           <span class="slider"></span>
@@ -183,7 +183,7 @@ h2 {
 }
 
 input:checked + .slider {
-  background: #00c9a7;
+  background: #aeb3b2;
 }
 
 input:checked + .slider:before {
@@ -211,7 +211,7 @@ input:checked + .slider:before {
 }
 
 .save {
-  background: #00c9a7;
+  background: #f7faf9;
   color: black;
   font-weight: 600;
 }

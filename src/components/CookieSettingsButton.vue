@@ -9,7 +9,7 @@ export default {
   methods: {
     openSettings() {
       alert("Abrirá el panel de configuración de cookies (puedes personalizarlo)");
-      // Aquí puedes abrir un modal, un drawer, etc.
+      
     }
   }
 };
@@ -19,7 +19,7 @@ export default {
 .cookie-floating {
   position: fixed;
   bottom: 91px;
-  right: 29px;
+  right: 32px;
 
   width: 48px;
   height: 48px;

@@ -184,6 +184,7 @@ export default {
     return { servicios, portfolio, goToServicios }
   }
 }
+
 </script>
 
 
@@ -242,6 +243,7 @@ section {
   font-size: 3rem;
   font-weight: 800;
   letter-spacing: 0.5px;
+  margin-top: -50px;
   margin-bottom: 1rem;
   color: #ffffff; 
   background: linear-gradient(120deg, #00c6ff, #0072ff);
@@ -268,6 +270,7 @@ h2.subtitle {
   color: #e0e0e0; 
   letter-spacing: 0.3px;
   margin-bottom: 1rem;
+
 }
 
 
@@ -337,6 +340,7 @@ h2{
   font-weight: 800;
   letter-spacing: 0.5px;
   margin-bottom: 1rem;
+  margin-top: -50px;
 text-align: center;
   
   color: #ffffff; 
@@ -453,7 +457,7 @@ h2.subtitle {
   width: 400px;
   height: 4px;
   margin: 2rem auto 4rem;
-  background: linear-gradient(270deg, #00ffff, #ffffff, #081ddb,#ffffff, rgb(62, 187, 187));
+  background: linear-gradient(270deg, #00ffff, #ffffff, #0c76b3,#ffffff, rgb(62, 187, 187));
   border-radius: 5px;
   animation: drawFlow 2s ease-out forwards, gradientFlow 3s linear infinite;
   opacity: 0;

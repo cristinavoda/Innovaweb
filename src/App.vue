@@ -3,10 +3,11 @@
     <Navbar />
     <router-view />
     <CookiesBanner />
-  <CookieSettingsButton />
-  <CookiesSettingsModal/>
+  
+  
 
   <DrawerSidebar v-if="showDrrawer" @close="showDrower=false" />
+  
 <Footer />
 
     
@@ -15,11 +16,12 @@
 <div class="cookie-floating" @click="openModal" aria-label="Configuración de cookies">
   ⚙️
 </div>
+<CookieSettingsModal v-model="showCookiesModal" />
 
     
     <button 
       v-if="showButton" 
-      class="scroll-top-btn" 
+      class="scroll-top-btn"  
       @click="scrollToTop"
       aria-label="Volver arriba"
     >
@@ -37,7 +39,7 @@ import PhoneButton from './components/PhoneButton.vue'
 import CookiesBanner from "./components/CookiesBanner.vue";
 import CookieSettingsButton from "./components/CookieSettingsButton.vue";
 import CookieSettingsModal from "./components/CookieSettingsModal.vue";
-
+const showCookiesModal = ref(false)
 const showButton = ref(false)
 
 const checkScroll = () => {
@@ -100,6 +102,7 @@ body {
   font-size: 1.8rem;
   animation: float 1.5s ease-in-out infinite;
 }
+
 .cookie-floating:hover {
   transform: scale(1.12);
   background: rgba(41, 37, 37, 0.22);
