@@ -115,7 +115,7 @@ body {
     width: 45px;
     height: 45px;
     font-size: 18px;
-    bottom: 105px;
+    bottom: 305px;
     right: 15px;
   }
 }

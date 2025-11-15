@@ -33,7 +33,7 @@ onBeforeUnmount(() => {
 <style scoped>
 .scroll-top {
   position: fixed;
-  bottom: 80px;
+  bottom: 300px;
   right: 20px;
   background-color: #008b8b; /* DarkCyan elegante */
   color: white;
@@ -60,7 +60,7 @@ onBeforeUnmount(() => {
 }
 @media (max-width: 768px) {
   .scroll-top {
-    bottom: 50%; /* mitad de la pantalla */
+    margin-bottom: 300px; /* mitad de la pantalla */
     right: 50%;
     transform: translate(50%, 50%);
     width: 45px;
