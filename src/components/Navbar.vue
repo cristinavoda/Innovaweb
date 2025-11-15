@@ -2,14 +2,14 @@
   <nav class="navbar">
     <div class="logo" @click="goHome">Innovaweb</div>
 
-    <!-- HAMBURGER para móvil -->
+    
     <div class="hamburger" ref="hamburger" @click="toggleMenu">
       <span></span>
       <span></span>
       <span></span>
     </div>
 
-    <!-- NAV LINKS -->
+    
     <ul :class="['nav-links', { open: menuOpen }]" ref="menu">
       <li><router-link to="/" @click="closeMenu">Inicio</router-link></li>
 
@@ -46,7 +46,7 @@ const menu = ref(null);
 let autoCloseTimer = null;
 let submenuCloseTimeout = null;
 
-// Abrir / cerrar menú principal
+
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value;
   animateHamburger(menuOpen.value);
@@ -55,7 +55,7 @@ const toggleMenu = () => {
   else clearTimeout(autoCloseTimer);
 };
 
-// Timer para cerrar menú automáticamente
+
 const startTimer = () => {
   clearTimeout(autoCloseTimer);
   autoCloseTimer = setTimeout(() => {
@@ -64,34 +64,34 @@ const startTimer = () => {
   }, 6000);
 };
 
-// Cerrar menú manual
+
 const closeMenu = () => {
   menuOpen.value = false;
   activeSubmenu.value = null;
   animateHamburger(false);
 };
 
-// Submenú con delay
+
 const toggleSubmenu = (name) => {
   clearTimeout(submenuCloseTimeout);
 
   if (activeSubmenu.value === name) {
     submenuCloseTimeout = setTimeout(() => {
       activeSubmenu.value = null;
-    }, 1000); // 1s de retraso
+    }, 1000); 
   } else {
     activeSubmenu.value = name;
   }
 };
 
-// Scroll to top
+
 const goHome = () => {
   router.push('/');
   closeMenu();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-// Animación hamburguesa
+
 const animateHamburger = (isOpen) => {
   const bars = hamburger.value.querySelectorAll('span');
   if (isOpen) {
@@ -105,7 +105,7 @@ const animateHamburger = (isOpen) => {
   }
 };
 
-// Cerrar menú al hacer click fuera
+
 onMounted(() => {
   document.addEventListener('click', (e) => {
     if (
@@ -119,7 +119,7 @@ onMounted(() => {
 });
 </script>
 <style scoped >
-/* ------------------- NAVBAR ------------------- */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -143,11 +143,47 @@ onMounted(() => {
   cursor: pointer;
 }
 
-/* ------------------- NAV LINKS ------------------- */
+
 .nav-links {
   display: flex;
   list-style: none;
   gap: 30px;
+}
+/* Aplicar underline SOLO a enlaces que NO son toggles */
+nav .nav-links a:not(.submenu-toggle) {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-color, #111);
+  padding-bottom: 4px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+
+nav .nav-links a:not(.submenu-toggle)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #1b0e92, #1bc8cd, #0e8f92);
+  background-size: 200%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* Hover + active */
+nav .nav-links a:not(.submenu-toggle):hover::after,
+nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
+  transform: scaleX(1);
+  animation: flow 1.5s linear infinite;
+}
+
+@keyframes flow {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
 }
 
 .nav-links li a {
@@ -159,11 +195,18 @@ onMounted(() => {
 }
 
 .nav-links li a:hover {
-  background: rgba(255,255,255,0.15);
-  border-radius: 6px;
+  color:darkcyan;
+  border-bottom: 1px 1px 1px darkcyan;
 }
 
-/* ------------------- SUBMENUS ------------------- */
+.nav-links li:hover {
+  color: #0a7e65;
+  border-bottom:1px 1px #0a8c95;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+
 .submenu {
   position: relative;
 }
@@ -194,7 +237,7 @@ onMounted(() => {
   white-space: nowrap;
 }
 
-/* ------------------- HAMBURGER ------------------- */
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -240,6 +283,23 @@ onMounted(() => {
     list-style: none;
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #7c9696, #0a8c95);
+  transition: width 0.35s ease;
+}
+.nav-links a:hover {
+  color: #0a7e65;
+  border-bottom:1px 1px #0a8c95;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
 
   .dropdown {
     position: relative;

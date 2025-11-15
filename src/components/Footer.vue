@@ -202,7 +202,7 @@ onMounted(() => {
   bottom: 0;
   width: 0%;
   height: 2px;
-  background: linear-gradient(90deg, #00b3b3, #00cccc);
+  background: linear-gradient(90deg, #dfe4e4, #0a8c95);
   transition: width 0.35s ease;
 }
 .links a:hover {

@@ -199,4 +199,14 @@ export default {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-content .typewriter {
+    top: 14rem;             
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.4rem;       
+    line-height: 1.6;
+    max-width: 650px;       
+}
+
 </style>
