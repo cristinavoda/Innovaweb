@@ -207,6 +207,7 @@ export default {
     font-size: 1.4rem;       
     line-height: 1.6;
     max-width: 650px;       
+  }
 }
 
 </style>
