@@ -478,6 +478,10 @@ h2.subtitle {
     background-position: 100% 50%;
   }
 }
+@keyframes flow {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
 
 
 .pricing-container {

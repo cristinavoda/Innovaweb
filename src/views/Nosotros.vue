@@ -259,5 +259,14 @@ p {
     max-width: 700px;
   }
 }
-
+@media (min-width: 768px) and (max-width: 1024px) {
+   .nosotros-imagen  {
+    width: 1080px;
+    height: 700px;
+    margin-left: 60px;
+    max-width: 170%;
+    border-radius: 0px;
+    margin-left: -300px;
+  }
+}
 </style>
