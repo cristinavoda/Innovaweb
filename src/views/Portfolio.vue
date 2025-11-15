@@ -1,7 +1,7 @@
 <template>
   
   <section class="galeria3d-section">
-    <h2>Galería Inmersiva Premium</h2>
+    <h2></h2>
     <div class="galeria3d-ui">
       <button @click="startTour">Iniciar Tour ▶</button>
       
@@ -32,7 +32,8 @@ export default {
       { src: "/images/img2.png", height: 0.7 },
       { src: "/images/img3.png", height: 1.1 },
       { src: "/images/img4.png", height: 0.8 },
-      { src: "/images/img5.png", height: 0.65 }
+      { src: "/images/img5.png", height: 0.65 },
+      { src: "/images/img7.png", height: 0.65 },
     ];
 
     function createTourPath() {
@@ -72,23 +73,23 @@ export default {
     onMounted(() => {
       const canvas = galeriaCanvas.value;
 
-      // Renderer
+     
       renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-      // Scene
+      
       scene = new THREE.Scene();
       scene.background = new THREE.Color(0x0b0b0c);
 
-      // Camera
+      
       camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 300);
       camera.position.set(0, 1.6, 8);
 
-      // Light
+      
       scene.add(new THREE.AmbientLight(0xffffff, 1));
 
-      // Loader y planos
+      
       const loader = new THREE.TextureLoader();
       let loadedCount = 0;
 
@@ -110,7 +111,7 @@ export default {
           loadedCount++;
           if (loadedCount === imagenes.length) {
             createTourPath();
-            startTour(); // inicia el tour automáticamente
+            startTour(); 
           }
         });
       });
@@ -129,7 +130,7 @@ const particleMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.05,
 const particleSystem = new THREE.Points(particles, particleMaterial);
 scene.add(particleSystem);
 
-// Animación dentro de animate()
+
 particleSystem.rotation.y += 0.0005;
 particleSystem.rotation.x += 0.0002;
 
@@ -138,7 +139,7 @@ const pointLight = new THREE.PointLight(0xffffff, 0.3);
 camera.add(pointLight);
 scene.add(camera);
 
-// Pulsar intensidad con GSAP
+
 gsap.to(pointLight, {
   intensity: 0.6,
   duration: 3,
@@ -146,14 +147,14 @@ gsap.to(pointLight, {
   yoyo: true,
   ease: "sine.inOut"
 });
-// Fondo grande detrás de todo
-const bgGeometry = new THREE.PlaneGeometry(50, 50);
+
+const bgGeometry = new THREE.PlaneGeometry(70, 30);
 const bgMaterial = new THREE.MeshBasicMaterial({ color: new THREE.Color(0x0b0b0c) });
 const bgPlane = new THREE.Mesh(bgGeometry, bgMaterial);
 bgPlane.position.z = -20;
 scene.add(bgPlane);
 
-// Animación de color con GSAP
+
 gsap.to(bgMaterial.color, {
   r: 0.08,
   g: 0.08,
@@ -163,7 +164,7 @@ gsap.to(bgMaterial.color, {
   yoyo: true,
   ease: "sine.inOut"
 });
-// Raycaster y vector del mouse
+
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 

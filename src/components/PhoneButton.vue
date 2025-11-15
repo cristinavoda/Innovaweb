@@ -14,7 +14,7 @@ export default {
 .phone-button {
   position: fixed;
   bottom: 25px;         
-  left: 20px;
+  left: 50px;
   background-color: #0a84ff; 
   color: white;
   border-radius: 50%;

@@ -23,7 +23,7 @@ export default {
     const subtitle = ref(null)
     const btn = ref(null)
     onMounted(() => {
-      // Hover GSAP para video
+      
       hero.value.addEventListener("mouseenter", () => {
         gsap.to(bgVideo.value, { opacity: 1, scale: 1.1, duration: 1, ease: "power2.out" });
       });
@@ -31,10 +31,10 @@ export default {
         gsap.to(bgVideo.value, { opacity: 0, scale: 1, duration: 1, ease: "power2.out" });
       });
 
-      // Timeline GSAP
+      
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      // h1: fade + slide desde arriba
+      
       tl.from(title.value, { y: -50, opacity: 0, duration: 1 });
 
       
@@ -44,7 +44,7 @@ export default {
         .to(subtitle.value, {
           duration: text.length * 0.06,
            onUpdate: function () {
-      const progress = this.progress(); // entre 0 y 1
+      const progress = this.progress(); 
       const length = Math.floor(progress * text.length);
       subtitle.value.innerHTML = text.substring(0, length);
     },
@@ -95,7 +95,7 @@ export default {
 
  h1 {
   font-size: clamp(2rem, 5vw, 4rem);
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
   text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
@@ -103,7 +103,7 @@ export default {
 
 .hero-content .typewriter {
   position: absolute;
-  bottom: 3rem;
+  top: 19rem;
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.6rem;
@@ -149,37 +149,37 @@ export default {
 /* Mobile Hero */
 @media (max-width: 768px) {
   .hero-content .typewriter {
-    bottom: auto;        /* desactiva la posición inferior */
-    top: 2rem;           /* coloca el texto cerca de la parte superior */
+    bottom: auto;        
+    top: 2rem;           
 
-    font-size: 1.2rem;   /* tamaño más pequeño para móviles */
+    font-size: 1.2rem;   
     line-height: 1.5;
-    max-width: 90%;      /* ancho adaptativo */
-    word-wrap: break-word; /* permite que las palabras se rompan si es necesario */
+    max-width: 90%;      
+    word-wrap: break-word; 
   }
 }
 .grid-container {
-    grid-template-columns: 1fr; /* un item por fila */
+    grid-template-columns: 1fr;
     gap: 0.8rem;
   }
 
   .grid-item {
-    flex-direction: column; /* se mantiene columna */
+    flex-direction: column; 
   }
 
   .image {
-    height: 200px; /* imagen más alta para móvil */
+    height: 200px; 
   }
 
   .text {
-    font-size: 1.1rem; /* texto más legible */
+    font-size: 1.1rem; 
     padding: 1.2rem;
   }
 
 
 @media (max-width: 480px) {
   .image {
-    height: 180px; /* ajusta si quieres más compacta */
+    height: 180px; 
   }
 
   .text {

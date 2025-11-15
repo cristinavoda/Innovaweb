@@ -145,7 +145,7 @@ h2 {
 }
 
 .line-separator {
-  width: 200px;
+  width: fit-content;
   height: 4px;
   margin: 2rem auto 4rem;
   background: linear-gradient(270deg, #00ffff, #ffffff, #4400ff, cyan);
@@ -156,6 +156,14 @@ h2 {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
 }
+@keyframes drawFlow {
+  to {
+    width: 400px;
+    opacity: 1;
+  }
+}
+
+
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -234,7 +242,7 @@ h2 {
   color: #e4f4ff;
 }
 
-/* Colores por plan */
+
 .basic { background: linear-gradient(180deg, #fefefe, #eaf9f9); }
 .advanced { background: linear-gradient(180deg, #ffffff, #e4f4ff); }
 .premium { background: linear-gradient(180deg, #ffffff, #e7f8ef); }
@@ -254,27 +262,30 @@ h2 {
 @media (max-width: 767px) {
  .pricing-grid {
     display: flex;
-    flex-direction: column; /* una card debajo de otra */
+    flex-direction: column; 
     gap: 1.2rem;
   width: 100%;
     
-    padding: 0; /* importante */
+    padding: 0;
     margin: 0 auto;
   }
 
-  /* LAS CARDS TAMBIÉN AL 100% */
+ 
   .plan-card {
     width: 100%;
     max-width: 100%;
     border-radius: 0.9rem;
     padding: 1.2rem;
     margin: 0;
-    box-sizing: border-box; /* evita desbordes */
+    box-sizing: border-box; 
   }
 
-  /* TÍTULO */
+  
   .pricing-section .title {
     padding: 0 1rem;
   }
+}
+.line-separator {
+  max-width: 350px;
 }
 </style>

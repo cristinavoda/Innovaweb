@@ -660,7 +660,7 @@ h2.subtitle {
   }
 
   .service-item img {
-    width: 200px;
+    width: 350px;
     height: 150px;
   }
 }
