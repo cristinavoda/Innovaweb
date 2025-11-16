@@ -89,8 +89,8 @@ onMounted(() => {
   justify-content: space-around;
   flex-wrap: wrap;
   max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
+  margin: 0 auto;
+  padding: 4rem 2rem;
   z-index: 2;
   position: relative;
 }
@@ -260,19 +260,16 @@ p {
     max-width: 700px;
   }
 }
-@media (min-width: 768px) and (max-width: 1024px) {
-  
+@media (min-width: 768px) and (max-width: 1199px) {
   .nosotros-container {
-    align-items: center;
-    gap: 2rem;
+    gap: 3rem;
   }
-   .nosotros-imagen  {
-    width: 80%;
-    height: auto;
-    margin-top: 40px;
-    
+
+  .nosotros-imagen img {
+    max-width: 550px;
   }
 }
+
 @media (min-width: 1200px) and (max-width: 1500px) {
   .nosotros-imagen img {
     width: 70%;
@@ -284,6 +281,7 @@ p {
   .nosotros-container {
     flex-direction: column;
     text-align: center;
+    gap: 2.5rem;
   }
 
   .wave {
@@ -292,8 +290,9 @@ p {
 
   .nosotros-imagen img {
     width: 100%;
-    margin: 0 auto;
-    margin-top: 60px;
+     max-width: 350px;
+    margin-top: 30px;
+   
   }
 
   .firma {
