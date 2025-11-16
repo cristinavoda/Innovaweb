@@ -267,14 +267,16 @@ p {
 
   .nosotros-imagen img {
     max-width: 550px;
+    height: 550px;
   }
 }
 
 @media (min-width: 1200px) and (max-width: 1500px) {
   .nosotros-imagen img {
-    width: 70%;
+    width: 150%;
     height: auto;
-    margin-top: 30px; 
+    margin-top: 0px; 
+    margin-left: -90px;
   }
 }
 @media (max-width: 900px) {
@@ -290,13 +292,24 @@ p {
 
   .nosotros-imagen img {
     width: 100%;
-     max-width: 350px;
-    margin-top: 30px;
+     max-width: 450px;
+    margin-top: 190px;
    
   }
 
   .firma {
     text-align: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-content .typewriter {
+    top: 14rem;              
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;      
+    line-height: 1.6;
+    max-width: 650px;        
   }
 }
 

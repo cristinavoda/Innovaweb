@@ -148,7 +148,7 @@ export default {
 .media-container:hover .hero-video {
   opacity: 1;
 }
-/* Mobile Hero */
+
 @media (max-width: 768px) {
   .hero-content .typewriter {
     bottom: auto;        
@@ -201,12 +201,26 @@ export default {
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .hero-content .typewriter {
-    top: 14rem;             
+   margin-top: 4rem;             
     left: 50%;
     transform: translateX(-50%);
     font-size: 1.4rem;       
     line-height: 1.6;
     max-width: 650px;       
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+  .hero-content .typewriter {
+    position: absolute;
+    top: calc(50% + 4rem); /* centrado vertical + ajuste */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;     /* ajuste más fino */
+    line-height: 1.7;
+    max-width: 700px;
+    padding: 0 1rem;       /* para que no toque los bordes */
+    white-space: pre-line;
   }
 }
 
