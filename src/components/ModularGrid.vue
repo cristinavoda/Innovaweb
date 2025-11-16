@@ -28,9 +28,9 @@ export default {
     const gridItems = ref([])
 
     const images = [
-      '/images/mod1.jpg', '/images/mod2.jpg', '/images/mod3.jpg',
-      '/images/mod4.jpg', '/images/mod5.jpg', '/images/mod6.jpg',
-      '/images/mod7.jpg', '/images/mod8.jpg', '/images/mod9.jpg'
+      '/images/mod1.png', '/images/mod2.jpg', '/images/mod3.jpg',
+      '/images/mod4.png', '/images/mod5.jpg', '/images/mod6.jpg',
+      '/images/mod7.png', '/images/mod8.jpg', '/images/mod9.jpg'
     ]
 
     const titles = [

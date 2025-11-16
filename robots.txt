@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://paginaswebeconomicas-cristinavodacom.es/sitemap.xml

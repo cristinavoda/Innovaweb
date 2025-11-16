@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar">
-    <div class="logo" @click="goHome">Innovaweb</div>
+    <div class="logo" @click="goHome">Paginasweb</div>
 
     
     <div class="hamburger" ref="hamburger" @click="toggleMenu">
@@ -149,7 +149,7 @@ onMounted(() => {
   list-style: none;
   gap: 30px;
 }
-/* Aplicar underline SOLO a enlaces que NO son toggles */
+
 nav .nav-links a:not(.submenu-toggle) {
   position: relative;
   text-decoration: none;
@@ -174,7 +174,6 @@ nav .nav-links a:not(.submenu-toggle)::after {
   transition: transform 0.3s ease;
 }
 
-/* Hover + active */
 nav .nav-links a:not(.submenu-toggle):hover::after,
 nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
   transform: scaleX(1);

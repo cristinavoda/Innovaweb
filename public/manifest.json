@@ -1,0 +1,23 @@
+{
+  "name": "Páginas Web Económicas · Cristina Voda",
+  "short_name": "Cristina Voda Web",
+  "description": "Diseño de páginas web económicas y profesionales en España.",
+  "lang": "es",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00a7b3",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

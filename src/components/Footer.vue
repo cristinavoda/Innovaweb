@@ -146,12 +146,17 @@ onMounted(() => {
   position: absolute;
   bottom: -6px;
   left: 0;
-  width: 150px;
+  width: 200px;
   height: 3px;
   background: linear-gradient(90deg,  #00cccc, #e9eeee, #00cccc);
+  transform: scaleX(1);
+  animation: flow 1.5s linear infinite;
   border-radius: 2px;
 }
-
+@keyframes flow {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
 
 .brand p {
   opacity: 0.7;

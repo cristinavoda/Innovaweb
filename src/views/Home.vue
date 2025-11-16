@@ -2,6 +2,9 @@
   <div class="home">
 <HeroCard />
 <div class="line-separator"></div>  
+<h1>Diseño de Páginas Web Económicas en España</h1>
+
+<div class="line-separator"></div>  
 <section class="metodologia-intro container" data-aos="fade-up">
   <h2> Nuestra Metodología </h2>
 
@@ -236,7 +239,29 @@ section {
   text-align: center;
   padding: 0 1rem;
 }
-
+.home h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0.5px;
+  margin-top: -50px;
+  margin-bottom: 1rem;
+  color: #ffffff; 
+  background: linear-gradient(120deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: titleEnter 0.8s ease-out forwards;
+}
+@keyframes titleEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .metodologia-intro h2 {
  
   font-family: 'Playfair Display', serif;
@@ -451,36 +476,72 @@ h2.subtitle {
   font-weight: 700;
   letter-spacing: 1px;
 }
-
-
 .line-separator {
-  width: 400px;
-  height: 4px;
-  margin: 2rem auto 4rem;
-  background: linear-gradient(270deg, #00ffff, #ffffff, #0c76b3,#ffffff, rgb(62, 187, 187));
-  border-radius: 5px;
-  animation: drawFlow 2s ease-out forwards, gradientFlow 3s linear infinite;
+  width: 0;
+  height: 5px;
+  margin: 3rem auto;
+  background: linear-gradient(90deg, rgb(166, 217, 252), #ffffff);
+  background-size: 250% 250%;
+  border-radius: 50px;
+
+ 
+  animation:
+    drawFlow 1.2s ease-out forwards,
+    flow 3.5s linear infinite 1.2s,
+    glowPulse 4s ease-in-out infinite 1.2s;
+  
   opacity: 0;
+  filter: drop-shadow(0 0 4px rgba(0, 255, 255, 0.4));
 }
+
 
 @keyframes drawFlow {
   to {
-    width: 400px;
+    width: 410px;
     opacity: 1;
   }
 }
 
-@keyframes gradientFlow {
-  0% {
-    background-position: 0 50%;
+
+@keyframes flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+
+@keyframes glowPulse {
+  0% { filter: drop-shadow(0 0 4px rgba(0,255,255,0.3)); }
+  50% { filter: drop-shadow(0 0 12px rgba(0,255,255,0.8)); }
+  100% { filter: drop-shadow(0 0 4px rgba(0,255,255,0.3)); }
+}
+
+@media (max-width: 600px) {
+  .line-separator {
+    height: 4px;
+    animation-name: drawFlowMobile, flow, glowPulse;
   }
-  100% {
-    background-position: 100% 50%;
+
+  @keyframes drawFlowMobile {
+    to {
+      width: 80%;
+      opacity: 1;
+    }
   }
 }
-@keyframes flow {
-  0% { background-position: 0% }
-  100% { background-position: 200% }
+
+
+@media (min-width: 1200px) {
+  .line-separator {
+    animation-name: drawFlowDesktop, flow, glowPulse;
+  }
+
+  @keyframes drawFlowDesktop {
+    to {
+      width: 90%;
+      max-width: 1200px; 
+      opacity: 1;
+    }
+  }
 }
 
 

@@ -16,7 +16,6 @@ const phoneNumber = "34634688218"
 const message = "Hola, me gustaría información sobre el desarrollo de páginas web personalizadas."
 const whatsAppLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
-// Animación de aparición al montar
 onMounted(() => {
   const button = document.querySelector('.whatsapp-float')
   if (button) {

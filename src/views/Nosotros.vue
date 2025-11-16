@@ -38,7 +38,7 @@ onMounted(() => {
     const h = (canvas.value.height = canvas.value.offsetHeight);
     ctx.clearRect(0, 0, w, h);
 
-    // Degradado animado suave
+    
     const gradient = ctx.createLinearGradient(0, 0, w, h);
     gradient.addColorStop(0, `hsl(${(t * 40) % 360}, 80%, 60%)`);
     gradient.addColorStop(1, `hsl(${(t * 40 + 120) % 360}, 80%, 60%)`);
@@ -165,6 +165,7 @@ p {
   }
   .nosotros-imagen img {
     width: 100%;
+    
     margin-top: 250px;
     margin-left: 20px;
   }
@@ -260,11 +261,16 @@ p {
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
+  
+  .nosotros-container {
+    align-items: center;
+    gap: 2rem;
+  }
    .nosotros-imagen  {
-    width: 1080px;
-    height: 700px;
-    margin-left: 60px;
-    max-width: 170%;
+    width: 90%;
+    height: auto;
+    
+     margin: 0 auto;
     border-radius: 0px;
     margin-left: -300px;
   }
