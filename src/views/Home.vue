@@ -245,7 +245,6 @@ section {
   font-weight: 800;
   text-align: center;
   letter-spacing: 0.5px;
-  margin-top: -50px;
   margin-bottom: 1rem;
   color: #ffffff; 
   background: linear-gradient(120deg, #00c6ff, #0072ff);
@@ -319,7 +318,7 @@ h2.subtitle {
 
 .btn-metodologia {
   display: inline-block;
-  margin-top: 1rem;
+  margin-top: rem;
   padding: 0.8rem 1.6rem;
   font-size: 1.1rem;
   font-weight: 600;
@@ -478,7 +477,7 @@ h2.subtitle {
 }
 .line-separator {
   width: 0;
-  height: 5px;
+  height: 1px;
   margin: 3rem auto;
   background: linear-gradient(90deg, rgb(166, 217, 252), #ffffff);
   background-size: 250% 250%;

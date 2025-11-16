@@ -40,7 +40,7 @@ export default {
     ]
 
     const descriptions = [
-      'Creamos proyectos únicos y originales.',
+      'Creamos proyectos únicos y originales: UI/UX-interfaz impactante y navegación intuitiva.Accesibilidad — Para todos los usuarios y dispositivos.Responsive — Perfecto en pantallas grandes y pequeñas.SEO & Rendimiento — Optimizado para buscadores y velocidad',
       'Tu marca destacará con estilo propio.',
       'Experiencias digitales que emocionan.',
       'Webs intuitivas y funcionales.',
@@ -48,7 +48,7 @@ export default {
       'Tecnología al servicio de tus ideas.',
       'Estrategias que impulsan resultados.',
       'Combinamos arte y funcionalidad.',
-      'Impacto visual memorable para tu público.'
+      'Impacto visual memorable para tu público.Experiencias interactivas y envolventes usando Three.js y animaciones en Canvas.Efectos dinámicos y microinteracciones que captan la atención desde el primer segundo.Diseñado para que cada visita sea inolvidable y futurista.'
     ]
 
     const getSize = (index) => {

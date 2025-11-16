@@ -165,8 +165,8 @@ p {
   }
   .nosotros-imagen img {
     width: 100%;
-    
-    margin-top: 250px;
+    height: 80%;
+    margin-top: 30px;
     margin-left: 20px;
   }
   .firma {
@@ -267,12 +267,38 @@ p {
     gap: 2rem;
   }
    .nosotros-imagen  {
-    width: 90%;
+    width: 80%;
     height: auto;
+    margin-top: 40px;
     
-     margin: 0 auto;
-    border-radius: 0px;
-    margin-left: -300px;
   }
 }
+@media (min-width: 1200px) and (max-width: 1500px) {
+  .nosotros-imagen img {
+    width: 70%;
+    height: auto;
+    margin-top: 30px; 
+  }
+}
+@media (max-width: 900px) {
+  .nosotros-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .wave {
+    display: none;
+  }
+
+  .nosotros-imagen img {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 60px;
+  }
+
+  .firma {
+    text-align: center;
+  }
+}
+
 </style>
