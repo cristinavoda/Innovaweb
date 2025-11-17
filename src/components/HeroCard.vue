@@ -214,7 +214,8 @@ export default {
   .hero-content .typewriter {
     position: absolute;
     top: calc(50% + 4rem); 
-    left: 60%;
+    text-align: left;
+    margin-left: 300px;
     transform: translate(-50%, -50%);
     font-size: 1.5rem;     
     line-height: 1.7;
@@ -223,11 +224,12 @@ export default {
     white-space: pre-line;
   }
 }
-@media (min-width: 1424px) and (max-width: 1600px) {
+@media (min-width: 1400px) and (max-width: 1600px) {
   .hero-content .typewriter {
     position: absolute;
     top: calc(50% + 4rem); 
-    left: 75%;
+     text-align: left;
+     margin-left: 300px;;
     transform: translate(-50%, -50%);
     font-size: 1.5rem;     
     line-height: 1.7;
