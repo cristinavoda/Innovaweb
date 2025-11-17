@@ -201,8 +201,8 @@ export default {
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .hero-content .typewriter {
-   margin-top: 4rem;             
-    left: 50%;
+   margin-top: -3rem;             
+    margin-left: 150px;
     transform: translateX(-50%);
     font-size: 1.4rem;       
     line-height: 1.6;
@@ -213,15 +213,27 @@ export default {
 @media (min-width: 1024px) and (max-width: 1400px) {
   .hero-content .typewriter {
     position: absolute;
-    top: calc(50% + 4rem); /* centrado vertical + ajuste */
-    left: 50%;
+    top: calc(50% + 4rem); 
+    left: 60%;
     transform: translate(-50%, -50%);
-    font-size: 1.5rem;     /* ajuste más fino */
+    font-size: 1.5rem;     
     line-height: 1.7;
     max-width: 700px;
-    padding: 0 1rem;       /* para que no toque los bordes */
+    padding: 0 1rem;       
     white-space: pre-line;
   }
 }
-
+@media (min-width: 1424px) and (max-width: 1600px) {
+  .hero-content .typewriter {
+    position: absolute;
+    top: calc(50% + 4rem); 
+    left: 75%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;     
+    line-height: 1.7;
+    max-width: 700px;
+    padding: 0 1rem;       
+    white-space: pre-line;
+  }
+}
 </style>
