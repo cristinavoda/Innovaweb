@@ -34,8 +34,8 @@ onBeforeUnmount(() => {
 .scroll-top {
   position: fixed;
   bottom: 300px;
-  right: 20px;
-  background-color: #008b8b; /* DarkCyan elegante */
+  right: 30px;
+  background-color: #008b8b; 
   color: white;
   border: none;
   border-radius: 50%;
@@ -60,7 +60,7 @@ onBeforeUnmount(() => {
 }
 @media (max-width: 768px) {
   .scroll-top {
-    margin-bottom: 300px; /* mitad de la pantalla */
+    margin-bottom: 300px; 
     right: 50%;
     transform: translate(50%, 50%);
     width: 45px;

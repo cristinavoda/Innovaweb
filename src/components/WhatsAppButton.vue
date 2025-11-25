@@ -70,7 +70,7 @@ onMounted(() => {
   width: 62px;
   height: 62px;
   bottom: 25px;
-  right: 25px;
+  right: 18px;
   color: white;
    background-color: #25d366;
    box-shadow: 0 0 20px rgba(226, 233, 228, 0.8);

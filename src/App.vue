@@ -72,7 +72,7 @@ body {
 .scroll-top-btn {
   position: fixed;
   bottom: 10rem;
-  right: 2rem;
+  right: 3%;
   background-color: rgb(247, 248, 248);
   color: darkcyan;
   border: none;
