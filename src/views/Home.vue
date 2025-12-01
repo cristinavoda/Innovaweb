@@ -460,7 +460,7 @@ h2.subtitle {
 }
 
 .project-link:hover {
-  color: #00ffff; }
+  color: #4b4e4e; }
 
 .section-title {
   font-size: 2.5rem;
@@ -473,7 +473,7 @@ h2.subtitle {
   width: 0;
   height: 1px;
   margin: 3rem auto;
-  background: linear-gradient(90deg, rgb(166, 217, 252), #ffffff);
+  background: linear-gradient(90deg, rgb(150, 153, 155), #ffffff);
   background-size: 250% 250%;
   border-radius: 50px;
 
@@ -484,7 +484,7 @@ h2.subtitle {
     glowPulse 4s ease-in-out infinite 1.2s;
   
   opacity: 0;
-  filter: drop-shadow(0 0 4px rgba(0, 255, 255, 0.4));
+  filter: drop-shadow(0 0 4px rgba(139, 141, 141, 0.4));
 }
 
 
@@ -503,9 +503,9 @@ h2.subtitle {
 
 
 @keyframes glowPulse {
-  0% { filter: drop-shadow(0 0 4px rgba(0,255,255,0.3)); }
-  50% { filter: drop-shadow(0 0 12px rgba(0,255,255,0.8)); }
-  100% { filter: drop-shadow(0 0 4px rgba(0,255,255,0.3)); }
+  0% { filter: drop-shadow(0 0 4px rgba(112, 116, 116, 0.3)); }
+  50% { filter: drop-shadow(0 0 12px rgba(109, 110, 110, 0.8)); }
+  100% { filter: drop-shadow(0 0 4px rgba(213, 218, 218, 0.3)); }
 }
 
 @media (max-width: 600px) {

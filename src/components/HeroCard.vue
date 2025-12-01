@@ -32,7 +32,7 @@ export default {};
   width: 100%;
   height: 100%;
   object-position: 50% 45%;
-  margin-top: -10px;
+  margin-top: -30px;
 }
 
 
@@ -40,9 +40,9 @@ export default {};
 .marquee-container {
   width: 100%;
   overflow: hidden;
-  background-color: rgba(104, 103, 103, 0.65);
+  background-color: transparent;
   position: absolute;
-  bottom: 0;
+  margin-top: 0;
   padding:  0;
   white-space: nowrap;
 }
@@ -51,6 +51,7 @@ export default {};
   display: inline-block;
   padding-left: 100%;
   background-color: #fff;
+  font-size: 1.5rem;
   color: #4b4949;
   font-weight: 600;
   animation: move-marquee 15s linear infinite;
@@ -68,7 +69,7 @@ export default {};
   }
 
   .marquee-content {
-    font-size: 0.75rem;
+    font-size: 1.5rem;
   }
 }
 </style>
