@@ -216,23 +216,17 @@ section {
 }
 .hero {
   text-align: center;
-  padding: 1rem 2rem;
+
   background: linear-gradient(135deg, #ffffff, #f0f0f0);
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
+
 
 .hero .highlight {
-  color: #0077cc;
+  color: #353738;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
+
 .metodologia-intro {
   max-width: 900px;
   margin: 4rem auto;

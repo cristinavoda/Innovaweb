@@ -3,16 +3,11 @@
     <Navbar />
     <router-view />
     <CookiesBanner />
-  
-  
-
-  <DrawerSidebar v-if="showDrrawer" @close="showDrower=false" />
-  
-<Footer />
-
-    
+    <DrawerSidebar v-if="showDrrawer" @close="showDrower=false" />
+    <Footer />
     <WhatsAppButton />
     <PhoneButton />
+    
 <div class="cookie-floating" @click="openModal" aria-label="Configuración de cookies">
   ⚙️
 </div>

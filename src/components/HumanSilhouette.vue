@@ -63,7 +63,7 @@ onMounted(() => {
 
   animate();
 
-  // Animación GSAP al entrar en viewport
+  
   gsap.from(sectionRef.value, {
     opacity: 0,
     y: 100,
@@ -81,7 +81,7 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
   position: relative;
-  background: #f8f8f8; /* fondo claro para destacar la silueta */
+  background: #f8f8f8; 
   overflow: hidden;
 }
 

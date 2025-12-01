@@ -38,7 +38,7 @@ export default {
 
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      // Creamos un degradado
+      
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height)
       gradient.addColorStop(0, "darkcyan")
       gradient.addColorStop(1, "darkblue")

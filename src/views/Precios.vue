@@ -120,7 +120,7 @@ h2 {
   font-size: 3rem;
   font-weight: 800;
   letter-spacing: 0.5px;
-  margin-top: 5rem;
+  margin-top: 7rem;
   color: #ffffff; 
   background: linear-gradient(120deg, #00c6ff, #0072ff);
   -webkit-background-clip: text;

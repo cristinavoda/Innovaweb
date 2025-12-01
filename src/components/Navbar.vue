@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar">
-    <div class="logo" @click="goHome">Paginasweb</div>
+    <div class="logo" @click="goHome">Paginas web</div>
 
     
     <div class="hamburger" ref="hamburger" @click="toggleMenu">
