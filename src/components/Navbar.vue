@@ -255,7 +255,7 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
   border-radius: 3px;
 }
 
-/* ------------------- MEDIA QUERY MOVIL ------------------- */
+
 @media (max-width: 768px) {
   .hamburger { display: flex; }
 

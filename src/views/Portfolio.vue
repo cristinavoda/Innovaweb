@@ -26,7 +26,7 @@ export default {
     let tourTween = null;
     const tourObj = { t: 0 };
 
-    // Tus imágenes reales
+   
     const imagenes = [
       { src: "/images/img1.jpg", height: 0.9 },
       { src: "/images/img2.png", height: 0.7 },
@@ -84,7 +84,7 @@ export default {
 
       
       camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 300);
-      camera.position.set(0, 1.6, 8);
+      camera.position.set(0, 1.6, 7);
 
       
       scene.add(new THREE.AmbientLight(0xffffff, 1));

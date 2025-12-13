@@ -3,8 +3,8 @@
     <div class="footer-inner container">
      
       <div class="brand">
-        <h2>Innovaweb</h2>
-        <p>Desarrollo web elegante y funcional, optimizado para cada negocio.</p>
+        <h2>Paginas web economicas-Cristina Voda</h2>
+        <p>Desarrollo web elegante y funcional, optimizado para cada negocio en Lleida ,Barcelona ,Madrid ,Valencia y otras ciudades.</p>
       </div>
 
       
@@ -26,13 +26,14 @@
 
       
       <div class="social">
-        <h3>Conecta</h3>
+        
         <div class="icons">
           <a href="https://wa.me/34634688218" target="_blank"><i class="fab fa-whatsapp"></i></a>
           <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
           <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
           <a href="mailto:paginaswebpersonalizadas.es@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
+      
       </div>
     </div>
 
@@ -136,8 +137,8 @@ onMounted(() => {
 
 
 .brand h2 {
-  color: darkcyan;
-  font-size: 1.5rem;
+  color: rgb(30, 103, 197);
+  font-size: 1rem;
   margin-bottom: 0.5rem;
   position: relative;
 }
@@ -160,6 +161,7 @@ onMounted(() => {
 
 .brand p {
   opacity: 0.7;
+  font-size: 0.8rem;
   line-height: 1.6;
   transition: opacity 0.3s ease;
 }
@@ -170,9 +172,10 @@ onMounted(() => {
 
 .links h3,
 .social h3 {
+  margin-left: 35px;
   margin-bottom: 1rem;
-  color: darkcyan;
-  font-size: 1.8rem;
+  color: rgb(39, 74, 172);
+  font-size: 0.8rem;
   font-weight: 600;
 }
 

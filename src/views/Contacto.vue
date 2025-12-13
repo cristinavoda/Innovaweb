@@ -6,7 +6,7 @@
 <div class ="contact-mail">
     <h1 data-aos="fade-down" class="h1">Contacto</h1>
     <p data-aos="fade-up" data-aos-delay="400">
-      ¿Quieres una página web elegante y personalizada? ¡Hablemos!
+      ¿Quieres una página web elegante y personalizada? 
     </p>
      
        <a href="mailto:paginaswebpersonalizadas.es@gmail.com" class="btn email-btn" title="paginasweb">
