@@ -35,7 +35,7 @@ onMounted(() => {
 .whatsapp-button {
   position: fixed;
   bottom: 25px;
-  right: 25px;
+  right: 18px;
   background-color: #25d366;
   color:azure;
   border-radius: 50%;

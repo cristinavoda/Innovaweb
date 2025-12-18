@@ -34,7 +34,7 @@ onBeforeUnmount(() => {
 .scroll-top {
   position: fixed;
   bottom: 300px;
-  right: 30px;
+  right: 18px;
   background-color: #008b8b; 
   color: white;
   border: none;

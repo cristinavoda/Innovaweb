@@ -66,8 +66,8 @@ body {
 
 .scroll-top-btn {
   position: fixed;
-  bottom: 10rem;
-  right: 3%;
+  bottom: 19rem;
+  right: 1.3%;
   background-color: rgb(247, 248, 248);
   color: darkcyan;
   border: none;
@@ -114,7 +114,7 @@ body {
     height: 45px;
     font-size: 18px;
     bottom: 305px;
-    right: 15px;
+    margin-right: 15px;
   }
 }
 </style>
