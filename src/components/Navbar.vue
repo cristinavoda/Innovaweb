@@ -23,6 +23,8 @@
       </li>
 
       <li><router-link to="/modular" @click="closeMenu">Servicios</router-link></li>
+       <li><router-link to="/projects" @click="closeMenu">Proyectos</router-link></li>
+
        <li><router-link to="/portfolio" @click="closeMenu">Portfolio</router-link></li>
       
       <li><router-link to="/nosotros" @click="closeMenu">Nosotros</router-link></li>
@@ -127,7 +129,7 @@ onMounted(() => {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   padding: 15px 40px;
   background: rgba(255, 255, 255, 0.20);
   backdrop-filter: blur(18px);
@@ -163,7 +165,7 @@ nav .nav-links a:not(.submenu-toggle) {
 nav .nav-links a:not(.submenu-toggle)::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 10;
   bottom: -3px;
   width: 100%;
   height: 2px;
@@ -213,7 +215,7 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
 .dropdown {
   position: absolute;
   top: 100%;
-  left: 0;
+  margin-left: 10px;
   background: rgba(255, 255, 255, 0.20);
   backdrop-filter: blur(12px);
   padding: 10px 0;
@@ -232,6 +234,7 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
 
 .dropdown li a {
   display: block;
+  margin-left: 40px;
   padding: 10px 20px;
   white-space: nowrap;
 }
@@ -280,12 +283,13 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
 
   .nav-links li {
     list-style: none;
+    right: 0;
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 .nav-links a::after {
   content: '';
   position: absolute;
-  left: 0;
+  right: 0;
   bottom: 0;
   width: 0%;
   height: 2px;
