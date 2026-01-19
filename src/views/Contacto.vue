@@ -14,24 +14,26 @@
 
 </a>
 </div>
+
 <div class="contact-cards">
   
- 
-     <a href="https://wa.me/34634688218"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="WhatsApp"
-             class="card" data-aos="fade-right" data-aos-delay="300"
-          >
-            <i class="fab fa-whatsapp"></i>
-            <h2>Teléfono / WhatsApp</h2>
-    <p>+34 634 688 218</p>
-          </a>
-  
+ <div class="form-card" data-aos="fade-up" data-aos-delay="600">
+      <h2>Envíanos un mensaje</h2>
+      <form @submit.prevent="submitForm">
+        <input type="text" v-model="name" placeholder="Tu nombre" required />
+        <input type="email" v-model="email" placeholder="Tu email" required />
+        <textarea v-model="message" placeholder="Tu mensaje" required></textarea>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </div>
+     </div>
+
+
+    
 
  
           
-      <div class="card" data-aos="fade-right" data-aos-delay="500">
+      <div class="card-ubication" data-aos="fade-right" data-aos-delay="500">
         <h2> Ubicación</h2>
         <div class="map-container">
         <iframe
@@ -53,17 +55,7 @@
      
     
 
-    
-    <div class="form-card" data-aos="fade-up" data-aos-delay="600">
-      <h2>Envíanos un mensaje</h2>
-      <form @submit.prevent="submitForm">
-        <input type="text" v-model="name" placeholder="Tu nombre" required />
-        <input type="email" v-model="email" placeholder="Tu email" required />
-        <textarea v-model="message" placeholder="Tu mensaje" required></textarea>
-        <button type="submit" class="btn">Enviar</button>
-      </form>
-    </div>
-     </div>
+   
   </section>
  
 </template>
@@ -96,11 +88,11 @@ onMounted(() => {
   text-align: left;
   background-color: #fdfdfd;
   color: #002f33;
-   background: linear-gradient(180deg, #fefefe, #eaf9f9); ;
+   background: linear-gradient(180deg, #fefefe, #eaf9f9); 
 }
 .contact-bg {
                                                                                                                                                                       
-background-image: url('images/contact-background2.jpg'); 
+background:  linear-gradient(180deg,#f0f7f7, #fefefe, #f8fcfc);; 
   background-repeat:repeat-y;
   background-size: cover;
   width: 100%;
@@ -111,10 +103,10 @@ background-position: center;
 }
 
 .contact h1 {
-  font-size: 2.5rem;
-  margin-top: 4rem;
+  font-size: 2rem;
+  margin-top: 5rem;
   margin-bottom: 3rem;
-  background: linear-gradient(45deg, #484b48, #ffffff);
+  background: linear-gradient(45deg, #484b48, #b9b5b5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.5s ease;
@@ -125,7 +117,7 @@ background-position: center;
 
 .contact p {
   font-size: 1.2rem;
-  margin-top: 2.5rem;
+  margin-top: -1rem;
   background: linear-gradient(45deg, #121312, #b4b0b0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -135,6 +127,11 @@ btn email-btn{
   width: auto;
 }
 .contact-mail{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
 
 }
 .contact-cards {
@@ -179,8 +176,8 @@ btn email-btn{
   background-color: #fff;
   padding: 2rem;
   border-radius: 1rem;
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 800px;
+  margin-left: 1px;
   box-shadow:2px 1px 4px#ecf0ee;
 }
 .form-card:hover {
@@ -188,7 +185,7 @@ btn email-btn{
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 10px 10px 10px#b4b0b0;
-  max-width: 500px;
+  max-width: 800px;
   margin: 0 auto;
   
 }
@@ -196,7 +193,8 @@ btn email-btn{
 .form-card h2 {
   margin-bottom: 1rem;
    margin-bottom: 1rem;
-  color: rgb(122, 126, 126);
+  color: rgb(121, 124, 124);
+  text-align: center;
    
   
 }
@@ -238,28 +236,23 @@ btn email-btn{
 btn-icon {
   font-size: 1px;
 }
-.whatsapp-button {
-  position: fixed;
-  width: 62px;
-  height: 62px;
-  bottom: 25px;
-  right: 25px;
-  color: white;
-   background-color: #25d366;
-   box-shadow: 0 0 20px rgba(226, 233, 228, 0.8);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;}
-
-
-
-  .nav-item {
+ .nav-item {
     color: inherit;
     font-size: 1.1rem;
     text-align: center;
   }
+  .map-container {
+    right: 25px;
+    top: 1rem;
+  }
+  h2 {
+  margin-bottom: 1rem;
+   margin-bottom: 1rem;
+  color: rgb(62, 65, 65);
+  text-align: center;
+  text-shadow: 1px 1px 2px #fdfdfd;
+  
+}
 @media (max-width: 768px) {
   .navbar {
     height: 60px;
@@ -353,18 +346,18 @@ btn-icon {
 
 .google-map {
   width: 100%;
-  height: 350px;           /* altura ideal desktop */
+  height: 350px;         
   border: 0;
 }
 
-/* 📱 Móviles */
+
 @media (max-width: 768px) {
   .google-map {
-    height: 250px;         /* más compacto en móvil */
+    height: 250px;        
   }
 }
 
-/* 📱 Móviles muy pequeños */
+
 @media (max-width: 480px) {
   .google-map {
     height: 200px;
