@@ -508,7 +508,7 @@ h2.subtitle {
   letter-spacing: 1px;
 }
 .line-separator {
-  width: 0;
+  width: 90%;
   height: 1px;
   margin: 3rem auto;
   background: linear-gradient(90deg, rgb(150, 153, 155), #ffffff);
@@ -696,7 +696,7 @@ h2.subtitle {
   position: absolute;
   top: 0;
   left: 0;
-  width: 190%;
+  width: 100%;
   height: 100%;
   z-index: 1;
   color: #fff;
