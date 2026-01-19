@@ -149,13 +149,29 @@ onMounted(() => {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 30px;
+  font-size: 1.6rem;
+  gap: 5rem;
+  background: linear-gradient(45deg, #333533, #979494);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.5s ease;
+  text-shadow: black;
+  
 }
+.nav-links a:hover {
+  color:darkcyan;
+  border-bottom: 1px 1px 1px darkcyan;
+}
+
 
 nav .nav-links a:not(.submenu-toggle) {
   position: relative;
   text-decoration: none;
-  color: var(--text-color, #111);
+   background: linear-gradient(45deg, #484b48, #b9b5b5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.5s ease;
+  text-overflow: black;
   padding-bottom: 4px;
   display: inline-block;
   font-weight: 500;
@@ -165,11 +181,11 @@ nav .nav-links a:not(.submenu-toggle) {
 nav .nav-links a:not(.submenu-toggle)::after {
   content: "";
   position: absolute;
-  left: 10;
+  left: 0;
   bottom: -3px;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, #1b0e92, #1bc8cd, #0e8f92);
+  background: linear-gradient(90deg, #1b0e92, #1bc8cd, #4c35cf);
   background-size: 200%;
   transform: scaleX(0);
   transform-origin: left;
@@ -187,15 +203,20 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
   100% { background-position: 200% }
 }
 
-.nav-links li a {
-  color: rgb(110, 107, 107);
+.nav-link li a {
+  background: linear-gradient(45deg, #484b48, #b9b5b5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.5s ease;
+  
   text-decoration: none;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.55);
-  padding: 8px 12px;
+  padding: 4px 12px;
+  gap:8rem;
   transition: 0.25s;
 }
 
-.nav-links li a:hover {
+.nav-links-li a:hover {
   color:darkcyan;
   border-bottom: 1px 1px 1px darkcyan;
 }
@@ -235,7 +256,7 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
 .dropdown li a {
   display: block;
   margin-left: 40px;
-  padding: 10px 20px;
+  padding: 10px 10px;
   white-space: nowrap;
 }
 
@@ -268,9 +289,11 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
     right: 0;
     flex-direction: column;
     width: 100%;
-    background: rgba(255,255,255 );
+    
+    background: rgb(235, 230, 230);
     backdrop-filter: blur(18px);
-    padding: 20px 0;
+    padding: 10px 20px;
+    gap: 10px;
     transform: translateY(-200%);
     opacity: 0;
     transition: transform 0.35s ease, opacity 0.35s ease;
@@ -285,6 +308,7 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
     list-style: none;
     right: 0;
     border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 2rem;
   }
 .nav-links a::after {
   content: '';

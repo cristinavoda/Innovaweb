@@ -2,10 +2,13 @@
   <div class="home">
 <HeroCard />
 <div class="line-separator"></div>  
+
 <h1>Diseño de Páginas Web Económicas en España</h1>
 
 <div class="line-separator"></div>  
+
 <section class="metodologia-intro container" data-aos="fade-up">
+
   <h2> Nuestra Metodología </h2>
 
   <p>
@@ -25,9 +28,9 @@
   </router-link>
 </section>
 
-    <section id="precios" class="pricing-section">
 
   <div class="line-separator"></div> 
+   <section id="precios" class="pricing-section" data-aos="fade-in">
 
   <h2 class="section-title">Planes y Precios</h2>
   
@@ -87,6 +90,8 @@
 
 <div class="line-separator"></div>  
 
+<div class="service-card">
+
  <section class="services container">
   <h2 data-aos="fade-right">Nuestros Servicios</h2>
 
@@ -97,10 +102,10 @@
       :key="index"
       data-aos="fade-up"
     >
-      <img :src="service.imagen" :alt="service.titulo" />
-
+     
       <div class="service-content">
-        <h3>{{ service.titulo }}</h3>
+        <h3 class="h3-services">{{ service.titulo }}</h3>
+         <img :src="service.imagen" :alt="service.titulo" class="service-img" />
         <p>{{ service.descripcion }}</p>
       </div>
 
@@ -108,7 +113,7 @@
     </div>
   </div>
 </section>
-
+</div>
 
   <div class="line-separator"></div> 
 
@@ -231,8 +236,6 @@ export default {
 
 <style scoped>
 .home {
-  
-  
   margin: 0;
   padding-left: 2rem;
   display: block;
@@ -273,7 +276,7 @@ section {
 }
 .home h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   font-weight: 800;
   text-align: center;
   letter-spacing: 0.5px;
@@ -294,12 +297,10 @@ section {
   }
 }
 .metodologia-intro h2 {
- 
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
+  font-size: 1.8rem;
   font-weight: 800;
   letter-spacing: 0.5px;
-  margin-top: -50px;
   margin-bottom: 1rem;
   color: #ffffff; 
   background: linear-gradient(120deg, #00c6ff, #0072ff);
@@ -352,8 +353,8 @@ h2.subtitle {
   display: inline-block;
   margin-top: rem;
   padding: 0.8rem 1.6rem;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 500;
   border-radius: 50px;
   border: 2px solid var(--theme-green, #f8fcfc);
   box-shadow: 1px 1px 1px #009688;
@@ -392,24 +393,17 @@ h2.subtitle {
 
 h2{
   font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-size: 1.9rem;
   font-weight: 800;
   letter-spacing: 0.5px;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   margin-top: -50px;
-text-align: center;
-  
+  text-align: center;
   color: #ffffff; 
-  
   background: linear-gradient(120deg, #00c6ff, #0072ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-
- 
-  opacity: 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);opacity: 0;
   transform: translateY(20px);
   animation: titleEnter 0.8s ease-out forwards;
 }
@@ -455,7 +449,7 @@ h2.subtitle {
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
-  width: 350px;
+  width: 550px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s,  box-shadow 0.3s ease;
 }
@@ -463,15 +457,36 @@ h2.subtitle {
 .card:hover, .project-card:hover {
   transform: translateY(-10px);
 }
-.service-cards img {
-  width: 98%;
+.service-img {
+  width: 100%;
+  height: 800px;
   border-radius: 8px;
   margin-bottom: 1rem;
 
 }
-.service-cards h3 {
-  color: #008b8b;
+.service-titulo {
+   font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  color: #ffffff; 
+  background: linear-gradient(120deg, #230577, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: titleEnter 0.8s ease-out forwards;
 }
+
+@keyframes titleEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  
 .project-card img {
   width: 98%;
   border-radius: 8px;
@@ -501,7 +516,7 @@ h2.subtitle {
   color: #4b4e4e; }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #155b9c;
   font-weight: 700;
@@ -700,14 +715,6 @@ h2.subtitle {
   height: 100%;
   z-index: 1;
   color: #fff;
-}
-h2 {
-  font-size: 2rem;
-  margin-top: 0.1rem;
-  background: linear-gradient(45deg, #9a9e9a, #f8f5f5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.5s ease;
 }
 
 

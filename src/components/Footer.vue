@@ -119,6 +119,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
+  
 .footer {
   position: relative;
   background: #ffffff;
@@ -147,9 +148,9 @@ onMounted(() => {
   position: absolute;
   bottom: -6px;
   left: 0;
-  width: 200px;
+  width: 310px;
   height: 3px;
-  background: linear-gradient(90deg,  #00cccc, #e9eeee, #00cccc);
+  background: linear-gradient(90deg,  #0913a1, #e9eeee, #0a9999);
   transform: scaleX(1);
   animation: flow 1.5s linear infinite;
   border-radius: 2px;
@@ -248,7 +249,7 @@ onMounted(() => {
   transition: color 0.3s ease;
 }
 .footer-bottom:hover {
-  color: #00b3b3;
+  color: #210b81;
 }
 
 
@@ -267,8 +268,9 @@ onMounted(() => {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 700px;
+  height: 800px;
   z-index: 0;
   pointer-events: none;
+
 }
 </style>
