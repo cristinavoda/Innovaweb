@@ -18,7 +18,7 @@
           <p>SEO básico</p>
           <p>Soporte 24/5</p>
         </ul>
-        <button class="select-btn">Elegir plan</button>
+        
       </div>
 
       <div class="plan-card advanced">
@@ -33,7 +33,7 @@
           <p>Mantenimiento 24/7</p>
           <lp>Optimización de rendimiento</lp>
         </ul>
-        <button class="select-btn">Elegir plan</button>
+        
       </div>
 
       <div class="plan-card premium">
@@ -48,7 +48,7 @@
           <p>Backup diario</p>
           <p>Soporte prioritario 24/7</p>
         </ul>
-        <button class="select-btn">Elegir plan</button>
+      
       </div>
     </div>
     
