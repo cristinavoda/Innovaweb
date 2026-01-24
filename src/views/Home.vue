@@ -39,7 +39,7 @@
     <div class="pricing-card basic">
       <h3>Básico</h3>
       <p class="subtitle">Sencillo, eficiente, perfecto</p>
-      <p class="price">250€ <span>/mes</span></p>
+      <p class="price">150€ <span>/mes</span></p>
       <ul>
         <li>Hosting incluido</li>
         <li>Diseño web sencillo / corporativa</li>
@@ -56,7 +56,7 @@
     <div class="pricing-card advanced">
       <h3>Avanzado</h3>
       <p class="subtitle">La excelencia hecha web</p>
-      <p class="price">450€ <span>/mes</span></p>
+      <p class="price">350€ <span>/mes</span></p>
       <ul>
         <li>Todo lo del plan anterior</li>
         <li>Diseño web avanzado</li>
@@ -73,7 +73,7 @@
     <div class="pricing-card premium">
       <h3>Premium</h3>
       <p class="subtitle">Soluciones premium, resultados premium</p>
-      <p class="price">750€ <span>/mes</span></p>
+      <p class="price">650€ <span>/mes</span></p>
       <ul>
         <li>Todo lo del plan anterior</li>
         <li>Diseño web profesional</li>

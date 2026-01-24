@@ -9,7 +9,7 @@
         <p class="subtitle"> Eficiente</p>
 
 
-        <div class="price">250€</div>
+        <div class="price">150€</div>
         <ul>
           <p>Hosting incluido</p>
           <p>Diseño web sencillo</p>
@@ -24,7 +24,7 @@
       <div class="plan-card advanced">
         <h3>Avanzado</h3>
         <p class="subtitle">Presencia de marca completa</p>
-        <div class="price">450€</div>
+        <div class="price">350€</div>
         <ul>
           <p>Diseño web avanzado</p>
           <p>4 secciones máximo</p>
@@ -39,7 +39,7 @@
       <div class="plan-card premium">
         <h3>Premium</h3>
         <p class="subtitle">ecommerce,integraciones y rendimiento avanzado</p>
-        <div class="price">750€</div>
+        <div class="price">650€</div>
         <ul>
           <p>Diseño profesional sin límites</p>
           <p>WooCommerce incluido</p>

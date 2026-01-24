@@ -1,9 +1,7 @@
 <template>
   <nav class="navbar">
-    <div class="logo" @click="goHome">Paginas web</div>
-
-    
-    <div class="hamburger" ref="hamburger" @click="toggleMenu">
+   
+<div class="hamburger" ref="hamburger" @click="toggleMenu">
       <span></span>
       <span></span>
       <span></span>
@@ -137,20 +135,13 @@ onMounted(() => {
   font-family: 'Poppins', sans-serif;
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: white;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.55);
-  cursor: pointer;
-}
-
 
 .nav-links {
   display: flex;
+  padding: 0.1rem 2rem;
   list-style: none;
   font-size: 1.6rem;
-  gap: 5rem;
+  gap: 4rem;
   background: linear-gradient(45deg, #333533, #979494);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -208,7 +199,6 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.5s ease;
-  
   text-decoration: none;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.55);
   padding: 4px 12px;
@@ -275,7 +265,8 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
   display: block;
   height: 3px;
   width: 100%;
-  background: rgb(85, 83, 83);
+  background: rgb(129, 127, 127);
+  text-shadow: 2px 1px white;
   border-radius: 3px;
 }
 
@@ -283,13 +274,15 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
 @media (max-width: 768px) {
   .hamburger { display: flex; }
 
+  .navbar {
+    align-items: center;
+  }
   .nav-links {
     position: absolute;
     top: 68px;
     right: 0;
     flex-direction: column;
     width: 100%;
-    
     background: rgb(235, 230, 230);
     backdrop-filter: blur(18px);
     padding: 10px 20px;
