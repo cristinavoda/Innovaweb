@@ -10,13 +10,13 @@
 
 
         <div class="price">150€</div>
-        <ul>
-          <p>Hosting incluido</p>
-          <p>Diseño web sencillo</p>
-          <p>3 secciones máximo</p>
-          <p>Dominio y SSL incluidos</p>
-          <p>SEO básico</p>
-          <p>Soporte 24/5</p>
+        <ul  class="plan-features">
+          <li>Hosting incluido</li>
+          <li>Diseño web sencillo</li>
+          <li>3 secciones máximo</li>
+          <li>Dominio y SSL incluidos</li>
+          <li>SEO básico</li>
+          <li>Soporte 24/5</li>
         </ul>
         
       </div>
@@ -25,13 +25,13 @@
         <h3>Avanzado</h3>
         <p class="subtitle">Presencia de marca completa</p>
         <div class="price">350€</div>
-        <ul>
-          <p>Diseño web avanzado</p>
-          <p>4 secciones máximo</p>
-          <p>Dominio y SSL incluidos</p>
-          <p>SEO básico</p>
-          <p>Mantenimiento 24/7</p>
-          <lp>Optimización de rendimiento</lp>
+        <ul class="plan-features">
+          <li>Diseño web avanzado</li>
+          <li>4 secciones máximo</li>
+          <li>Dominio y SSL incluidos</li>
+          <li>SEO básico</li>
+          <li>Mantenimiento 24/7</li>
+          <li>Optimización de rendimiento</li>
         </ul>
         
       </div>
@@ -40,13 +40,13 @@
         <h3>Premium</h3>
         <p class="subtitle">ecommerce,integraciones y rendimiento avanzado</p>
         <div class="price">650€</div>
-        <ul>
-          <p>Diseño profesional sin límites</p>
-          <p>WooCommerce incluido</p>
-          <p>SEO avanzado</p>
-          <p>IA y automatizaciones</p>
-          <p>Backup diario</p>
-          <p>Soporte prioritario 24/7</p>
+        <ul class="plan-features">
+          <li>Diseño profesional sin límites</li>
+          <li>WooCommerce incluido</li>
+          <li>SEO avanzado</li>
+          <li>IA y automatizaciones</li>
+          <li>Backup diario</li>
+          <li>Soporte prioritario 24/7</li>
         </ul>
       
       </div>
@@ -122,8 +122,6 @@ h2 {
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: 0.5px;
- 
- 
   margin-top: -100px;
   color: #ffffff; 
   background: linear-gradient(120deg, #00c6ff, #0072ff);
@@ -144,7 +142,6 @@ h2 {
 .title {
   font-size: 1.5rem;
   font-weight: 700;
- 
   color: #ffffff; 
   background: linear-gradient(120deg, #6a6b6b, #dddfe0);
   -webkit-background-clip: text;
@@ -153,7 +150,6 @@ h2 {
   opacity: 0;
   transform: translateY(20px);
   animation: titleEnter 0.8s ease-out forwards;
-
   margin-top: 0.1rem;
 }
 
@@ -234,10 +230,30 @@ h2 {
   padding-left: 1.2rem;
 }
 .plan-card li::before {
-  content: "✔";
+  content: none;
   position: absolute;
   left: 0;
   color: darkcyan;
+}
+.plan-card.premium .plan-features li {
+  color: #2f2440;
+  text-shadow: 0 1px 1px white;
+}
+
+.plan-card.premium .plan-features li::before {
+  content: none;
+  position: absolute;
+  left: 0;
+  color: #6b3fa0;
+  font-size: 0.85rem;
+}
+.plan-features li {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.plan-features li:hover {
+  transform: translateX(3px);
+  opacity: 0.9;
 }
 
 .select-btn {
@@ -256,9 +272,19 @@ h2 {
 }
 
 
-.basic { background: linear-gradient(180deg, #fefefe, #c5eeee); }
-.advanced { background: linear-gradient(180deg, #ffffff, #7493f8); }
-.premium { background: linear-gradient(180deg, #ffffff, #ca84f3); }
+.basic { background: linear-gradient(180deg, #fefefe, #d8f8f8); }
+.advanced { background: linear-gradient(180deg, #ffffff, #cbd5f7); }
+.premium { background: linear-gradient(180deg, #ffffff, #e5cef3); }
+.plan-card.premium h3 {
+  color: #3a2b4d;
+  text-shadow:
+    -1px -1px 0 #fff,
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff;
+}
+
+
 @media (min-width: 1200px) {
   .pricing-grid {
     grid-template-columns: repeat(3, 1fr);
