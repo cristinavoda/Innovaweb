@@ -240,8 +240,8 @@ onMounted(() => {
 
 
 .footer-bottom {
-  margin-top: 3rem;
-  padding-top: 1.2rem;
+  margin-top: 0.1rem;
+  padding-top: 0.2rem;
   border-top: 1px solid rgba(0,0,0,0.08);
   text-align: center;
   font-size: 0.85rem;

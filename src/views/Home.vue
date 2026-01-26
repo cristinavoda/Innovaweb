@@ -301,7 +301,7 @@ section {
   font-size: 1.8rem;
   font-weight: 800;
   letter-spacing: 0.5px;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   color: #ffffff; 
   background: linear-gradient(120deg, #00c6ff, #0072ff);
   -webkit-background-clip: text;
@@ -825,7 +825,7 @@ h2.subtitle {
 
 .separator {
   height: 1px;
-  background: linear-gradient(270deg, #00ffff, #ffffff, #081ddb,#ffffff, rgb(62, 187, 187));
+  background: linear-gradient(270deg, #5d5f5f, #a09d9d, #636469,#838080, rgb(127, 129, 129));
   width: 100%;
   margin: 20px 0;
 }

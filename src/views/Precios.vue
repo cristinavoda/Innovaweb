@@ -107,20 +107,24 @@ onMounted(() => {
 
 .pricing-section {
   text-align: center;
-  padding:  1rem 1rem 1rem;
+  padding: 6rem 1rem 8rem; 
   background: linear-gradient(180deg, #ffffff, #f7f9fa);
-   position: relative;
-   width: 100%;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin-bottom: 6rem; 
 }
 
 
 h2 {
  
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: 0.5px;
-  margin-top: 7rem;
+ 
+ 
+  margin-top: -100px;
   color: #ffffff; 
   background: linear-gradient(120deg, #00c6ff, #0072ff);
   -webkit-background-clip: text;
@@ -138,17 +142,26 @@ h2 {
   }
 }
 .title {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: #0f3c3c;
-  margin-top: 5rem;
+ 
+  color: #ffffff; 
+  background: linear-gradient(120deg, #6a6b6b, #dddfe0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: titleEnter 0.8s ease-out forwards;
+
+  margin-top: 0.1rem;
 }
 
 .line-separator {
   width: fit-content;
-  height: 4px;
-  margin: 2rem auto 4rem;
-  background: linear-gradient(270deg, #00ffff, #ffffff, #4400ff, cyan);
+  height: 1px;
+  margin: 1rem auto 0.1rem;
+  background: linear-gradient(270deg, #444444, #ffffff, #3f3e41, rgb(233, 236, 236));
   border-radius: 5px;
   opacity: 0;
 }
@@ -243,9 +256,9 @@ h2 {
 }
 
 
-.basic { background: linear-gradient(180deg, #fefefe, #eaf9f9); }
-.advanced { background: linear-gradient(180deg, #ffffff, #e4f4ff); }
-.premium { background: linear-gradient(180deg, #ffffff, #e7f8ef); }
+.basic { background: linear-gradient(180deg, #fefefe, #c5eeee); }
+.advanced { background: linear-gradient(180deg, #ffffff, #7493f8); }
+.premium { background: linear-gradient(180deg, #ffffff, #ca84f3); }
 @media (min-width: 1200px) {
   .pricing-grid {
     grid-template-columns: repeat(3, 1fr);
