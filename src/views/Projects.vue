@@ -53,6 +53,19 @@ const portfolio = [
 ]
 </script>
 <style>
+h1 {
+ text-align: center;
+  padding: 2rem 1rem 0.1rem; 
+  background: linear-gradient(180deg, #ffffff, #f7f9fa);
+  position: relative;
+  background: linear-gradient(45deg, #333533, #d1cfcf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.5s ease;
+  text-shadow: black;
+  
+  
+}
 .projects-grid {
   background-color: transparent;
   display: flex;
