@@ -47,7 +47,7 @@ const portfolio = [
     link: 'https://paginaswebpersonalizadas.es/'
   },
   {
-    titulo: 'Landingpage',
+    titulo: 'Landing page',
     imagen: '/images/pagina-roxana.png',
     link: 'https://roxana-oana-calin-pshicolog-terapeut.netlify.app/'
   }

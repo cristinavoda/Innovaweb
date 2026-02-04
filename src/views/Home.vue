@@ -209,7 +209,7 @@ export default {
     { titulo: 'Hotel Mirage', imagen: '/images/proyecto.png', link: 'https://hotelmirageweb.netlify.app/' },
       { titulo: 'Studioart', imagen: '/images/proyecto1.jpg', link: 'https://interiorista.netlify.app/' },
       { titulo: 'Web Design', imagen: '/images/proyecto7.png', link: 'https://paginaswebpersonalizadas.es/' },
-      { titulo: 'Landingpage', imagen: '/images/pagina-roxana.png', link: 'https://roxana-oana-calin-pshicolog-terapeut.netlify.app/' },
+      { titulo: 'Landing page', imagen: '/images/pagina-roxana.png', link: 'https://roxana-oana-calin-pshicolog-terapeut.netlify.app/' },
     ]
 
     onMounted(() => {
