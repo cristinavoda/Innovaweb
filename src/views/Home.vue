@@ -209,7 +209,7 @@ export default {
     { titulo: 'Hotel Mirage', imagen: '/images/proyecto.png', link: 'https://hotelmirageweb.netlify.app/' },
       { titulo: 'Studioart', imagen: '/images/proyecto1.jpg', link: 'https://interiorista.netlify.app/' },
       { titulo: 'Web Design', imagen: '/images/proyecto7.png', link: 'https://paginaswebpersonalizadas.es/' },
-      { titulo: 'Blog', imagen: '/images/proyecto3.png', link: 'https://maltratoemocionalpsicologicoeconomico.wordpress.com/2023/07/30/el-amor-no-duele/#more-34' },
+      { titulo: 'Landingpage', imagen: '/images/pagina-roxana.png', link: 'https://roxana-oana-calin-pshicolog-terapeut.netlify.app/' },
     ]
 
     onMounted(() => {

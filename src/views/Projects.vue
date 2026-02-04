@@ -38,6 +38,7 @@ const portfolio = [
   {
     titulo: 'Studioart',
     imagen: '/images/proyecto1.jpg',
+
     link: 'https://interiorista.netlify.app/'
   },
   {
@@ -46,9 +47,9 @@ const portfolio = [
     link: 'https://paginaswebpersonalizadas.es/'
   },
   {
-    titulo: 'Blog WordPress',
-    imagen: '/images/proyecto3.png',
-    link: 'https://maltratoemocionalpsicologicoeconomico.wordpress.com/2023/07/30/el-amor-no-duele/#more-34'
+    titulo: 'Landingpage',
+    imagen: '/images/pagina-roxana.png',
+    link: 'https://roxana-oana-calin-pshicolog-terapeut.netlify.app/'
   }
 ]
 </script>
