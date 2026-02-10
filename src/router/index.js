@@ -27,7 +27,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    // volver arriba SIEMPRE
+   
     return { top: 0 }
   }
 

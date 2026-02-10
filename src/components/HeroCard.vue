@@ -1,7 +1,7 @@
 <template>
   <section class="hero-section">
     <video autoplay muted loop playsinline class="background-video">
-      <source src="/videos/anuncio.mp4" type="video/mp4" />
+      <source src="/videos/anuncio1.mp4" type="video/mp4" />
     </video>
 
     <div class="marquee-container">
