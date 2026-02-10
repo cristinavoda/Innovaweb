@@ -66,6 +66,7 @@ export default {};
 @media (max-width: 768px) {
   .hero-section {
     height: 75vh;
+    width: 100%;
   }
 
   .marquee-content {
