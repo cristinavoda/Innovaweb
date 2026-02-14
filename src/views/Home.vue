@@ -1,11 +1,14 @@
 <template>
   <div class="home">
+<div class="line-separator"></div>  
+
 <HeroCard />
-<div class="line-separator"></div>  
-
-<h1>Diseño de Páginas Web Económicas en España</h1>
 
 <div class="line-separator"></div>  
+
+<h1>Diseño y desarrollo de Páginas Web Económicas en España</h1>
+
+
 
 <section class="metodologia-intro container" data-aos="fade-up">
 
@@ -279,13 +282,13 @@ section {
   font-size: 1.9rem;
   font-weight: 800;
   text-align: center;
-  letter-spacing: 0.5px;
-  margin-bottom: 1rem;
+   margin-top: 0.1rem;
   color: #ffffff; 
-  background: linear-gradient(120deg, #00c6ff, #0072ff);
+   background: linear-gradient(45deg, #333533, #979494);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  transition: all 0.5s ease;
+  text-shadow: black;
   opacity: 0;
   transform: translateY(20px);
   animation: titleEnter 0.8s ease-out forwards;
@@ -299,14 +302,14 @@ section {
 .metodologia-intro h2 {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.5px;
   margin-top: 1rem;
   color: #ffffff; 
-  background: linear-gradient(120deg, #00c6ff, #0072ff);
+  background: linear-gradient(45deg, #333533, #f5f4f4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  transition: all 0.5s ease;
   opacity: 0;
   transform: translateY(20px);
   animation: titleEnter 0.8s ease-out forwards;
@@ -357,13 +360,13 @@ h2.subtitle {
   font-weight: 500;
   border-radius: 50px;
   border: 2px solid var(--theme-green, #f8fcfc);
-  box-shadow: 1px 1px 1px #009688;
-  color: var(--theme-green, #008b8b);
+  box-shadow: 1px 1px 1px #7c7e7e;
+  color: var(--theme-green, #898b8b);
   transition: 0.3s ease;
 }
 
 .btn-metodologia:hover {
-  background: var(--theme-green, #008b8b);
+  background: var(--theme-green, #828585);
   color: white;
 }
 
@@ -377,7 +380,7 @@ h2.subtitle {
   display: inline-block;
   margin-top: 1.5rem;
   background-color: transparent;
-  color: #0b9fda;
+  color: #787a7a;
   padding: 0.8rem 1.6rem;
   border-radius: 8px;
   text-decoration: none;
@@ -396,11 +399,10 @@ h2{
   font-size: 1.9rem;
   font-weight: 800;
   letter-spacing: 0.5px;
-  margin-bottom: 3rem;
-  margin-top: -50px;
+  margin-top: 0.1rem;
   text-align: center;
   color: #ffffff; 
-  background: linear-gradient(120deg, #00c6ff, #0072ff);
+  background: linear-gradient(120deg, #e8eaeb, #5e5e5f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.4);opacity: 0;
@@ -500,20 +502,22 @@ h2.subtitle {
 
 .project-card h3 {
   margin-top: 0.8rem;
-  color: #0f4392;
+  color: #67696b;
 }
 
 .project-link {
   display: inline-block;
   margin-top: 0.5rem;
-  color: #1e90ff; 
+  color: #4e5153;
   text-decoration: underline;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .project-link:hover {
-  color: #4b4e4e; }
+  color: darkcyan; 
+   transform: translateY(20px);
+}
 
 .section-title {
   font-size: 1.5rem;
@@ -809,8 +813,8 @@ h2.subtitle {
 
 .service-content h3 {
   margin: 1 0 0.5rem 0;
-  color: rgb(27, 133, 133);
-  font-size: 1.2rem;
+  color: rgb(66, 70, 70);
+  font-size: 1.5rem;
 }
 .service-content title {
   margin-left: 10px;

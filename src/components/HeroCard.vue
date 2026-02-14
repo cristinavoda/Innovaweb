@@ -3,7 +3,7 @@
     <video autoplay muted loop playsinline class="background-video">
       <source src="/videos/anuncio1.mp4" type="video/mp4" />
     </video>
-
+<div class="line-separator"></div>  
     <div class="marquee-container">
       <p class="marquee-content">
        Diseño Web Profesional · Páginas Web desde 250€ · Hosting + Dominio · Entrega Rápida · Google Business Incluido · Soporte Total · ¡Impulsa Tu Negocio Ahora!
@@ -42,7 +42,7 @@ export default {};
   overflow: hidden;
   background-color: transparent;
   position: absolute;
-  margin-top: 0;
+  margin-top: 2.5rem;
   padding:  0;
   white-space: nowrap;
 }
@@ -73,4 +73,5 @@ export default {};
     font-size: 1.5rem;
   }
 }
+
 </style>

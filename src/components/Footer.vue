@@ -138,7 +138,7 @@ onMounted(() => {
 
 
 .brand h2 {
-  color: rgb(30, 103, 197);
+  color: rgb(95, 97, 100);
   font-size: 1rem;
   margin-bottom: 0.5rem;
   position: relative;
