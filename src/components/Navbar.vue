@@ -370,5 +370,20 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
     opacity: 1;
   }
 }
+.navbar h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #f2f7f5; 
+   background: linear-gradient(45deg, #272727, #f7f3f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.5s ease;
+  text-shadow: 2px 1pxsolid black;
+  transform: translateY(20px);
+  animation: titleEnter 0.8s ease-out forwards;
+}
 
 </style>
