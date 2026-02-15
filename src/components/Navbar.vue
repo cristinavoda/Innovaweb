@@ -8,14 +8,9 @@
     <ul :class="['nav-links', { open: menuOpen }]" ref="menu">
       <li><router-link to="/" @click="closeMenu">Inicio</router-link></li>
 
-      <li class="submenu">
-        <a href="#" @click.prevent="toggleSubmenu('precios')">Precios</a>
-        <ul :class="['dropdown', { open: activeSubmenu === 'precios' }]">
-          <li><router-link to="/precios" @click="closeMenu">Básico</router-link></li>
-          <li><router-link to="/precios" @click="closeMenu">Avanzado</router-link></li>
-          <li><router-link to="/precios" @click="closeMenu">Premium</router-link></li>
-        </ul>
-      </li>
+     
+          <li><router-link to="/precios" @click="closeMenu">Precios</router-link></li>
+         
 
       <li><router-link to="/modular" @click="closeMenu">Servicios</router-link></li>
        <li><router-link to="/projects" @click="closeMenu">Proyectos</router-link></li>
