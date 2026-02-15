@@ -3,7 +3,7 @@
     <div class="footer-inner container">
      
       <div class="brand">
-        <h2>Paginas web economicas-Cristina Voda</h2>
+        <h2>Paginas web - Cristina Voda</h2>
         <p>Desarrollo web elegante y funcional, optimizado para cada negocio en Lleida ,Barcelona ,Madrid ,Valencia y otras ciudades.</p>
       </div>
 
@@ -143,22 +143,7 @@ onMounted(() => {
   margin-bottom: 0.5rem;
   position: relative;
 }
-.brand h2::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 310px;
-  height: 3px;
-  background: linear-gradient(90deg,  #0913a1, #e9eeee, #0a9999);
-  transform: scaleX(1);
-  animation: flow 1.5s linear infinite;
-  border-radius: 2px;
-}
-@keyframes flow {
-  0% { background-position: 0% }
-  100% { background-position: 200% }
-}
+
 
 .brand p {
   opacity: 0.7;
@@ -168,6 +153,7 @@ onMounted(() => {
 }
 .brand:hover p {
   opacity: 1;
+  color: darkcyan;
 }
 
 

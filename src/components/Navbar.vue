@@ -1,12 +1,9 @@
 <template>
   <nav class="navbar">
-   
-<div class="hamburger" ref="hamburger" @click="toggleMenu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
+<div class="navbar-brand" data-aos="fade-up">
+   <img src="/icons/logo.png" alt="Cristina Voda" />
+<h1 > Páginas Web  </h1>
+</div>
     
     <ul :class="['nav-links', { open: menuOpen }]" ref="menu">
       <li><router-link to="/" @click="closeMenu">Inicio</router-link></li>
@@ -28,6 +25,11 @@
       <li><router-link to="/nosotros" @click="closeMenu">Nosotros</router-link></li>
       <li><router-link to="/contacto" @click="closeMenu">Contacto</router-link></li>
     </ul>
+    <div class="hamburger" ref="hamburger" @click="toggleMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
 </template>
 <script setup>
@@ -118,6 +120,8 @@ onMounted(() => {
   });
 });
 </script>
+
+
 <style scoped >
 
 .navbar {
@@ -125,16 +129,32 @@ onMounted(() => {
   top: 0;
   left: 0;
   width: 100%;
+   height: 68px;
   display: flex;
   justify-content: space-between;
-  align-items: start;
-  padding: 15px 40px;
+  align-items: center;
+  padding: 0  42px;
   background: rgba(255, 255, 255, 0.20);
   backdrop-filter: blur(18px);
   z-index: 1000;
   font-family: 'Poppins', sans-serif;
 }
 
+.navbar h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #f2f7f5; 
+   background: linear-gradient(45deg, #3a3b3a, #f7f3f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.5s ease;
+  text-shadow: 1px solid black;
+  transform: translateY(20px);
+  animation: titleEnter 0.8s ease-out forwards;
+}
 
 .nav-links {
   display: flex;
@@ -146,7 +166,7 @@ onMounted(() => {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.5s ease;
-  text-shadow: black;
+  text-shadow: 1px solid black;
   
 }
 .nav-links a:hover {
@@ -172,7 +192,7 @@ nav .nav-links a:not(.submenu-toggle) {
 nav .nav-links a:not(.submenu-toggle)::after {
   content: "";
   position: absolute;
-  left: 0;
+  right: 0;
   bottom: -3px;
   width: 100%;
   height: 2px;
@@ -226,10 +246,9 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
 .dropdown {
   position: absolute;
   top: 100%;
-  margin-left: 10px;
+  margin-right: 10px;
   background: rgba(255, 255, 255, 0.20);
-  backdrop-filter: blur(12px);
-  padding: 10px 0;
+   padding: 10px 0;
   border-radius: 8px;
   opacity: 0;
   transform: translateY(-10px);
@@ -245,7 +264,7 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
 
 .dropdown li a {
   display: block;
-  margin-left: 40px;
+  margin-right: 40px;
   padding: 10px 10px;
   white-space: nowrap;
 }
@@ -253,6 +272,7 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
 
 .hamburger {
   display: none;
+  right: 10px;
   flex-direction: column;
   justify-content: space-between;
   width: 28px;
@@ -269,7 +289,11 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
   text-shadow: 2px 1px white;
   border-radius: 3px;
 }
-
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
 @media (max-width: 768px) {
   .hamburger { display: flex; }
@@ -277,36 +301,44 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
   .navbar {
     align-items: center;
   }
+  
   .nav-links {
-    position: absolute;
-    top: 68px;
-    right: 0;
-    flex-direction: column;
+    position: fixed;
+    inset: 0; 
+    height: 100vh;
     width: 100%;
-    background: rgb(235, 230, 230);
-    backdrop-filter: blur(18px);
-    padding: 10px 20px;
-    gap: 10px;
-    transform: translateY(-200%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end; 
+    padding-top: 25px;
+    padding-right: 40px;
+    gap: 30px;
+    background: rgba(240, 238, 238, 0.95); 
+    transform: translateX(100%);
     opacity: 0;
-    transition: transform 0.35s ease, opacity 0.35s ease;
+    transition: transform 0.4s ease, opacity 0.4s ease;
   }
 
   .nav-links.open {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
   }
+
+
+ 
 
   .nav-links li {
     list-style: none;
     right: 0;
     border-bottom: 1px solid rgba(255,255,255,0.1);
-    font-size: 2rem;
+    font-size: 2.2rem;
+      font-weight: 600;
   }
 .nav-links a::after {
   content: '';
   position: absolute;
   right: 0;
+
   bottom: 0;
   width: 0%;
   height: 2px;
@@ -324,9 +356,9 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
   .dropdown {
     position: relative;
     top: 0;
+    right: 0;
     width: 100%;
-    background: rgba(255,255,255,0.25);
-    backdrop-filter: blur(15px);
+    background: rgba(240, 237, 237, 0.25);
     max-height: 0;
     overflow: hidden;
     opacity: 0;
