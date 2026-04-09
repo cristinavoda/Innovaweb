@@ -128,4 +128,9 @@ border-radius: 18px;
   color: #1e90ff;
 border-bottom:  #1e90ff 2px solid;  }
  
+ @media (max-width: 768px) {
+  .projects-grid {
+    flex-direction: column;
+    align-items: center;
+  }}
 </style>

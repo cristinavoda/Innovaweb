@@ -492,7 +492,7 @@ h2.subtitle {
   
 .project-card img {
   width: 98%;
-  height: 80%;
+  height: auto;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
