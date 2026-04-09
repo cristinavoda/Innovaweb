@@ -30,6 +30,11 @@
 
 <script setup>
 const portfolio = [
+   {
+    titulo: 'Abogada Maria de Luca',
+    imagen: '/images/maria.png',
+    link: 'https://abogada-maria-de-luca.netlify.app/'
+  },
   {
     titulo: 'Hotel Mirage',
     imagen: '/images/proyecto.png',
@@ -91,6 +96,7 @@ h1 {
 }
 .service-cards img {
   width: 98%;
+  height: 80%;
   border-radius: 8px;
   margin-bottom: 1rem;
 
@@ -98,6 +104,7 @@ h1 {
 
 .project-card img {
   width: 98%;
+  height: 80%;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
@@ -109,13 +116,16 @@ roject-card h3 {
 .project-link {
   display: inline-block;
   margin-top: 0.5rem;
-  color: #1e90ff; 
-  text-decoration: underline;
+  color: #585b5e; 
+border-bottom:  #656769 2px solid; 
+border-radius: 18px;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .project-link:hover {
-  color: #4b4e4e; }
+  
+  color: #1e90ff;
+border-bottom:  #1e90ff 2px solid;  }
  
 </style>

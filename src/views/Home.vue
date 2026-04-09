@@ -209,7 +209,8 @@ export default {
     ]
 
     const portfolio = [
-    { titulo: 'Hotel Mirage', imagen: '/images/proyecto.png', link: 'https://hotelmirageweb.netlify.app/' },
+      {titulo: 'Abogada Maria de Luca', imagen: '/images/maria.png', link: 'https://abogada-maria-de-luca.netlify.app/' },
+     {titulo: 'Hotel Mirage', imagen: '/images/proyecto.png', link: 'https://hotelmirageweb.netlify.app/' },
       { titulo: 'Studioart', imagen: '/images/proyecto1.jpg', link: 'https://interiorista.netlify.app/' },
       { titulo: 'Web Design', imagen: '/images/proyecto7.png', link: 'https://paginaswebpersonalizadas.es/' },
       { titulo: 'Landing page', imagen: '/images/pagina-roxana.png', link: 'https://roxana-oana-calin-pshicolog-terapeut.netlify.app/' },
@@ -491,6 +492,7 @@ h2.subtitle {
   
 .project-card img {
   width: 98%;
+  height: 80%;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
@@ -508,9 +510,11 @@ h2.subtitle {
 .project-link {
   display: inline-block;
   margin-top: 0.5rem;
-  color: #4e5153;
-  text-decoration: underline;
-  font-weight: 500;
+  color: #136aa8;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.5rem;
+  font-family: Robo slab;
   transition: color 0.3s ease;
 }
 
@@ -523,7 +527,9 @@ h2.subtitle {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #155b9c;
+  text-shadow: #230577 6px 0 10px;
   font-weight: 700;
+  font-size: 2rem;
   letter-spacing: 1px;
 }
 .line-separator {

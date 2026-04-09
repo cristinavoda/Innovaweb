@@ -139,7 +139,7 @@ onMounted(() => {
   font-family: 'Playfair Display', serif;
   font-size: 1.9rem;
   padding: 1rem 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-weight: 600;
   color: #f2f7f5; 
    background: linear-gradient(45deg, #3a3b3a, #f7f3f3);
