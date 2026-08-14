@@ -1,6 +1,6 @@
 <template>
   <section class="portfolio container">
-    <h1 data-aos="fade-right">Proyectos</h1>
+   
     
 
     <div class="projects-grid">
@@ -10,10 +10,13 @@
         :key="index"
         data-aos="fade-up"
       >
+
+      <h3>{{ project.titulo }}</h3>
+
         <img :src="project.imagen" :alt="project.titulo" />
 
         <div class="project-info">
-          <h3>{{ project.titulo }}</h3>
+        
           <a
             :href="project.link"
             target="_blank"
@@ -30,6 +33,11 @@
 
 <script setup>
 const portfolio = [
+{
+    titulo: 'Restaurante Sensus ',
+    imagen: '/images/sensus.png',
+    link: 'https://sensusrestaurante.netlify.app/'
+  },
    {
     titulo: 'Abogada Maria de Luca',
     imagen: '/images/maria.png',
@@ -40,6 +48,11 @@ const portfolio = [
     imagen: '/images/proyecto.png',
     link: 'https://hotelmirageweb.netlify.app/'
   },
+   {
+    titulo: 'Web Design',
+    imagen: '/images/proyecto7.png',
+    link: 'https://paginaswebpersonalizadas.es/'
+  },
   {
     titulo: 'Studioart',
     imagen: '/images/proyecto1.jpg',
@@ -47,15 +60,12 @@ const portfolio = [
     link: 'https://interiorista.netlify.app/'
   },
   {
-    titulo: 'Web Design',
-    imagen: '/images/proyecto7.png',
-    link: 'https://paginaswebpersonalizadas.es/'
-  },
-  {
-    titulo: 'Landing page',
+    titulo: 'Psicologo Online',
     imagen: '/images/pagina-roxana.png',
     link: 'https://roxana-oana-calin-pshicolog-terapeut.netlify.app/'
-  }
+  },
+ 
+ 
 ]
 </script>
 <style>
@@ -79,47 +89,55 @@ h1 {
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 2.5rem;
 }
 
+
 .card, .project-card {
-  background-color: #f9f9f9;
-  padding: 2rem;
-  border-radius: 12px;
+  background: #fafafa;
+  padding: 1.5rem;
+  border-radius: 0px;
   text-align: center;
   width: 350px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s,  box-shadow 0.3s ease;
+  height: 100%;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .card:hover, .project-card:hover {
-  transform: translateY(-10px);
-}
-.service-cards img {
-  width: 98%;
-  height: 80%;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
+
+.project-card h3 {
+  margin: 0.4rem 0 1rem;
+  background: linear-gradient(45deg, #282928, #e6e1e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.45rem;
+  font-weight: 600;
+  font-family: "Roboto Slab";
+  
+}
 .project-card img {
   width: 98%;
-  height: 80%;
-  border-radius: 8px;
+  height: 100%;
+  border-radius: 0px;
   margin-bottom: 1rem;
+  margin-top: 1.5rem;
 }
-roject-card h3 {
-  margin-top: 0.8rem;
-  color: #0f4392;
-}
+
 
 .project-link {
   display: inline-block;
-  margin-top: 0.5rem;
-  color: #585b5e; 
-border-bottom:  #656769 2px solid; 
-border-radius: 18px;
-  font-weight: 500;
+  margin-top: 0.7rem;
+  color: #57575a; 
+  border-bottom: #1c1c1d 1px solid; 
+  font-weight: 600;
   transition: color 0.3s ease;
 }
 
@@ -128,6 +146,8 @@ border-radius: 18px;
   color: #1e90ff;
 border-bottom:  #1e90ff 2px solid;  }
  
+
+
  @media (max-width: 768px) {
   .projects-grid {
     flex-direction: column;

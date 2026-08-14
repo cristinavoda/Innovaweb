@@ -1,10 +1,13 @@
 <template>
   <nav class="navbar">
 <div class="navbar-brand" data-aos="fade-up">
-   <img src="/icons/logo.png" alt="Cristina Voda" />
-<h1 > Páginas Web  </h1>
+  <h1 class="navbar-title">Páginas Web</h1>
+  <img
+    src="/icons/logo.png"
+    class="navbar-logo"
+    alt="Cristina Voda"
+  />
 </div>
-    
     <ul :class="['nav-links', { open: menuOpen }]" ref="menu">
       <li><router-link to="/" @click="closeMenu">Inicio</router-link></li>
 
@@ -134,29 +137,42 @@ onMounted(() => {
   z-index: 1000;
   font-family: 'Poppins', sans-serif;
 }
-
-.navbar h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.9rem;
-  padding: 1rem 2rem;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  color: #f2f7f5; 
-   background: linear-gradient(45deg, #3a3b3a, #f7f3f3);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.5s ease;
-  text-shadow: 1px solid black;
-  transform: translateY(20px);
-  animation: titleEnter 0.8s ease-out forwards;
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  white-space: nowrap;
 }
 
+.navbar-title {
+  margin-left: -15px;
+  margin-top: -15px;
+  padding: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: 600;
+
+  color: #f2f7f5;
+  background: linear-gradient(45deg, #3a3b3a, #f7f3f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar-logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-left: -15px;
+}
 .nav-links {
   display: flex;
-  padding: 0.1rem 2rem;
+  align-items: center;
   list-style: none;
-  font-size: 1.6rem;
-  gap: 4rem;
+  font-size: 1.5rem;
+  gap: 3.5rem;
   background: linear-gradient(45deg, #333533, #979494);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -367,12 +383,12 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
 }
 .navbar h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  padding: 1rem 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.2rem;
   font-weight: 600;
   color: #f2f7f5; 
-   background: linear-gradient(45deg, #272727, #f7f3f3);
+   background: linear-gradient(45deg, #242323, #eeeded);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.5s ease;

@@ -33,15 +33,15 @@ onBeforeUnmount(() => {
 <style scoped>
 .scroll-top {
   position: fixed;
-  bottom: 300px;
+  bottom: 200px;
   right: 18px;
   background-color: #008b8b; 
   color: white;
   border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  font-size: 15px;
   display: flex;
   cursor: pointer;
   align-items: center;
@@ -55,7 +55,7 @@ onBeforeUnmount(() => {
 
 .scroll-top:hover {
   transform: scale(1.1);
-  background-color: #25d366; 
+  background-color: #585c59; 
   color: #fff;
 }
 @media (max-width: 768px) {

@@ -4,11 +4,12 @@
 
 <HeroCard />
 
-<div class="line-separator"></div>  
 
-<h1>Diseño y desarrollo de Páginas Web Económicas en España</h1>
+<div class="line-separator"></div> 
 
+<h1>Diseño y desarrollo de Páginas Web</h1>
 
+<div class="line-separator"></div> 
 
 <section class="metodologia-intro container" data-aos="fade-up">
 
@@ -35,7 +36,7 @@
   <div class="line-separator"></div> 
    <section id="precios" class="pricing-section" data-aos="fade-in">
 
-  <h2 class="section-title">Planes y Precios</h2>
+   <h2 data-aos="fade-right">Nuestros Planes y Precios</h2>
   
 <div class="pricing-container">
    
@@ -124,8 +125,9 @@
       <h2 data-aos="fade-left">Proyectos Recientes</h2>
       <div class="projects">
         <div class="project-card" data-aos="flip-up" v-for="(project, index) in portfolio" :key="index">
-          <img :src="project.imagen" :alt="project.titulo" />
           <h3>{{ project.titulo }}</h3>
+          <img :src="project.imagen" :alt="project.titulo" />
+          
            <a :href="project.link" target="_blank" class="project-link">Ver proyecto</a>
         </div>
       </div>
@@ -133,6 +135,8 @@
     </div>
 
 <div class="line-separator"></div>
+
+
  <section class="contact">
   <div class="contact-container">
 
@@ -209,11 +213,12 @@ export default {
     ]
 
     const portfolio = [
+      {titulo: 'Restaurante Sensus ',imagen: '/images/sensus.png',link: 'https://sensusrestaurante.netlify.app/'},
       {titulo: 'Abogada Maria de Luca', imagen: '/images/maria.png', link: 'https://abogada-maria-de-luca.netlify.app/' },
      {titulo: 'Hotel Mirage', imagen: '/images/proyecto.png', link: 'https://hotelmirageweb.netlify.app/' },
-      { titulo: 'Studioart', imagen: '/images/proyecto1.jpg', link: 'https://interiorista.netlify.app/' },
+      { titulo: 'Studioart-Interiorismo', imagen: '/images/proyecto1.jpg', link: 'https://interiorista.netlify.app/' },
       { titulo: 'Web Design', imagen: '/images/proyecto7.png', link: 'https://paginaswebpersonalizadas.es/' },
-      { titulo: 'Landing page', imagen: '/images/pagina-roxana.png', link: 'https://roxana-oana-calin-pshicolog-terapeut.netlify.app/' },
+      { titulo: 'Psicóloga Roxana Calin', imagen: '/images/pagina-roxana.png', link: 'https://roxana-oana-calin-pshicolog-terapeut.netlify.app/' },
     ]
 
     onMounted(() => {
@@ -285,7 +290,7 @@ section {
   text-align: center;
    margin-top: 0.1rem;
   color: #ffffff; 
-   background: linear-gradient(45deg, #333533, #979494);
+   background: linear-gradient(45deg, #4d4f52, #eef0f1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.5s ease;
@@ -333,7 +338,17 @@ h2.subtitle {
   margin-bottom: 1rem;
 
 }
-
+.btn-metodologia {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-bottom: 2px solid var(--theme-green, #b5b9b9);
+  box-shadow: 1px 1px 0px #414646;
+  color: var(--theme-green, #898b8b);
+  transition: 0.3s ease;
+}
 
 @media (max-width: 768px) {
   h1.section-title {
@@ -353,22 +368,11 @@ h2.subtitle {
   color: #2c2c2c;
 }
 
-.btn-metodologia {
-  display: inline-block;
-  margin-top: rem;
-  padding: 0.8rem 1.6rem;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 50px;
-  border: 2px solid var(--theme-green, #f8fcfc);
-  box-shadow: 1px 1px 1px #7c7e7e;
-  color: var(--theme-green, #898b8b);
-  transition: 0.3s ease;
-}
+
 
 .btn-metodologia:hover {
-  background: var(--theme-green, #828585);
-  color: white;
+  background: var(--theme-green, #f6f7f7);
+  color: rgb(14, 13, 13);
 }
 
 .metodologia-preview {
@@ -377,19 +381,7 @@ h2.subtitle {
   max-width: 900px;
   margin: auto;
 }
-.btn-leer-mas {
-  display: inline-block;
-  margin-top: 1.5rem;
-  background-color: transparent;
-  color: #787a7a;
-  padding: 0.8rem 1.6rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.btn-leer-mas:hover {
-  color: #00332a;
-}
+
 
 .services, .portfolio {
   padding: 4rem 0;
@@ -400,7 +392,8 @@ h2{
   font-size: 1.9rem;
   font-weight: 800;
   letter-spacing: 0.5px;
-  margin-top: 0.1rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
   text-align: center;
   color: #ffffff; 
   background: linear-gradient(120deg, #e8eaeb, #5e5e5f);
@@ -463,7 +456,7 @@ h2.subtitle {
 .service-img {
   width: 100%;
   height: 800px;
-  border-radius: 8px;
+  border-radius: 0px;
   margin-bottom: 1rem;
 
 }
@@ -493,7 +486,7 @@ h2.subtitle {
 .project-card img {
   width: 98%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 0px;
   margin-bottom: 1rem;
 }
 .pricing-section {
@@ -510,23 +503,24 @@ h2.subtitle {
 .project-link {
   display: inline-block;
   margin-top: 0.5rem;
-  color: #136aa8;
+  color: #454849;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.5rem;
+  font-weight: 500;
+  font-size: 1.3rem;
   font-family: Robo slab;
   transition: color 0.3s ease;
 }
 
 .project-link:hover {
-  color: darkcyan; 
+  color: rgb(63, 66, 66); 
    transform: translateY(20px);
 }
 
 .section-title {
   font-size: 1.5rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
-  color: #155b9c;
+  color: #5c6064;
   text-shadow: #230577 6px 0 10px;
   font-weight: 700;
   font-size: 2rem;
@@ -573,7 +567,7 @@ h2.subtitle {
 
 @media (max-width: 600px) {
   .line-separator {
-    height: 4px;
+    height: px;
     animation-name: drawFlowMobile, flow, glowPulse;
   }
 
@@ -608,10 +602,14 @@ h2.subtitle {
   gap: 2rem;
 }
 
-
+.h3-pricing {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff; 
+  background: linear-gradient(120deg, #6a6b6b, #dddfe0);}
 .pricing-card {
   width: 300px;
-  border-radius: 20px;
+  border-radius: 0px;
   padding: 2rem;
   color: #fff;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
@@ -626,19 +624,20 @@ h2.subtitle {
 
 
 .basic {
-  background: linear-gradient(135deg, #00bcd4, #f3f6f7);
+  background: linear-gradient(135deg, #23d9f1, #f3f6f7);
 }
 .advanced {
-  background: linear-gradient(135deg, #009688, #dae6e3);
+  background: linear-gradient(135deg, #004d96, #dae6e3);
 }
 .premium {
-  background: linear-gradient(135deg, #a0f1eb, #00332a);
+  background: linear-gradient(135deg, #a0f1eb, #8b0597);
 }
 
 
 .pricing-card h3 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
+  Color: #fffafa;
 }
 
 .subtitle {
@@ -810,10 +809,11 @@ h2.subtitle {
 }
 
 .service-item img {
-  width: 450px;
-  height: 220px;
+  width: 650px;
+  height: 250px;
+  align-items: center;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 0px;
   flex-shrink: 0;
 }
 
@@ -849,7 +849,7 @@ h2.subtitle {
 
   .service-item img {
     width: 350px;
-    height: 150px;
+    height: 250px;
   }
 }
 

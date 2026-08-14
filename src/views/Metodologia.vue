@@ -69,7 +69,7 @@
       </ul>
     </section>
 
-    <!-- STACK TECNICO -->
+   
     <section class="stack container" data-aos="fade-up">
       <h2>Tecnologías Con Las Que Trabajamos</h2>
 
@@ -86,7 +86,7 @@
       </div>
     </section>
 
-    <!-- EXPERIENCIA / CREDIBILIDAD -->
+    
     <section class="calidad container" data-aos="fade-up">
       <h2>Calidad Corporativa</h2>
       <p>
@@ -174,13 +174,13 @@ h1 {
 .step {
   background: #fafafa;
   padding: 1.5rem;
-  border-radius: 12px;
+  border-radius: 0px;
   border: 1px solid #eee;
 }
 
 .step .num {
   font-size: 2rem;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--theme-green, #008b8b);
 }
 
@@ -212,13 +212,13 @@ h1 {
   font-weight: 600;
 }
 
-/* CALIDAD */
+
 .calidad p {
   margin: 1rem 0;
   line-height: 1.7;
 }
 
-/* CTA FINAL */
+
 .cta-final {
   text-align: center;
   margin: 3rem 0;
@@ -227,10 +227,10 @@ h1 {
 .cta-btn {
   display: inline-block;
   padding: 0.9rem 1.8rem;
-  border-radius: 50px;
-  background: var(--theme-green, #008b8b);
-  color: white;
-  font-weight: 600;
+  border-bottom: 2px solid rgb(123, 128, 128);
+  background: var(--theme-green, #fafcfc);
+  color: rgb(90, 88, 88);
+  font-weight: 500;
   margin-top: 1rem;
   text-decoration: none;
 }
@@ -238,22 +238,23 @@ h1 {
   background-color: #f8f8f8;
   color: #098678;
   padding: 1.5rem;
-  border-radius: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-top: 2rem;
 }
 
 
 .btn-inicio {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   display: inline-block;
   margin-top: 1.5rem;
   margin-left: 35px;
   background-color: transparent;
   color: #0b9fda;
   padding: 0.3rem 1rem;
-  border-radius: 8px;
+  border-bottom: 1px solid #16cae2;
   text-decoration: none;
   transition: 0.3s;
-  box-shadow:1px 1px 1px #098678;
+  
 }
 
 

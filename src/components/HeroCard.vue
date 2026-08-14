@@ -53,7 +53,7 @@ export default {};
   background-color: #fff;
   font-size: 1.5rem;
   color: #4b4949;
-  font-weight: 600;
+  font-weight: 500;
   animation: move-marquee 15s linear infinite;
   letter-spacing: 1px;
 }

@@ -35,8 +35,8 @@ export default {
 
     const titles = [
       'Diseño Creativo', 'Innovación Digital', 'Experiencia Visual',
-      'Soluciones Web', 'Branding Único', 'Tecnología Moderna',
-      'Estrategia Digital', 'Arte y Funcionalidad', 'Impacto Visual'
+      'Soluciones Web', 'Branding Único', 'Arte y Funcionalidad', 'Marketing ',
+      'Estrategia Digital', 'Tecnología Moderna', 'Impacto Visual'
     ]
 
     const descriptions = [
@@ -45,9 +45,9 @@ export default {
       'Experiencias digitales que emocionan.',
       'Webs intuitivas y funcionales.',
       'Identidad de marca coherente y atractiva.',
-      'Tecnología al servicio de tus ideas.',
+       'Combinamos arte y funcionalidad.',
+      'Soluciones de marketing al servicio de tus ideas.',
       'Estrategias que impulsan resultados.',
-      'Combinamos arte y funcionalidad.',
       'Impacto visual memorable para tu público.Experiencias interactivas y envolventes usando Three.js y animaciones en Canvas.Efectos dinámicos y microinteracciones que captan la atención desde el primer segundo.Diseñado para que cada visita sea inolvidable y futurista.'
     ]
 
@@ -58,7 +58,7 @@ export default {
 
     onMounted(() => {
       gridItems.value.forEach((el) => {
-        // Animación al aparecer
+        
         gsap.from(el, {
           scrollTrigger: {
             trigger: el,

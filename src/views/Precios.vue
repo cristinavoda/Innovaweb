@@ -4,49 +4,80 @@
     <div class="line-separator"></div>
 
     <div class="pricing-grid">
+
+
+
       <div class="plan-card basic">
-        <h3>Básico</h3>
+        <h3 class="h3">Básico</h3>
+  
+
+
         <p class="subtitle"> Eficiente</p>
 
 
-        <div class="price">150€</div>
+        <div class="price"> 150€</div>
+        <p>Precio orientativo · presupuesto personalizado </p>
+
+
         <ul  class="plan-features">
+         
+          
+          <li>Diseño web personalizado</li>
+          <li>Entrega en 3 días</li>
           <li>Hosting incluido</li>
-          <li>Diseño web sencillo</li>
-          <li>3 secciones máximo</li>
+          <li>3 secciones </li>
           <li>Dominio y SSL incluidos</li>
           <li>SEO básico</li>
-          <li>Soporte 24/5</li>
+          <li>Soporte inicial incluido</li>
+          <p class="pricing-note">
+  * Los plazos son orientativos y dependen de la entrega de contenidos y materiales por parte del cliente.
+</p>
         </ul>
         
       </div>
 
+
+
       <div class="plan-card advanced">
-        <h3>Avanzado</h3>
+        <h3 class="h3">Avanzado</h3>
         <p class="subtitle">Presencia de marca completa</p>
-        <div class="price">350€</div>
+        <div class="price">  350€</div>
+         <p>Precio orientativo · presupuesto personalizado </p>
+        
         <ul class="plan-features">
           <li>Diseño web avanzado</li>
-          <li>4 secciones máximo</li>
+          <li>4 secciones </li>
+           <li>Entrega en 5 días</li>
           <li>Dominio y SSL incluidos</li>
           <li>SEO básico</li>
-          <li>Mantenimiento 24/7</li>
+          <li>Soporte inicial incluido</li>
           <li>Optimización de rendimiento</li>
+          <p class="pricing-note">
+  * Los plazos son orientativos y dependen de la entrega de contenidos y materiales por parte del cliente.
+</p>
         </ul>
         
       </div>
 
       <div class="plan-card premium">
-        <h3>Premium</h3>
-        <p class="subtitle">ecommerce,integraciones y rendimiento avanzado</p>
-        <div class="price">650€</div>
+         
+        <h3 class="h3">Premium</h3>
+        <p class="subtitle">
+  Ecommerce, integraciones y rendimiento avanzado
+</p>
+        <div class="price"> 650€</div>
+         <p>Precio orientativo · presupuesto personalizado </p>
         <ul class="plan-features">
-          <li>Diseño profesional sin límites</li>
+          <li>Diseño profesional </li>
+           <li>Entrega en 7–10 días</li>
           <li>WooCommerce incluido</li>
           <li>SEO avanzado</li>
           <li>IA y automatizaciones</li>
-          <li>Backup diario</li>
-          <li>Soporte prioritario 24/7</li>
+          <li>Backup optimizado</li>
+          <li>Soporte prioritario </li>
+          <p class="pricing-note">
+  * Los plazos son orientativos y dependen de la entrega de contenidos y materiales por parte del cliente.
+</p>
         </ul>
       
       </div>
@@ -116,23 +147,24 @@ onMounted(() => {
 }
 
 
-h2 {
+.h3 {
  
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: 0.5px;
-  margin-top: -100px;
+  margin-top: 25px;
   color: #ffffff; 
-  background: linear-gradient(120deg, #00c6ff, #0072ff);
+  background: linear-gradient(120deg, #00c6ff, #096a88);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-  opacity: 0;
   transform: translateY(20px);
   animation: titleEnter 0.8s ease-out forwards;
 }
-
+.plan-card.premium h3 {
+  color: #3a2b4d;
+}
 @keyframes titleEnter {
   to {
     opacity: 1;
@@ -150,7 +182,7 @@ h2 {
   opacity: 0;
   transform: translateY(20px);
   animation: titleEnter 0.8s ease-out forwards;
-  margin-top: 0.1rem;
+  margin-top: 1.5rem;
 }
 
 .line-separator {
@@ -184,7 +216,6 @@ h2 {
   width: 100%;
   max-width: 340px;
   background: #ffffff;
-  border-radius: 1.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -195,13 +226,10 @@ h2 {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
-.plan-card h3 {
-  font-size: 1.6rem;
-  color: #004e4e;
-}
+
 
 .subtitle {
-  color: #777;
+  color: #55575a;
   margin-bottom: 1rem;
   font-size: 0.95rem;
 }
@@ -261,7 +289,6 @@ h2 {
   border: none;
   color: rgb(114, 113, 113);
   padding: 0.8rem 1.8rem;
-  border-radius: 2rem;
   cursor: pointer;
   font-weight: 600;
   transition: background 0.3s ease;
@@ -272,17 +299,9 @@ h2 {
 }
 
 
-.basic { background: linear-gradient(180deg, #fefefe, #d8f8f8); }
+.basic { background: linear-gradient(180deg, #fefefe, #ddf8f8); }
 .advanced { background: linear-gradient(180deg, #ffffff, #cbd5f7); }
-.premium { background: linear-gradient(180deg, #ffffff, #e5cef3); }
-.plan-card.premium h3 {
-  color: #3a2b4d;
-  text-shadow:
-    -1px -1px 0 #fff,
-     1px -1px 0 #fff,
-    -1px  1px 0 #fff,
-     1px  1px 0 #fff;
-}
+.premium { background: linear-gradient(180deg, #ffffff, #f0e0fa); }
 
 
 @media (min-width: 1200px) {
@@ -304,7 +323,6 @@ h2 {
     flex-direction: column; 
     gap: 1.2rem;
   width: 100%;
-    
     padding: 0;
     margin: 0 auto;
   }
@@ -313,7 +331,6 @@ h2 {
   .plan-card {
     width: 100%;
     max-width: 100%;
-    border-radius: 0.9rem;
     padding: 1.2rem;
     margin: 0;
     box-sizing: border-box; 
@@ -321,7 +338,7 @@ h2 {
 
   
   .pricing-section .title {
-    padding: 0 1rem;
+    padding: 0.1rem;
   }
 }
 .line-separator {

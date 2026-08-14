@@ -66,17 +66,17 @@ body {
 
 .scroll-top-btn {
   position: fixed;
-  bottom: 19rem;
+  bottom: 160px;
   right: 1.3%;
   background-color: rgb(247, 248, 248);
-  color: darkcyan;
+  color: rgb(96, 99, 99);
   border: none;
   border-radius: 50%;
-  width: 55px;
-  height: 55px;
+  width: 40px;
+  height: 40px;
   font-size: 2.2rem;
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
   transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
   z-index: 1000;
   display: flex;
@@ -85,10 +85,10 @@ body {
 }
 
 .scroll-top-btn:hover {
-  background-color: #0b8a8a;
-  color: #ffffff;
+  background-color: #f3f5f5;
+  color: #464444;
   transform: scale(1.15);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.45);
 }
 
 .arrow {
@@ -101,7 +101,7 @@ body {
 .cookie-floating:hover {
   transform: scale(1.12);
   background: rgba(41, 37, 37, 0.22);
-  box-shadow: 0 6px 25px rgba(0, 201, 167, 0.7);
+  box-shadow: 0 6px 5px rgba(86, 88, 88, 0.7);
 }
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -113,7 +113,7 @@ body {
     width: 45px;
     height: 45px;
     font-size: 18px;
-    bottom: 305px;
+    bottom: 175px;
     margin-right: 15px;
   }
 }
