@@ -502,7 +502,8 @@ h2.subtitle {
 
 .project-link {
   display: inline-block;
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   color: #454849;
   text-decoration: none;
   font-weight: 500;
@@ -513,7 +514,7 @@ h2.subtitle {
 
 .project-link:hover {
   color: rgb(63, 66, 66); 
-   transform: translateY(20px);
+  
 }
 
 .section-title {
