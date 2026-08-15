@@ -173,24 +173,24 @@ document.addEventListener("mousemove", (event) => {
   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 });
 
-// En animate()
+
 function animate() {
   requestAnimationFrame(animate);
 
-  // Rotación sutil de los planos
+  
   planos.forEach((p) => { p.rotation.y += 0.001; });
 
-  // Raycaster detecta plano bajo el mouse
+  
   raycaster.setFromCamera(mouse, camera);
   const intersects = raycaster.intersectObjects(planos);
 
   planos.forEach((p) => {
-    // reset glow
+    
     p.material.emissive = new THREE.Color(0x000000);
   });
 
   intersects.forEach((intersect) => {
-    // aplica glow
+   
     intersect.object.material.emissive = new THREE.Color(0x00ffff); // azul holograma
     intersect.object.material.emissiveIntensity = 0.6;
   });
@@ -198,7 +198,7 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-      // Animación
+      
       const clock = new THREE.Clock();
       function animate() {
         const dt = clock.getDelta();
@@ -208,7 +208,7 @@ function animate() {
       }
       animate();
 
-      // Responsive
+      
       window.addEventListener("resize", () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
         camera.aspect = window.innerWidth / window.innerHeight;
@@ -279,12 +279,10 @@ canvas {
     height: 70vh;
   }
 
-  /* Ajustar tamaño de planos si quieres que sean más pequeños */
-  /* Esto se puede controlar también en JS si quieres cambiar geometría según screen */
 }
 .toggle-sidebar {
-  position: fixed; /* o absolute según tu layout */
-  z-index: 30;     /* mayor que 1 del canvas */
+  position: fixed; 
+  z-index: 30;     
 }
 
 </style>
