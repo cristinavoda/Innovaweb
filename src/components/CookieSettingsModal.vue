@@ -231,15 +231,11 @@ input:checked + .slider:before {
 
   font-size: 22px;
 
-  background: rgba(255,255,255,0.13);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.2);
-
-  border-radius: 50%;
+  background: transparent;
+  
   cursor: pointer;
 
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
-
+ 
   transition: transform 0.25s ease, background 0.3s ease;
   z-index: 9999;
 }

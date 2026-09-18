@@ -68,15 +68,13 @@ body {
   position: fixed;
   bottom: 160px;
   right: 1.3%;
-  background-color: rgb(247, 248, 248);
+  background-color: transparent;
   color: rgb(96, 99, 99);
   border: none;
-  border-radius: 50%;
   width: 40px;
   height: 40px;
   font-size: 2.2rem;
   cursor: pointer;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
   transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
   z-index: 1000;
   display: flex;
@@ -85,10 +83,10 @@ body {
 }
 
 .scroll-top-btn:hover {
-  background-color: #f3f5f5;
+  background-color: transparent;
   color: #464444;
   transform: scale(1.15);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.45);
+  
 }
 
 .arrow {
@@ -97,11 +95,33 @@ body {
   font-size: 1.8rem;
   animation: float 1.5s ease-in-out infinite;
 }
+.cookie-floating {
+  position: fixed;
+  bottom: 94px;
+  right: 20px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 22px;
+
+  background: transparent;
+  
+  cursor: pointer;
+
+ 
+
+  transition: transform 0.25s ease, background 0.3s ease;
+  z-index: 9999;
+}
 
 .cookie-floating:hover {
   transform: scale(1.12);
-  background: rgba(41, 37, 37, 0.22);
-  box-shadow: 0 6px 5px rgba(86, 88, 88, 0.7);
+  
 }
 @keyframes float {
   0%, 100% { transform: translateY(0); }
