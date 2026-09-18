@@ -52,7 +52,7 @@ export default {
     ]
 
     const getSize = (index) => {
-      const sizes = ['large', 'medium', 'small', 'small', 'medium', 'medium', 'small', 'large', 'medium']
+      const sizes = ['large', 'small', 'small', 'medium','small',  'small',  'large', 'small']
       return sizes[index % sizes.length]
     }
 
@@ -79,7 +79,7 @@ export default {
     const y = e.clientY - rect.top
     const centerX = rect.width / 2
     const centerY = rect.height / 2
-    const rotateY = (x - centerX) / centerX * 10 // máximo 10 grados
+    const rotateY = (x - centerX) / centerX * 10 
     const rotateX = -(y - centerY) / centerY * 10
 
     gsap.to(el, { rotateY: rotateY, rotateX: rotateX, transformPerspective: 600, transformOrigin: 'center', duration: 0.3 })
@@ -94,7 +94,7 @@ export default {
     gsap.to(image, { x: 10, scale: 1.05, duration: 0.8, ease: 'power3.out' })
   })
 
-        // Hover GSAP
+        
         el.addEventListener('mouseenter', () => {
           gsap.to(el.querySelector('.image'), { x: 10, scale: 1.05, duration: 0.8, ease: 'power3.out' })
         })
