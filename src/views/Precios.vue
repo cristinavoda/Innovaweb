@@ -189,8 +189,8 @@ onMounted(() => {
   width: fit-content;
   height: 1px;
   margin: 1rem auto 0.1rem;
-  background: linear-gradient(270deg, #444444, #ffffff, #3f3e41, rgb(233, 236, 236));
-  border-radius: 5px;
+  background: linear-gradient(270deg, #cac9c9, #ffffff, #3f3e41, rgb(233, 236, 236));
+  border-radius: 0px;
   opacity: 0;
 }
 @keyframes gradientFlow {
@@ -216,7 +216,7 @@ onMounted(() => {
   width: 100%;
   max-width: 340px;
   background: #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -270,7 +270,6 @@ onMounted(() => {
 
 .plan-card.premium .plan-features li::before {
   content: none;
-  position: absolute;
   left: 0;
   color: #6b3fa0;
   font-size: 0.85rem;
@@ -299,9 +298,9 @@ onMounted(() => {
 }
 
 
-.basic { background: linear-gradient(180deg, #fefefe, #ddf8f8); }
-.advanced { background: linear-gradient(180deg, #ffffff, #cbd5f7); }
-.premium { background: linear-gradient(180deg, #ffffff, #f0e0fa); }
+.basic { background: linear-gradient(180deg, #fefefe, #eff0f0); }
+.advanced { background: linear-gradient(180deg, #ffffff, #ebecec); }
+.premium { background: linear-gradient(180deg, #ffffff, #d8d8d8); }
 
 
 @media (min-width: 1200px) {
@@ -322,7 +321,7 @@ onMounted(() => {
     display: flex;
     flex-direction: column; 
     gap: 1.2rem;
-  width: 100%;
+    width: 100%;
     padding: 0;
     margin: 0 auto;
   }

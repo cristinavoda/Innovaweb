@@ -1,8 +1,4 @@
-/* --------------------
-   Estilos globales
--------------------- */
 
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +12,7 @@ body {
   line-height: 1.6;
 }
 
-/* Enlaces */
+
 a {
   text-decoration: none;
   color: inherit;
@@ -24,10 +20,10 @@ a {
 }
 
 a:hover {
-  color: #0077cc; /* Azul suave al pasar el mouse */
+  color: #0077cc; 
 }
 
-/* Contenedores generales */
+
 .container {
   width: 90%;
   max-width: 1200px;
@@ -35,18 +31,17 @@ a:hover {
   padding: 2rem 0;
 }
 
-/* Titulares */
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
-/* Párrafos */
+
 p {
   margin-bottom: 1rem;
 }
 
-/* Botones básicos */
 button {
   cursor: pointer;
   border: none;
@@ -62,12 +57,12 @@ button:hover {
   background-color: #005fa3;
 }
 
-/* Secciones */
+
 section {
   padding: 4rem 0;
 }
 
-/* Animaciones base (para GSAP o AOS) */
+
 .fade-up {
   opacity: 0;
   transform: translateY(20px);

@@ -94,7 +94,7 @@
 
 <div class="line-separator"></div>  
 
-<div class="service-card">
+
 
  <section class="services container">
   <h2 data-aos="fade-right">Nuestros Servicios</h2>
@@ -117,7 +117,7 @@
     </div>
   </div>
 </section>
-</div>
+
 
   <div class="line-separator"></div> 
 
@@ -344,8 +344,7 @@ h2.subtitle {
   padding: 0.8rem 1.6rem;
   font-size: 1rem;
   font-weight: 500;
-  border-bottom: 2px solid var(--theme-green, #b5b9b9);
-  box-shadow: 1px 1px 0px #414646;
+  border-bottom: 1px solid var(--theme-green, #b5b9b9);
   color: var(--theme-green, #898b8b);
   transition: 0.3s ease;
 }
@@ -386,10 +385,14 @@ h2.subtitle {
 .services, .portfolio {
   padding: 4rem 0;
 }
-
-h2{
-  font-family: 'Playfair Display', serif;
-  font-size: 1.9rem;
+.service-content {
+  max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
+}
+.h3-services {
+  font-size: 1.3rem;
+  font-family:'Roboto slab';
   font-weight: 800;
   letter-spacing: 0.5px;
   margin-top: 2rem;
@@ -415,7 +418,7 @@ h2{
 h2.subtitle {
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 500;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   color: #e0e0e0; 
   letter-spacing: 0.3px;
   margin-bottom: 1rem;
@@ -432,7 +435,7 @@ h2.subtitle {
   }
 }
 
-.service-cards, .projects {
+ .projects {
   background-color: transparent;
   display: flex;
   gap: 2rem;
@@ -443,10 +446,11 @@ h2.subtitle {
 .card, .project-card {
   background-color: #f9f9f9;
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 0px;
   text-align: center;
   width: 550px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  height: auto;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.1);
   transition: transform 0.3s,  box-shadow 0.3s ease;
 }
 
@@ -454,6 +458,7 @@ h2.subtitle {
   transform: translateY(-10px);
 }
 .service-img {
+ 
   width: 100%;
   height: 800px;
   border-radius: 0px;
@@ -464,7 +469,9 @@ h2.subtitle {
    font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   font-weight: 800;
+  font-family:'Roboto slab';
   letter-spacing: 0.5px;
+  margin:0 10px auto;
   margin-bottom: 1rem;
   color: #ffffff; 
   background: linear-gradient(120deg, #230577, #0072ff);
@@ -606,14 +613,15 @@ h2.subtitle {
 .h3-pricing {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ffffff; 
+  color: #4e4c4c; 
   background: linear-gradient(120deg, #6a6b6b, #dddfe0);}
+
 .pricing-card {
   width: 300px;
   border-radius: 0px;
   padding: 2rem;
   color: #fff;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   animation: fadeInUp 0.8s ease forwards;
 }
@@ -625,32 +633,35 @@ h2.subtitle {
 
 
 .basic {
-  background: linear-gradient(135deg, #23d9f1, #f3f6f7);
+  background: linear-gradient(135deg, #ffffff, #f3f6f7);
 }
 .advanced {
-  background: linear-gradient(135deg, #004d96, #dae6e3);
+  background: linear-gradient(135deg, #ffffff, #f1f1f1);
 }
 .premium {
-  background: linear-gradient(135deg, #a0f1eb, #8b0597);
+  background: linear-gradient(135deg, #ffffff, #cfcfcf);
 }
 
 
 .pricing-card h3 {
   font-size: 1.8rem;
+  font-family:'roboto slab';
   margin-bottom: 0.5rem;
-  Color: #fffafa;
+  color: #555252;
 }
 
 .subtitle {
   font-size: 1rem;
   opacity: 0.9;
   margin-bottom: 1rem;
+  color: #5c5a5a;
 }
 
 .price {
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  color: #4e4c4c;
 }
 
 .price span {
@@ -669,6 +680,7 @@ h2.subtitle {
 .pricing-card ul li {
   padding: 0.4rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #5c5a5a;
 }
 
 .btn {
@@ -783,7 +795,6 @@ h2.subtitle {
 
   
   .pricing-container,
-  .service-cards,
   .projects {
     width: 100%;
     overflow-x: hidden;
@@ -795,6 +806,7 @@ h2.subtitle {
 
 .service-list {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 30px;
   max-width: 1000px;
@@ -811,15 +823,22 @@ h2.subtitle {
 
 .service-item img {
   width: 650px;
-  height: 250px;
+  height: 350px;
   align-items: center;
   object-fit: cover;
   border-radius: 0px;
   flex-shrink: 0;
 }
-
+.services h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: rgb(142, 145, 145);
+  text-align: center;
+  text-shadow: 1px 1px 2px #fdfdfd;
+}
 .service-content h3 {
-  margin: 1 0 0.5rem 0;
+  
   color: rgb(66, 70, 70);
   font-size: 1.5rem;
 }
