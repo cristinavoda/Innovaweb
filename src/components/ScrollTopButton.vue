@@ -35,7 +35,7 @@ onBeforeUnmount(() => {
   position: fixed;
   bottom: 200px;
   right: 18px;
-  background-color: #008b8b; 
+  
   color: white;
   border: none;
   border-radius: 50%;
@@ -46,7 +46,7 @@ onBeforeUnmount(() => {
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  
   z-index: 9998;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -65,8 +65,8 @@ onBeforeUnmount(() => {
     transform: translate(50%, 50%);
     width: 45px;
     height: 45px;
-    font-size: 18px;
-    background-color: #009999;
+    font-size: 21px;
+   
   }
 
   .scroll-top:hover {

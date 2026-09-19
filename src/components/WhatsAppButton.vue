@@ -80,7 +80,7 @@ onMounted(() => {
   justify-content: center;
   font-size: 2rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  z-index: 9999;
+  
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
 }

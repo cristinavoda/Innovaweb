@@ -176,11 +176,19 @@ export default {
 
 @media (max-width: 600px) {
   .modular-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr!important;
   }
 
   .grid-item .image {
+    width: 100%;
     height: 150px;
+  }
+
+  .grid-item.small {
+    grid-column: span 1;
+    grid-row: span 1;
+    width: 250px;
+    height: 350px;
   }
 }
 </style>

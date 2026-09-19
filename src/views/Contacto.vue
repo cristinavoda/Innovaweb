@@ -34,7 +34,7 @@
         <iframe
   width="100%"
   height="350"
-  style="border:0; border-radius: 12px;"
+  style="border:0; border-radius: 0px;"
   loading="lazy"
   allowfullscreen
   referrerpolicy="no-referrer-when-downgrade"
@@ -43,7 +43,7 @@
 </iframe>
 </div>
 
-        <p>Lleida, Catalunya, España</p>
+        <p class="map-p">Lleida, Catalunya, España</p>
       </div>
 </div>
    
@@ -76,30 +76,34 @@ onMounted(() => {
 </script>
 
 <style scoped>
+
 .contact {
   min-height: 120vh;
+  height: 100%;
+  display: flex;
   padding:1rem 1rem;
   margin-left: 0px;
   text-align: left;
   background-color: #fdfdfd;
   color: #002f33;
-   background: linear-gradient(180deg, #fefefe, #eaf9f9); 
+   background: linear-gradient(180deg, #fefefe, #fcfdfd); 
 }
+
+
 .contact-bg {
-                                                                                                                                                                      
-background:  linear-gradient(180deg,#f0f7f7, #feffff, #f8fcfc);; 
+                                                                                                                                                                      background:  linear-gradient(180deg,#f0f7f7, #feffff, #f8fcfc);; 
   background-repeat:repeat-y;
   background-size: cover;
   width: 100%;
-  height: auto; 
-background-position: center;
+  height: 100%; 
+  background-position: center;
 
   
 }
 
 .contact h1 {
   font-size: 2rem;
-  margin-top: 5rem;
+  margin-top: 3rem;
   margin-bottom: 3rem;
   background: linear-gradient(45deg, #484b48, #b9b5b5);
   -webkit-background-clip: text;
@@ -125,17 +129,15 @@ background-position: center;
   gap: 2rem;
   justify-content: center;
   margin-bottom: 1rem;
+  margin-top: 1rem;
   
 }
 
 .card {
   background-color: #fff;
-  padding: 3rem 3rem;
-  gap:2rem;
-  margin-top: 30px;
-  max-width: 300px;
-  max-height: 510px;
-  box-shadow:2px 1px 4px#ecf0ee;
+  padding: 1rem 3rem;
+  gap: 2rem;
+  
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -153,13 +155,13 @@ background-position: center;
 .card p {
   font-size: 1rem;
   color: rgb(88, 92, 92);
+  margin-top: auto;
 }
 
 .form-card {
   width: min(100%, 760px);
-  margin: 70px auto 0;
+  margin: 10px auto 0;
   padding: 60px 70px;
-  background: rgba(255, 255, 255, 0.55);
   box-shadow: none;
   border: none;
 }
@@ -238,17 +240,32 @@ background-position: center;
   .map-container {
     right: 25px;
     top: 1rem;
+    bottom: auto;
+    border-radius: 0px!important;
+
   }
+
+
+
   h2 {
-  margin-bottom: 1rem;
-   margin-top: 3rem;
-  color: rgb(62, 65, 65);
+  margin-bottom: 2rem;
+   color: rgb(62, 65, 65);
   text-align: center;
   text-shadow: 1px 1px 2px #fdfdfd;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
   
 }
   
+  .map-p {
+  font-size: 1rem; 
+  color: rgb(109, 107, 105);
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 5rem;
+
   
+  }
 
   
 @media (max-width: 768px) {
@@ -271,10 +288,10 @@ background-position: center;
   width: 100%;
   height:350px;
   max-width: 900px;        
-  margin: 0 auto;
-  border-radius: 18px;
+  margin: 10px auto 30px;
+  border-radius: 0px;
   overflow: hidden;
-  box-shadow: 1px 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 4px 2px rgba(0, 0, 0, 0.15);
 }
 
 .google-map {

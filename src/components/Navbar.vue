@@ -134,7 +134,7 @@ onMounted(() => {
   padding: 0  42px;
   background: rgba(255, 255, 255, 0.20);
   backdrop-filter: blur(18px);
-  z-index: 1000;
+  z-index: 9999;
   font-family: 'Poppins', sans-serif;
 }
 .navbar-brand {
@@ -181,8 +181,8 @@ onMounted(() => {
   
 }
 .nav-links a:hover {
-  color:darkcyan;
-  border-bottom: 1px 1px 1px darkcyan;
+  color:rgb(161, 165, 165);
+  border-bottom: 1px 1px 1px rgb(109, 110, 110);
 }
 
 
@@ -197,6 +197,9 @@ nav .nav-links a:not(.submenu-toggle) {
   padding-bottom: 4px;
   display: inline-block;
   font-weight: 500;
+  font-size: 1.3rem;
+  gap: 0.5rem;
+  z-index: 9999;
 }
 
 
@@ -212,6 +215,7 @@ nav .nav-links a:not(.submenu-toggle)::after {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
+  z-index: 9999;
 }
 
 nav .nav-links a:not(.submenu-toggle):hover::after,
@@ -233,19 +237,11 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
   text-decoration: none;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.55);
   padding: 4px 12px;
-  gap:8rem;
+  gap: 0.5rem;
   transition: 0.25s;
 }
 
-.nav-links-li a:hover {
-  color:darkcyan;
-  border-bottom: 1px 1px 1px darkcyan;
-}
 
-.nav-links li:hover {
-  color: #0a7e65;
-  border-bottom:1px 1px #0a8c95;
-}
 .nav-links a:hover::after {
   width: 100%;
 }
@@ -271,6 +267,7 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+  z-index: 9999;
 }
 
 .dropdown li a {
@@ -297,7 +294,10 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
   height: 3px;
   width: 100%;
   background: rgb(129, 127, 127);
-  text-shadow: 2px 1px white;
+  text-shadow: 6px 3px white;
+  text-emphasis-color: white;
+  border-bottom: 1.5px solid white;
+  transition: all 0.3s ease;
   border-radius: 3px;
 }
 .navbar-brand {
@@ -321,13 +321,14 @@ nav .nav-links a.router-link-active:not(.submenu-toggle)::after {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end; 
-    padding-top: 25px;
+    padding-top: 15px;
     padding-right: 40px;
-    gap: 30px;
+    gap: 5px;
     background: rgba(240, 238, 238, 0.95); 
     transform: translateX(100%);
     opacity: 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 1000;
   }
 
   .nav-links.open {

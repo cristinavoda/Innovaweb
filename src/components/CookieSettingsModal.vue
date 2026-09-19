@@ -44,7 +44,7 @@
       </div>
     </div>
 
-    <!-- Botón flotante -->
+   
     <div class="cookie-floating" @click="openModal">
       ⚙️
     </div>
@@ -237,7 +237,7 @@ input:checked + .slider:before {
 
  
   transition: transform 0.25s ease, background 0.3s ease;
-  z-index: 9999;
+ 
 }
 
 .cookie-floating:hover {

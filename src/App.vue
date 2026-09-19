@@ -71,9 +71,6 @@ body {
   background-color: transparent;
   color: rgb(96, 99, 99);
   border: none;
-  width: 40px;
-  height: 40px;
-  font-size: 2.2rem;
   cursor: pointer;
   transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
   z-index: 1000;
@@ -92,7 +89,7 @@ body {
 .arrow {
   display: inline-block;
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   animation: float 1.5s ease-in-out infinite;
 }
 .cookie-floating {
@@ -116,7 +113,7 @@ body {
  
 
   transition: transform 0.25s ease, background 0.3s ease;
-  z-index: 9999;
+  
 }
 
 .cookie-floating:hover {
@@ -130,9 +127,9 @@ body {
 
 @media (max-width: 768px) {
   .scroll-top-btn {
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
+    width: 55px;
+    height: 55px;
+  
     bottom: 175px;
     margin-right: 15px;
   }
